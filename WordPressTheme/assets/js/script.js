@@ -226,7 +226,7 @@ jQuery(function ($) {
 //   });
 // });
 
-$(function () {
+jQuery(function ($) {
   $(".faq-list__item:first-of-type .faq-list__item-answer").css("display", "block");
   $(".faq-list__item:first-of-type .faq-list__item-question").addClass("is-open");
   $(".faq-list__item-question").on("click", function () {

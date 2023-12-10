@@ -132,6 +132,32 @@
                 <div class="campaign-card__container">
                   <a href="#" class="campaign-card__link">
                     <div>
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img3.jpg" alt="光っているクラゲ">
+                    </div>
+                    <div class="campaign-card__body">
+                      <div class="campaign-card__mete">
+                        <p class="campaign-card__tag">体験ダイビング</p>
+                      </div>
+                      <div class="campaign-card__body-head">
+                        <h3 class="campaign-card__title">ナイトダイビング</h3>
+                      </div>
+                      <div class="campaign-card__charge">
+                        <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-card__charge-box">
+                          <p class="campaign-card__charge-price-1">&yen;10,000</p>
+                          <p class="campaign-card__charge-price-2">&yen;8,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide campaign-cards__item">
+              <div class="campaign-card">
+                <div class="campaign-card__container">
+                  <a href="#" class="campaign-card__link">
+                    <div>
                       <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img4.jpg" alt="ダイビングをしている様子">
                     </div>
                     <div class="campaign-card__body">
