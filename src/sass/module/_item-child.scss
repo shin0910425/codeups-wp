@@ -1,0 +1,17 @@
+@use "global" as *;
+
+.sp-nav__sub-list a:nth-child(1),
+.sp-nav__sub-list a:nth-child(2),
+.sp-nav__sub-list a:nth-child(3) {
+  color: $white;
+  display: block;
+  padding: rem(12);
+  font-size: rem(16);
+  font-family: $jp-family;
+  font-weight: $regular;
+  line-height: 1.125;
+}
+
+.sp-nav__sub-list a {
+  margin-left: rem(15);
+}

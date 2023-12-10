@@ -1,0 +1,123 @@
+@use "global" as *;
+
+
+.button {
+  display: inline-block;
+  width: rem(202);
+  padding: rem(19) 0;
+  position: relative;
+  font-size: rem(14);
+  font-weight: normal;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  background-color: $green3;
+  color: $white;
+  transition: color 0.2s;
+  border: rem(1) solid $green3;
+  z-index: 1;
+}
+
+.button.button__404 {
+  color: $green3;
+  background-color: $white;
+  border: rem(1) solid $white;
+}
+
+.button::first-letter {
+  text-transform: uppercase;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translate(rem(4), rem(4));
+  border: rem(1) solid $green3;
+  z-index: -2;
+}
+
+.button.button__404::before {
+  border: rem(1) solid $white;
+}
+
+.button::after {
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.button.button__404::after {
+  background-color: $green3;
+}
+
+.button:hover::after {
+
+  @include mq("md") {
+    transform: scale(1, 1);
+  }
+}
+
+.button span {
+  padding-right: rem(48);
+  position: relative;
+}
+
+.button span::after {
+  content: "";
+  position: absolute;
+  width: rem(40);
+  height: rem(7);
+  top: 40.74%;
+  transform: translateY(-50%);
+  right: 0;
+  background-image: url(../images/common/button-arrow_img1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: 0.2s background-color;
+}
+
+.button.button__404 span::after {
+    background-image: url(../images/common/button-arrow_img2.png);
+}
+
+.button:hover {
+
+  @include mq("md") {
+    color: $green3;
+    opacity: 1;
+  }
+}
+
+.button.button__404:hover {
+  color: $white;
+}
+
+.button:hover span::after {
+
+  @include mq("md") {
+    background-image: url(../images/common/button-arrow_img2.png);
+  }
+}
+
+.button.button__404:hover span::after {
+  background-image: url(../images/common/button-arrow_img1.png);
+}
+
+.button__text {
+  color: $white;
+  text-transform: capitalize;
+}
+

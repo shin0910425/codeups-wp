@@ -1,0 +1,164 @@
+@use "global" as *;
+
+.price {
+  padding: rem(80) 0;
+  background-color: $green2;
+
+  @include mq("md") {
+    position: relative;
+    padding: rem(85) 0 rem(100);
+  }
+}
+
+.price__inner {
+  padding: 0 rem(15);
+  max-width: rem(600);
+  width: 100%;
+
+  @include mq("md") {
+    // max-width: 100%;
+    position: relative;
+  }
+}
+
+.price__icon-image {
+  @include mq("md") {
+    position: absolute;
+    content: "";
+    z-index: 10;
+    left: calc(50% - min(48.5vw, rem(620)));
+    bottom: rem(50);
+    width: rem(437);
+    height: rem(201);
+  }
+}
+
+.price__list-box {
+  margin-top: rem(30);
+
+  @include mq("md") {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: rem(41);
+  }
+}
+
+.price__list-image {
+  @include mq("md") {
+    margin-left: rem(93);
+    width: 50%;
+  }
+}
+
+.price__list-image img {
+  width: 100%;
+  aspect-ratio: 345 / 227;
+  object-fit: cover;
+
+  @include mq("md") {
+    aspect-ratio: 492 / 746;
+  }
+}
+
+.price__list-body {
+  margin-top: rem(39);
+
+  @include mq("md") {
+    margin-top: 0;
+    width: 50%;
+  }
+}
+
+.price__list-body dl {
+  width: 100%;
+}
+
+.price__sub-title {
+  font-size: rem(16);
+  line-height: 1.5;
+  font-family: $jp-family;
+  font-weight: $bold;
+  padding-bottom: rem(2);
+  color: $green;
+  border-bottom: rem(1) solid $green3;
+}
+
+.price__sub-title:not(:first-child) {
+  margin-top: rem(48);
+
+  @include mq("md") {
+    margin-top: rem(42);
+  }
+}
+
+.price__list-item {
+  margin-top: rem(8);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include mq("md") {
+    width: calc(100% - rem(200));
+  }
+}
+
+.price__list-item dt,
+.price__list-item dd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.price__list-item dt {
+  width: 74%;
+
+  @include mq("md") {
+    width: 67.729%;
+  }
+}
+
+.price__list-item dd {
+  width: calc(100% - 74%);
+
+  @include mq("md") {
+    width: calc(100% - 67.729%);
+  }
+}
+
+.price__list-menu {
+  padding-right: rem(4);
+  font-size: rem(14);
+  line-height: 2;
+  font-family: $jp-family;
+  font-weight: $regular;
+  color: $green;
+
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: 1.8;
+  }
+}
+
+.price__list-money {
+  font-size: rem(14);
+  line-height: 2;
+  font-family: $jp-family;
+  font-weight: $regular;
+  color: $green;
+  text-align: right;
+
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+}
+
+
+.price__button {
+  margin-top: rem(36);
+  text-align: center;
+
+  @include mq("md") {
+    margin-top: rem(72);
+  }
+}

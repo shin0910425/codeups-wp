@@ -1,0 +1,118 @@
+@use "global" as *;
+
+.form__wrap {
+  padding-bottom: rem(40);
+  border-bottom: 1px solid $green3;
+
+  @include mq(md) {
+    display: flex;
+    // align-items: center;
+  }
+}
+
+.form__wrap:nth-child(5) {
+  @include mq("md") {
+    align-items: center;
+  }
+}
+
+.form__wrap.form__wrap--textarea {
+  @include mq(md) {
+    align-items: flex-start;
+  }
+}
+
+.form__wrap+.form__wrap {
+  padding-top: rem(40);
+}
+
+.form__label {
+  font-size: rem(16);
+  font-weight: $bold;
+  font-family: $jp-family;
+  line-height: 1;
+  color: $green;
+
+  @include mq(md) {
+    max-width: rem(220);
+    width: 100%;
+  }
+}
+
+.form__wrap.form__wrap--textarea .form__label {
+  @include mq(md) {
+    // margin-top: rem(10);
+  }
+}
+
+.form__label span {
+  margin-left: rem(10);
+  padding: rem(5);
+  display: inline-block;
+  font-size: rem(12);
+  color: $white;
+  line-height: 1;
+  letter-spacing: 0.4em;
+  background-color: $red;
+}
+
+.form__input,
+.form__select,
+.form__radio,
+.form__checkbox,
+.form__textarea {
+  margin-top: rem(19);
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+.form__checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.form__input,
+.form__select,
+.form__textarea {
+  flex-grow: 1;
+}
+
+.form__privacy {
+  margin-top: rem(40);
+
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.form__privacy-text input+span {
+  font-size: rem(14);
+  font-family: $jp-family;
+  font-weight: $regular;
+  line-height: 1.57143;
+  color: $green;
+  @include mq("md") {
+  }
+}
+
+.form__privacy-text.form-checkbox {
+  text-align: center;
+}
+
+.form__privacy-text.form-checkbox input+span {
+  padding: 0 0 0 rem(30);
+  text-align: left;
+
+
+    @include mq("md") {
+  padding: 0 0 0 rem(35);
+    }
+  }
+
+.form__submit {
+  margin-top: rem(60);
+  text-align: center;
+}

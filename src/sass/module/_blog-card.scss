@@ -1,0 +1,73 @@
+
+@use "global" as *;
+
+.blog-card {
+  padding: rem(16) rem(17) rem(24);
+  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+  background-color: $white;
+  @include mq("md") {
+    z-index: 20;
+  }
+}
+
+.blog-card a:hover {
+  opacity: 0.7;
+}
+
+.blog-card:not(:first-child) {
+  // margin-top: rem(-1);
+  @include mq("md") {}
+}
+
+.blog-card__image {
+  width: 100%;
+  // width: rem(300);
+    margin: 0 auto; //サンプルで中央に寄せたいので書かせていただいております。
+    overflow: hidden; //これを記述することではみ出た部分を非表示にします。
+}
+
+.blog-card__image img {
+  width: 100%;
+  aspect-ratio: 300/200;
+  object-fit: cover;
+  transition: 1s all;
+}
+
+.blog-card__image img:hover {
+  transform: scale(1.2, 1.2);
+    transition: 1s all;
+}
+
+.blog-card__mete {
+  margin-top: rem(18);
+}
+
+.blog-card__time {
+  font-family: $en-family;
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: 1.5;
+  margin-top: rem(24);
+}
+
+.blog-card__title {
+  font-size: rem(16);
+  line-height: 1.5;
+  font-family: $jp-family;
+  font-weight: normal;
+  padding-bottom: rem(4);
+  border-bottom: rem(1) solid $green3;
+}
+
+.blog-card__text {
+  margin-top: rem(14);
+  font-size: rem(16);
+  font-weight: $regular;
+  font-family: $jp-family;
+  line-height: 1.5;
+  color: $green;
+
+  @include mq("md") {
+    margin-top: rem(17);
+  }
+}
