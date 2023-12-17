@@ -8,12 +8,7 @@
 </div>
 
 <!-- パンくず -->
-
-<div class="breadcrumb">
-  <div class="inner">
-    <div>HOME > ブログ一覧 > ブログ詳細</div>
-  </div>
-</div>
+<?php get_template_part('parts/breadcrumb') ?>
 
 <main>
   <section class="page-blog page-blog-layout">
@@ -25,9 +20,6 @@
 
         <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
-
-
-
             <div class="page-blog-detail__body">
               <div class="page-blog-detail__mete">
                 <time datetime="<?php the_time('c') ?>" class="blog-card__time"><?php the_time('Y.m/d') ?></time>

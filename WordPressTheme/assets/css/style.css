@@ -3203,7 +3203,7 @@ body.active {
 	display: inline-block;
 	height: 3.125rem;
 	line-height: 1;
-	margin: 8px 4px;
+	margin: 8px 12px;
 	padding: 0.8125rem 0;
 	text-decoration: none;
 	width: 3.125rem;
@@ -3234,6 +3234,14 @@ body.active {
 .next.page-numbers {
 	margin: 0.5rem 2.1875rem;
 	transition: 0.3s;
+}
+
+.pagination a.nextpostslink {
+	margin-left: 40px;
+}
+
+.pagination a.previouspostslink {
+	margin-right: 40px;
 }
 
 .pc-nav__items {

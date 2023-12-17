@@ -8,11 +8,8 @@
 </div>
 
 <!-- パンくず -->
-<div class="breadcrumb">
-  <div class="inner">
-    <div>TOP > お問い合わせ</div>
-  </div>
-</div>
+<?php get_template_part('parts/breadcrumb') ?>
+
 
 <main>
   <div class="page-contact page-contact-layout">

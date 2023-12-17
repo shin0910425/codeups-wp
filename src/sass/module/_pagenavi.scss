@@ -8,7 +8,7 @@
 .pagination a,
 .pagination span {
   display: inline-block;
-  margin: 8px 4px;
+  margin: 8px 12px;
   text-decoration: none;
   // border-radius: 6px;
   background: #fff;
@@ -45,4 +45,14 @@
 .next.page-numbers {
   margin: rem(8) rem(35);
   transition: .3s;
+}
+
+// 次へ
+.pagination a.nextpostslink {
+  margin-left: 40px;
+}
+
+// 前へ
+.pagination a.previouspostslink {
+  margin-right: 40px;
 }
