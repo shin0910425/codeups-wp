@@ -27,13 +27,16 @@
             <?php if (have_posts()) : ?>
               <?php while (have_posts()) : the_post(); ?>
 
-
                 <div class="page-blog__item blog-cards__item">
                   <div class="blog-card">
                     <a href="<?php the_permalink(); ?>" class="blog-card__link">
                       <div class="blog-card__box">
                         <div class="blog-card__image">
-                          <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
+                          <?php if (get_the_post_thumbnail()) : ?>
+                            <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
+                          <?php else : ?>
+                            <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                          <?php endif; ?>
                         </div>
                         <div class="blog-card__mete">
                           <time datetime="<?php the_time('c') ?>" class="blog-card__time"><?php the_time('Y.m/d') ?></time>
