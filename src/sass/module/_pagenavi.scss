@@ -56,3 +56,8 @@
 .pagination a.previouspostslink {
   margin-right: 40px;
 }
+
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current {
+  border-color: $green3;
+}

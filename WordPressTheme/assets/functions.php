@@ -43,6 +43,8 @@ EOT;
 
 add_filter('style_loader_tag', 'add_rel_preconnect', 10, 4);
 
+
+//アイキャッチ画像の設定
 function my_setup()
 {
   add_theme_support('post-thumbnails'); /* アイキャッチ */
@@ -61,3 +63,18 @@ function my_setup()
 }
 add_action('after_setup_theme', 'my_setup');
 
+// アーカイブの表示件数変更
+function change_posts_per_page($query)
+{
+  if (is_admin() || !$query->is_main_query())
+    return;
+
+  if ($query->is_archive('campaign')) { // カスタム投稿タイプを指定
+    $query->set('posts_per_page', '4'); // 表示件数を指定
+  }
+
+  if ($query->is_archive('voice')) { // カスタム投稿タイプを指定
+    $query->set('posts_per_page', '-1'); // 表示件数を指定
+  }
+}
+add_action('pre_get_posts', 'change_posts_per_page');

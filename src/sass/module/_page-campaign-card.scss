@@ -93,6 +93,7 @@
   // border-bottom: rem(1) solid $green3;
 
   @include mq("md") {
+  font-size: rem(24);
     margin-top: rem(0);
     padding-bottom: rem(8);
   }
