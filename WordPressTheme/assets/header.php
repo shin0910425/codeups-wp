@@ -13,7 +13,7 @@
 <body>
 
   <!-- header -->
-  <header class="header header-layout">
+  <header class="header header-layout header-layout__404">
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="#">

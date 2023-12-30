@@ -73,6 +73,12 @@
   flex-direction: column;
 }
 
+// WPカスタマイズ
+.wpcf7-list-item {
+  display: block;
+  margin: 0;
+}
+
 
 .form__input,
 .form__select,

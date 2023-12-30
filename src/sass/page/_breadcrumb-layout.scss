@@ -1,12 +1,13 @@
 @use "global" as *;
 
 .breadcrumb.breadcrumb-layout__404 {
-  margin-top: 0;
+  margin-top: rem(-45);
   padding-top: rem(90);
   background-color: $green3;
   color: $white;
 
     @include mq("md") {
       padding-top: rem(100);
+  margin-top: rem(-35);
     }
 }
