@@ -43,19 +43,7 @@
         <?php endif; ?>
 
         <nav class="pagination u-desktop">
-
-          <!-- ============= ページング ============= -->
-          <?php
-          $args = array(
-            'mid_size' => 2,
-            'prev_text' => '<',
-            'next_text' => '>',
-            'screen_reader_text' => 'ページャー'
-          );
-          the_posts_pagination($args);
-          ?>
-
-          <!-- <div class="wp-pagination">
+          <div class="wp-pagination">
             <a class="prev page-numbers" href="">&lsaquo;</a>
             <span aria-current="page" class="page-numbers current">1</span>
             <a class="page-numbers" href="">2</a>
@@ -64,7 +52,7 @@
             <a class="page-numbers" href="">5</a>
             <a class="page-numbers" href="">6</a>
             <a class="next page-numbers" href="">&rsaquo;</a>
-          </div> -->
+          </div>
         </nav>
       </div>
 
@@ -73,7 +61,5 @@
     </div>
   </div>
 </section>
-
-
 
 <?php get_footer(); ?>

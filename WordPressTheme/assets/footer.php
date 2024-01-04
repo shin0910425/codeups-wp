@@ -16,18 +16,6 @@
                <p>TEL:0120-000-0000</p>
                <p>営業時間:8:30-19:00</p>
                <p>定休日:毎週火曜日</p>
-               <!-- <form action="submit.php" method="post">
-                    <label for="name">お名前：</label>
-                    <input type="text" id="name" name="name" required>
-                    <br>
-                    <label for="email">メールアドレス：</label>
-                    <input type="email" id="email" name="email" required>
-                    <br>
-                    <label for="message">お問い合わせ内容：</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    <br>
-                    <input type="submit" value="送信">
-                  </form> -->
              </div>
              <div class="contact__form-map">
                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57273.02319561034!2d127.64350234147601!3d26.21085943029272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5697141a6b58b%3A0x2cd8aff616585e98!2z5rKW57iE55yM6YKj6KaH5biC!5e0!3m2!1sja!2sjp!4v1693098102181!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -59,7 +47,7 @@
        <nav class="footer__nav">
          <div class="footer__logo-body">
            <div class="footer__logo">
-             <a href="#">
+             <a href="<?php echo esc_url(home_url('/')); ?>">
                <div>
                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps.svg" alt="CodeUps">
                </div>
@@ -83,7 +71,7 @@
              <ul class="footer__nav-items">
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#campaign">キャンペーン</a>
+                   <a href="<?php echo esc_url(home_url('/campaign')); ?>">キャンペーン</a>
                  </div>
                  <ul class="footer__sub-item">
                    <li class="footer__sub-list">
@@ -95,12 +83,12 @@
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#">私たちについて</a>
+                   <a href="<?php echo esc_url(home_url('/about')); ?>">私たちについて</a>
                  </div>
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#information">ダイビング情報</a>
+                   <a href="<?php echo esc_url(home_url('/information')); ?>">ダイビング情報</a>
                  </div>
                  <ul class="footer__sub-item">
                    <li class="footer__sub-list">
@@ -112,7 +100,7 @@
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#blog">ブログ</a>
+                   <a href="<?php echo esc_url(home_url('/blog')); ?>">ブログ</a>
                  </div>
                </li>
              </ul>
@@ -121,12 +109,12 @@
              <ul class="footer__nav-items">
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#voice">お客様の声</a>
+                   <a href="<?php echo esc_url(home_url('/voice')); ?>">お客様の声</a>
                  </div>
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#price">料金一覧</a>
+                   <a href="<?php echo esc_url(home_url('/price')); ?>">料金一覧</a>
                  </div>
                  <ul class="footer__sub-item">
                    <li class="footer__sub-list">
@@ -138,30 +126,35 @@
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#faq">よくある質問</a>
+                   <a href="<?php echo esc_url(home_url('/faq')); ?>">よくある質問</a>
                  </div>
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#faq">プライバシー<br class="u-mobile">
+                   <a href="<?php echo esc_url(home_url('/privacypolicy')); ?>">プライバシー<br class="u-mobile">
                      ポリシー</a>
                  </div>
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#faq">利用規約</a>
+                   <a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">利用規約</a>
                  </div>
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
-                   <a href="#Contact">お問い合わせ</a>
+                   <a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a>
                  </div>
                </li>
              </ul>
            </div>
          </div>
          <div class="footer__copyright">
-           <small>Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</small>
+           <small>
+             <?php
+              $current_year = date('Y');
+              echo 'Copyright &copy; 2021 - ' . $current_year . ' CodeUps LLC. All Rights Reserved.';
+              ?>
+           </small>
          </div>
        </nav>
      </div>

@@ -52,7 +52,7 @@
             <li class="swiper-slide campaign-cards__item">
               <div class="campaign-card">
                 <div class="campaign-card__container">
-                  <a href="#" class="campaign-card__link">
+                  <a href="<?php echo esc_url(home_url('/blog')); ?>" class="campaign-card__link">
                     <div>
                       <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img1.jpg" alt="魚の群れ">
                     </div>
@@ -78,7 +78,7 @@
             <li class="swiper-slide campaign-cards__item">
               <div class="campaign-card">
                 <div class="campaign-card__container">
-                  <a href="#" class="campaign-card__link">
+                  <a href="<?php echo esc_url(home_url('/blog')); ?>" class="campaign-card__link">
                     <div>
                       <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img2.jpg" alt="船と海の風景">
                     </div>
@@ -104,7 +104,7 @@
             <li class="swiper-slide campaign-cards__item">
               <div class="campaign-card">
                 <div class="campaign-card__container">
-                  <a href="#" class="campaign-card__link">
+                  <a href="<?php echo esc_url(home_url('/blog')); ?>" class="campaign-card__link">
                     <div>
                       <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img3.jpg" alt="光っているクラゲ">
                     </div>
@@ -130,7 +130,7 @@
             <li class="swiper-slide campaign-cards__item">
               <div class="campaign-card">
                 <div class="campaign-card__container">
-                  <a href="#" class="campaign-card__link">
+                  <a href="<?php echo esc_url(home_url('/blog')); ?>" class="campaign-card__link">
                     <div>
                       <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img4.jpg" alt="ダイビングをしている様子">
                     </div>
@@ -162,7 +162,7 @@
       </div>
     </div>
     <div class="campaign__button">
-      <a href="#" class="button"><span>view&nbsp;more</span></a>
+      <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
     </div>
   </section>
 
@@ -193,7 +193,7 @@
             <p class="about__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
               ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
             <div class="about__button">
-              <a href="#" class="button"><span>view&nbsp;more</span></a>
+              <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
             </div>
           </div>
         </div>
@@ -220,7 +220,7 @@
           <p class="information__text">当店はダイビングライセンス（Cカード）世界最大の教育機関PADI<br class="u-desktop">の「正規店」として店舗登録されています。<br>
             正規登録店として、安心安全に初めての方でも安心安全にライセン<br class="u-desktop">ス取得をサポート致します。</p>
           <div class="information__button">
-            <a href="#" class="button"><span>view&nbsp;more</span></a>
+            <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
           </div>
         </div>
       </div>
@@ -240,67 +240,45 @@
         <p class="section-header__sub section-header__sub--white">Blog</p>
         <h2 class="section-header__main section-header__main--white">ブログ</h2>
       </div>
-      <ul class="blog__cards blog-cards">
-        <li class="blog-cards__item">
-          <div class="blog-card">
-            <a href="#" class="blog-card__link">
-              <div class="blog-card__box">
-                <div class="blog-card__image">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img1.jpg" alt="珊瑚礁">
-                </div>
-                <div class="blog-card__mete">
-                  <time class="blog-card__time" datetime="2023-11-17">2023.11/17</time>
-                  <h3 class="blog-card__title">ライセンス取得</h3>
-                </div>
+      <?php
+      $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3
+      );
+      $args = [
+        'post_type' => 'post',
+        'posts_per_page' => 3
+      ];
+      $the_query = new WP_Query($args);
+      ?>
+      <?php if ($the_query->have_posts()) : ?>
+        <ul class="blog__cards blog-cards">
+          <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <li class="blog-cards__item">
+              <div class="blog-card">
+                <a href="<?php the_permalink(); ?>" class="blog-card__link">
+                  <div class="blog-card__box">
+                    <div class="blog-card__image">
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img1.jpg" alt="珊瑚礁">
+                    </div>
+                    <div class="blog-card__mete">
+                      <time class="blog-card__time"><?php echo get_the_date('Y.m/d'); ?></time>
+                      <h3 class="blog-card__title"><?php the_title(); ?></h3>
+                    </div>
+                  </div>
+                  <div class="blog-card__body">
+                    <p class="blog-card__text"><?php the_content(); ?>
+                  </div>
+                </a>
               </div>
-              <div class="blog-card__body">
-                <p class="blog-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-              </div>
-            </a>
-          </div>
-        </li>
-        <li class="blog-cards__item">
-          <div class="blog-card">
-            <a href="#" class="blog-card__link">
-              <div class="blog-card__box">
-                <div class="blog-card__image">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img2.jpg" alt="海亀が泳いでいる">
-                </div>
-                <div class="blog-card__mete">
-                  <time class="blog-card__time" datetime="2023-11-17">2023.11/17</time>
-                  <h3 class="blog-card__title">ウミガメと泳ぐ</h3>
-                </div>
-              </div>
-              <div class="blog-card__body">
-                <p class="blog-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-              </div>
-            </a>
-          </div>
-        </li>
-        <li class="blog-cards__item">
-          <div class="blog-card">
-            <a href="#" class="blog-card__link">
-              <div class="blog-card__box">
-                <div class="blog-card__image">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img3.jpg" alt="カクレクマノミが珊瑚礁の中にいる">
-                </div>
-                <div class="blog-card__mete">
-                  <time class="blog-card__time" datetime="2023-11-17">2023.11/17</time>
-                  <h3 class="blog-card__title">カクレクマノミ</h3>
-                </div>
-              </div>
-              <div class="blog-card__body">
-                <p class="blog-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                  ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-              </div>
-            </a>
-          </div>
-        </li>
-      </ul>
+            </li>
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
+        </ul>
+      <?php endif; ?>
+
       <div class="blog__button">
-        <a href="#" class="button"><span>view&nbsp;more</span></a>
+        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
     </div>
   </section>
@@ -320,7 +298,7 @@
       </div>
       <ul class="voice__cards voice-cards">
         <li class="voice-cards__item voice-card">
-          <a href="#" class="voice-card__link">
+          <a href="<?php echo esc_url(home_url('/blog')); ?>" class="voice-card__link">
             <div class="voice-card__box">
               <div class="voice-card__item">
                 <div class="voice-card__mete">
@@ -343,7 +321,7 @@
           </a>
         </li>
         <li class="voice-cards__item voice-card">
-          <a href="#" class="voice-card__link">
+          <a href="<?php echo esc_url(home_url('/blog')); ?>" class="voice-card__link">
             <div class="voice-card__box">
               <div class="voice-card__item">
                 <div class="voice-card__mete">
@@ -367,7 +345,7 @@
         </li>
       </ul>
       <div class="voice__button">
-        <a href="#" class="button"><span>view&nbsp;more</span></a>
+        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
     </div>
   </section>
@@ -434,7 +412,7 @@
         </div>
       </div>
       <div class="price__button">
-        <a href="#" class="button"><span>view&nbsp;more</span></a>
+        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
     </div>
   </section>

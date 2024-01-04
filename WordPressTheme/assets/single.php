@@ -18,9 +18,9 @@
     <div class="page-blog__inner inner">
       <div class="page-blog__wrapper">
 
-        <?php if (have_posts()) : ?>
-          <?php while (have_posts()) : the_post(); ?>
-            <div class="page-blog-detail__body">
+        <div class="page-blog-detail__body">
+              <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
               <div class="page-blog-detail__mete">
                 <time datetime="<?php the_time('c') ?>" class="blog-card__time"><?php the_time('Y.m/d') ?></time>
               </div>

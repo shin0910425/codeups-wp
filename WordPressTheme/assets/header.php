@@ -11,12 +11,13 @@
 </head>
 
 <body>
-
+  <?php wp_body_open(); ?>
   <!-- header -->
   <header class="header header-layout header-layout__404">
     <div class="header__inner">
       <h1 class="header__logo">
-        <a href="#">
+        <a href="<?php echo esc_url(home_url('/')); ?>">
+          <?php  ?>
           <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps.svg" alt="CodeUps">
         </a>
       </h1>
@@ -29,28 +30,28 @@
       <nav class="header__pc-nav pc-nav">
         <ul class="pc-nav__items">
           <li class="pc-nav__item">
-            <a href="#campaign"><span>Campaign</span>キャンペーン</a>
+            <a href="<?php echo esc_url(home_url('/campaign')); ?>"><span>Campaign</span>キャンペーン</a>
           </li>
           <li class="pc-nav__item">
-            <a href="#about"><span>About us</span>私たちについて</a>
+            <a href="<?php echo esc_url(home_url('/about')); ?>"><span>About us</span>私たちについて</a>
           </li>
           <li class="pc-nav__item">
-            <a href="#information"><span>Information</span>ダイビング情報</a>
+            <a href="<?php echo esc_url(home_url('/information')); ?>"><span>Information</span>ダイビング情報</a>
           </li>
           <li class="pc-nav__item">
-            <a href="#blog"><span>Blog</span>ブログ</a>
+            <a href="<?php echo esc_url(home_url('/blog')); ?>"><span>Blog</span>ブログ</a>
           </li>
           <li class="pc-nav__item">
-            <a href="#voice"><span>Voice</span>お客様の声</a>
+            <a href="<?php echo esc_url(home_url('/voice')); ?>"><span>Voice</span>お客様の声</a>
           </li>
           <li class="pc-nav__item">
-            <a href="#price"><span>Price</span>料金一覧</a>
+            <a href="<?php echo esc_url(home_url('/price')); ?>"><span>Price</span>料金一覧</a>
           </li>
           <li class="pc-nav__item">
-            <a href="#footer"><span>FAQ</span>よくある質問</a>
+            <a href="<?php echo esc_url(home_url('/faq')); ?>"><span>FAQ</span>よくある質問</a>
           </li>
           <li class="pc-nav__item">
-            <a href="#contact"><span>Contact</span>お問合せ</a>
+            <a href="<?php echo esc_url(home_url('/contact')); ?>"><span>Contact</span>お問合せ</a>
           </li>
         </ul>
       </nav>
@@ -62,7 +63,7 @@
               <ul class="sp-nav__items">
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#campaign">キャンペーン</a>
+                    <a href="<?php echo esc_url(home_url('/campaign')); ?>">キャンペーン</a>
                   </div>
                   <ul class="sp-nav__sub-item">
                     <li class="sp-nav__sub-list">
@@ -74,12 +75,12 @@
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#about">私たちについて</a>
+                    <a href="<?php echo esc_url(home_url('/about')); ?>">私たちについて</a>
                   </div>
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#information">ダイビング情報</a>
+                    <a href="<?php echo esc_url(home_url('/information')); ?>">ダイビング情報</a>
                   </div>
                   <ul class="sp-nav__sub-item">
                     <li class="sp-nav__sub-list">
@@ -91,7 +92,7 @@
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#blog">ブログ</a>
+                    <a href="<?php echo esc_url(home_url('/blog')); ?>">ブログ</a>
                   </div>
                 </li>
               </ul>
@@ -100,12 +101,12 @@
               <ul class="sp-nav__items">
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#voice">お客様の声</a>
+                    <a href="<?php echo esc_url(home_url('/voice')); ?>">お客様の声</a>
                   </div>
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#price">料金一覧</a>
+                    <a href="<?php echo esc_url(home_url('/price')); ?>">料金一覧</a>
                   </div>
                   <ul class="sp-nav__sub-item">
                     <li class="sp-nav__sub-list">
@@ -117,23 +118,23 @@
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#faq">よくある質問</a>
+                    <a href="<?php echo esc_url(home_url('/faq')); ?>">よくある質問</a>
                   </div>
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#faq">プライバシー<br>
+                    <a href="<?php echo esc_url(home_url('/privacypolicy')); ?>">プライバシー<br>
                       ポリシー</a>
                   </div>
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#faq">利用規約</a>
+                    <a href="<?php echo esc_url(home_url('/terms-of-service')); ?>">利用規約</a>
                   </div>
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="#contact">お問い合わせ</a>
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a>
                   </div>
                 </li>
               </ul>

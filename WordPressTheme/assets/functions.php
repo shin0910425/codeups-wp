@@ -63,6 +63,22 @@ function my_setup()
 }
 add_action('after_setup_theme', 'my_setup');
 
+/*
+function post_has_archive($args, $post_type){
+	if('post' == $post_type){
+		$args['rewrite'] = true;
+		$args['has_archive'] = 'news';
+		$args['label'] = 'お知らせ';
+	}
+	return $args;
+}
+add_filter('register_post_type_args','post_has_archive',10,2);
+*/
+
+
+
+
+
 // アーカイブの表示件数変更
 function change_posts_per_page($query)
 {

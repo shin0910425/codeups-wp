@@ -4,8 +4,8 @@
       <h3 class="page-blog__sidebar-title">人気記事</h3>
       <ul class="page-blog__ranking-items">
         <li class="page-blog__ranking-item">
-          <article class="page-blog__ranking">
-            <a class="page-blog__ranking-link" href="#">
+          <article class="page-blog__ranking ranking-1st">
+            <a class="page-blog__ranking-link" href="<?php echo esc_url(home_url('/blog/ranking-1st')); ?>">
               <div class="page-blog__ranking-img-wrap">
                 <div class="page-blog__ranking-img">
                   <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog-card_img1.jpg" alt="黄色い魚が">
@@ -19,8 +19,8 @@
           </article>
         </li>
         <li class="page-blog__ranking-item">
-          <article class="page-blog__ranking">
-            <a class="page-blog__ranking-link" href="#">
+          <article class="page-blog__ranking ranking-2nd">
+            <a class="page-blog__ranking-link" href="<?php echo esc_url(home_url('/blog/ranking-2nd')); ?>">
               <div class="page-blog__ranking-img-wrap">
                 <div class="page-blog__ranking-img">
                   <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img2.jpg" alt="海亀が泳いでいる">
@@ -34,11 +34,11 @@
           </article>
         </li>
         <li class="page-blog__ranking-item">
-          <article class="page-blog__ranking">
-            <a class="page-blog__ranking-link" href="#">
+          <article class="page-blog__ranking ranking-3rd">
+            <a class="page-blog__ranking-link" href="<?php echo esc_url(home_url('/blog/ranking-3rd')); ?>">
               <div class="page-blog__ranking-img-wrap">
                 <div class="page-blog__ranking-img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img3.jpg" alt="省略">
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img3.jpg" alt="カクレクマノミの画像">
                 </div>
               </div>
               <div class="page-blog__wrap">
@@ -56,7 +56,7 @@
       <ul class="page-blog__ranking-items">
         <li class="page-blog__ranking-item">
           <article class="page-blog__reviews">
-            <a class="page-blog__reviews-link" href="#">
+            <a class="page-blog__reviews-link" href="<?php echo esc_url(home_url('/voice')); ?>">
               <div class="page-blog__reviews-img">
                 <img src="<?php echo get_theme_file_uri(); ?>/images/common/side-voice_img.jpg" alt="省略">
               </div>
@@ -77,7 +77,7 @@
         <li class="page-blog-cards__item page-campaign--layout">
           <div class="page-blog-card">
             <div class="page-blog-card__container">
-              <a href="#" class="page-blog-card__link">
+              <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-blog-card__link">
                 <div>
                   <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img1.jpg" alt="魚の群れ">
                 </div>
@@ -103,7 +103,7 @@
         <li class="page-blog-cards__item page-campaign--layout">
           <div class="page-blog-card">
             <div class="page-blog-card__container">
-              <a href="#" class="page-blog-card__link">
+              <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-blog-card__link">
                 <div>
                   <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img2.jpg" alt="船と海の風景">
                 </div>
