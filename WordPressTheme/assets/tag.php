@@ -16,44 +16,27 @@
   </div>
   <div class="page-voice__inner inner">
     <div class="page-voice__tub page-voice__tab">
-      <div class="page-voice__tab-list">
-        <a href="#" class="page-voice__tab-item active" data-filter="catAll">ALL</a>
-        <a href="#" class="page-voice__tab-item" data-filter="catCourse">ライセンス講習</a>
-        <a href="#" class="page-voice__tab-item" data-filter="catExperience">体験ダイビング</a>
-        <a href="#" class="page-voice__tab-item" data-filter="catDiv">ファンダイビング</a>
-      </div>
+      <ul class="page-voice__tab-list js-voice__link">
+        <li class="page-voice__tab-item active" data-filter="catAll">ALL</li>
+        <li class="page-voice__tab-item" data-filter="catCourse">ライセンス講習</li>
+        <li class="page-voice__tab-item" data-filter="catExperience">体験ダイビング</li>
+        <li class="page-voice__tab-item" data-filter="catDiv">ファンダイビング</li>
+      </ul>
 
       <ul class="page-voice__contents">
         <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
-            <li class="page-voice__item voice-card" data-category="catCourse">
+            <li class="page-voice__item voice-card js-voice-content" data-category="catCourse">
               <a href="#" class="voice-card__link">
                 <div class="voice-card__box">
                   <div class="voice-card__item">
                     <div class="voice-card__mete">
-                      <!-- <p class="voice-card__category"> -->
-                      <div class="voice-card__category">
-                        <?php
-                        $terms = get_the_terms($post->ID, 'voice_category');
-                        foreach ($terms as $term) {
-                          echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                        }
-                        ?>
-                      </div>
-                      <div class="voice-card__tag">
-                        <?php
-                        $terms = get_the_terms($post->ID, 'voice_tag');
-                        foreach ($terms as $term) {
-                          echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                        }
-                        ?>
-                      </div>
-                      <!-- <?php $cat = get_the_category();
-                            $cat = $cat[0]; {
-                              echo $cat->name;
-                            } ?> -->
-                      <!-- </p> -->
-                      <!-- <p class="voice-card__tag"><?php the_tags(''); ?></p> -->
+                      <p class="voice-card__category">
+                        <?php $cat = get_the_category();
+                        $cat = $cat[0]; {
+                          echo $cat->name;
+                        } ?></p>
+                      <p class="voice-card__tag"><?php the_tags(''); ?></p>
                     </div>
                     <h2 class="voice-card__title"><?php the_title(); ?></h2>
                   </div>

@@ -294,7 +294,7 @@
   margin-top: rem(24);
 }
 
-.page-blog_year1 {
+.page-blog__year2 {
   font-size: rem(24);
   font-family: $jp-family;
   color: $green3;
@@ -302,34 +302,28 @@
   line-height: 1;
 }
 
-.page-blog_year1::before {
+/* CSS */
+.page-blog__year2::before {
   content: "";
-  background: url(../images/common/triangle-bottom_img.png) center/cover;
   display: inline-block;
   width: rem(24);
   height: rem(24);
   margin-right: rem(8);
-}
-
-.page-blog_year2 {
-  font-size: rem(24);
-  font-family: $jp-family;
-  color: $green3;
-  font-weight: $regular;
-  line-height: 1;
-}
-
-.page-blog_year2::before {
-  content: "";
   background: url(../images/common/triangle-right_img.png) center/cover;
-  display: inline-block;
-  width: rem(24);
-  height: rem(24);
-  margin-right: rem(8);
+}
+
+.page-blog__year2.active::before {
+  background: url(../images/common/triangle-bottom_img.png) center/cover;
+  transform: rotate(0deg);
 }
 
 .page-blog__category-items {
   padding-left: rem(8);
+  display: none;
+
+  &.active {
+    display: block;
+  }
 }
 
 .page-blog__category-item {
@@ -353,4 +347,13 @@
   color: $green3;
   font-weight: $regular;
   line-height: 1;
+  cursor: pointer;
+
+  &.active {
+    &::before {
+      background: url(../images/common/triangle-bottom_img.png) center/cover;
+      transform: rotate(0deg);
+    }
+  }
 }
+

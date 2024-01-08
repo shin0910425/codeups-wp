@@ -25,11 +25,7 @@
                   <a href="<?php the_permalink(); ?>" class="blog-card__link">
                     <div class="blog-card__box">
                       <div class="blog-card__image">
-                        <?php if (has_post_thumbnail()) : ?>
-                          <?php the_post_thumbnail('medium', array('class' => 'img')); ?>
-                        <?php else : ?>
-                          <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
-                        <?php endif; ?>
+                        <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img1.jpg" alt="珊瑚礁">
                       </div>
                       <div class="blog-card__mete">
                         <time class="blog-card__time"><?php the_time('Y.m/d') ?></time>
@@ -47,19 +43,7 @@
         <?php endif; ?>
 
         <nav class="pagination u-desktop">
-
-          <!-- ============= ページング ============= -->
-          <?php
-          $args = array(
-            'mid_size' => 2,
-            'prev_text' => '<',
-            'next_text' => '>',
-            'screen_reader_text' => 'ページャー'
-          );
-          the_posts_pagination($args);
-          ?>
-
-          <!-- <div class="wp-pagination">
+          <div class="wp-pagination">
             <a class="prev page-numbers" href="">&lsaquo;</a>
             <span aria-current="page" class="page-numbers current">1</span>
             <a class="page-numbers" href="">2</a>
@@ -68,7 +52,7 @@
             <a class="page-numbers" href="">5</a>
             <a class="page-numbers" href="">6</a>
             <a class="next page-numbers" href="">&rsaquo;</a>
-          </div> -->
+          </div>
         </nav>
       </div>
 
@@ -77,7 +61,5 @@
     </div>
   </div>
 </section>
-
-
 
 <?php get_footer(); ?>

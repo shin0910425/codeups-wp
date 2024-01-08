@@ -17,17 +17,17 @@
   </div>
   <div class="page-campaign__inner inner">
     <div class="page-campaign__tab">
-      <ul class="page-campaign__tab-list js-campaign__link">
-        <li class="page-campaign__tab-item active" data-filter="catAll">ALL</li>
-        <li class="page-campaign__tab-item" data-filter="catInfo">ライセンス講習</li>
-        <li class="page-campaign__tab-item" data-filter="catEvent">体験ダイビング</li>
-        <li class="page-campaign__tab-item" data-filter="catRecruit">ファンダイビング</li>
-      </ul>
+      <div class="page-campaign__tab-list">
+        <a href="#" class="page-campaign__tab-item active" data-filter="catAll">ALL</a>
+        <a href="#" class="page-campaign__tab-item" data-filter="catInfo">ライセンス講習</a>
+        <a href="#" class="page-campaign__tab-item" data-filter="catEvent">体験ダイビング</a>
+        <a href="#" class="page-campaign__tab-item" data-filter="catRecruit">ファンダイビング</a>
+      </div>
 
       <ul class="page-campaign__contents">
         <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
-            <li class="page-campaign__content js-campaign-content" data-category="catInfo">
+            <li class="page-campaign__content" data-category="catInfo">
               <div class="page-campaign-card">
                 <div class="page-campaign-card__container">
                   <div class="page-campaign-card__link">
@@ -53,7 +53,7 @@
                         </div>
                       </div>
                       <div class="page-campaign-card_box u-desktop">
-                        <p class="page-campaign-card_text"><?php the_content(); ?>
+                        <p class="page-campaign-card_text"><?php the_excerpt(); ?>
                         </p>
                         <time class="page-campaign-card__time" datetime="2023-06-01">2023/6/1-9/30</time>
                         <p class="page-campaign-card_contact-text">ご予約・お問い合わせはコチラ</p>
@@ -74,6 +74,16 @@
 </section>
 
 <nav class="pagination u-desktop">
+  <!-- ============= ページング ============= -->
+  <?php
+  $args = [
+    'mid_size' => 2,
+    'prev_text' => '<',
+    'next_text' => '>',
+    'screen_reader_text' => 'ページャー'
+  ];
+  the_posts_pagination($args);
+  ?>
   <div class="wp-pagination">
     <?php wp_pagenavi(); ?>
   </div>

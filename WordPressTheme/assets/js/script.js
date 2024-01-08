@@ -179,31 +179,31 @@ jQuery(function ($) {
       }
     });
   });
-  $(document).ready(function () {
-    // タブpage-campaign・page-voice ------------------------------------------
-    var newsLink = $(".js-campaign__link,.js-voice__link li");
-    var limit = 4;
-    var $campaignContent = $(".js-campaign-content,.js-voice-content");
+  // $(document).ready(function () {
+  //   // タブpage-campaign・page-voice ------------------------------------------
+  //   var newsLink = $(".js-campaign__link,.js-voice__link li");
+  //   var limit = 4;
+  //   var $campaignContent = $(".js-campaign-content,.js-voice-content");
 
-    // 最初の4つのコンテンツを表示
-    $campaignContent.slice(0, limit).fadeIn();
-    $(newsLink).click(function () {
-      $(newsLink).removeClass("active");
-      $(this).addClass("active");
-      var btnFilter = $(this).attr('data-filter');
-      if (btnFilter === 'catAll') {
-        // 全てのコンテンツを非表示
-        $campaignContent.css('display', 'none');
-        // 最初の4つのコンテンツを表示
-        $campaignContent.slice(0, limit).fadeIn();
-      } else {
-        // 特定のカテゴリのコンテンツを非表示
-        $campaignContent.css('display', 'none');
-        // 選択されたカテゴリのコンテンツを表示
-        $campaignContent.filter('[data-category="' + btnFilter + '"]').fadeIn();
-      }
-    });
-  });
+  //   // 最初の4つのコンテンツを表示
+  //   $campaignContent.slice(0, limit).fadeIn();
+  //   $(newsLink).click(function () {
+  //     $(newsLink).removeClass("active");
+  //     $(this).addClass("active");
+  //     var btnFilter = $(this).attr('data-filter');
+  //     if (btnFilter === 'catAll') {
+  //       // 全てのコンテンツを非表示
+  //       $campaignContent.css('display', 'none');
+  //       // 最初の4つのコンテンツを表示
+  //       $campaignContent.slice(0, limit).fadeIn();
+  //     } else {
+  //       // 特定のカテゴリのコンテンツを非表示
+  //       $campaignContent.css('display', 'none');
+  //       // 選択されたカテゴリのコンテンツを表示
+  //       $campaignContent.filter('[data-category="' + btnFilter + '"]').fadeIn();
+  //     }
+  //   });
+  // });
 });
 
 // タブpage-information ------------------------------------------
@@ -250,5 +250,41 @@ jQuery(function ($) {
   $(".js-modal-close").on("click", function () {
     $(".js-modal").fadeOut();
     $("html,body").css("overflow", "initial");
+  });
+});
+
+// sideber 三角開閉１------------------------------------------
+
+// JavaScript
+// document.addEventListener("DOMContentLoaded", function () {
+//   const yearLinks = document.querySelectorAll('.page-blog__year2');
+
+//   yearLinks.forEach(yearLink => {
+//     yearLink.addEventListener('click', function () {
+//       const categoryItems = this.nextElementSibling;
+//       categoryItems.classList.toggle('active');
+//     });
+//   });
+// });
+
+// sideber 三角開閉２------------------------------------------
+
+document.addEventListener("DOMContentLoaded", function () {
+  const yearLinks = document.querySelectorAll('.page-blog__year2');
+
+  yearLinks.forEach(yearLink => {
+    yearLink.addEventListener('click', function () {
+      // 他の全てのリストから 'active' クラスを削除
+      yearLinks.forEach(otherYearLink => {
+        if (otherYearLink !== this) {
+          const otherCategoryItems = otherYearLink.nextElementSibling;
+          otherCategoryItems.classList.remove('active');
+        }
+      });
+
+      // クリックされたリストに 'active' クラスを追加
+      const categoryItems = this.nextElementSibling;
+      categoryItems.classList.toggle('active');
+    });
   });
 });

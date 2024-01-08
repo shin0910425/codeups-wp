@@ -80,27 +80,46 @@ add_filter('register_post_type_args','post_has_archive',10,2);
 
 
 // アーカイブの表示件数変更
-function change_posts_per_page($query)
+// function change_posts_per_page($query)
+// {
+//   if (is_admin() || !$query->is_main_query())
+//     return;
+
+//   if ($query->is_archive('campaign')) { // カスタム投稿タイプを指定
+//     $query->set('posts_per_page', '1'); // 表示件数を指定
+//   }
+
+//   if ($query->is_archive('voice')) { // カスタム投稿タイプを指定
+//     $query->set('posts_per_page', '-1'); // 表示件数を指定
+//   }
+// }
+// add_action('pre_get_posts', 'change_posts_per_page');
+
+
+// カスタム投稿タイプ【ブログ】：メインクエリの変更（アーカイブページにて表示件数を9件にする）
+function change_set_blog($query)
 {
-  if (is_admin() || !$query->is_main_query())
+  if (is_admin() || !$query->is_main_query()) {
     return;
-
-  if ($query->is_archive('campaign')) { // カスタム投稿タイプを指定
-    $query->set('posts_per_page', '4'); // 表示件数を指定
   }
-
-  if ($query->is_archive('voice')) { // カスタム投稿タイプを指定
-    $query->set('posts_per_page', '-1'); // 表示件数を指定
+  if ($query->is_post_type_archive('campaign')) {
+    $query->set('posts_per_page', '4');
+    return;
   }
 }
-add_action('pre_get_posts', 'change_posts_per_page');
+add_action('pre_get_posts', 'change_set_blog');
 
-// ContactForm7で自動挿入されるPタグ、brタグを削除
-// add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
-// function wpcf7_autop_return_false()
-// {
-//   return false;
-// }
+//　カスタム投稿タイプ【ブログ】：アーカイブページ抜粋文の長さ変更
+function change_excerpt_length()
+{
+  $length = 80;
+  if (is_post_type_archive('voice')) {
+    return 50; //リターンした時点で処理は終了する
+  }
+  return $length; // デフォルト110文字
+}
+add_filter('excerpt_length', 'change_excerpt_length', 999);
+
 
 /* -------------------------------------------------
   Contact Form 7で自動挿入されるPタグ、brタグを削除
@@ -110,3 +129,4 @@ function wpcf7_autop_return_false()
 {
   return false;
 }
+

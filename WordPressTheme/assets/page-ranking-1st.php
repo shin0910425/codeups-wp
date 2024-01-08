@@ -58,7 +58,6 @@
           </div>
         </nav>
       </div>
-
       <!-- sidebar -->
       <?php get_sidebar() ?>
     </div>

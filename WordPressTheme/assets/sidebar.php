@@ -135,7 +135,7 @@
     <li class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">アーカイブ</h3>
       <div class="page-blog__box">
-        <div class="page-blog_year1">2023</div>
+        <div class="page-blog__year2">2023</div>
         <ul class="page-blog__category-items">
           <li class="page-blog__category-item">
             <a class="page-blog__category-month" href="#">3月</a>
@@ -147,9 +147,19 @@
             <a class="page-blog__category-month" href="#">1月</a>
           </li>
         </ul>
-        <div class="page-blog_year2">2022</div>
+        <div class="page-blog__year2">2022</div>
+        <ul class="page-blog__category-items">
+          <li class="page-blog__category-item">
+            <a class="page-blog__category-month" href="#">3月</a>
+          </li>
+          <li class="page-blog__category-item">
+            <a class="page-blog__category-month" href="#">2月</a>
+          </li>
+          <li class="page-blog__category-item">
+            <a class="page-blog__category-month" href="#">1月</a>
+          </li>
+        </ul>
       </div>
     </li>
-
   </ul>
 </aside>
