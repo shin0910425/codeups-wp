@@ -241,10 +241,6 @@
         <h2 class="section-header__main section-header__main--white">ブログ</h2>
       </div>
       <?php
-      $args = array(
-        'post_type' => 'post',
-        'posts_per_page' => 3
-      );
       $args = [
         'post_type' => 'post',
         'posts_per_page' => 3
@@ -259,7 +255,7 @@
                 <a href="<?php the_permalink(); ?>" class="blog-card__link">
                   <div class="blog-card__box">
                     <div class="blog-card__image">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img1.jpg" alt="珊瑚礁">
+                      <?php the_post_thumbnail('medium', array('class' => 'img')); ?>
                     </div>
                     <div class="blog-card__mete">
                       <time class="blog-card__time"><?php echo get_the_date('Y.m/d'); ?></time>
@@ -267,7 +263,7 @@
                     </div>
                   </div>
                   <div class="blog-card__body">
-                    <p class="blog-card__text"><?php the_content(); ?>
+                    <p class="blog-card__text"><?php echo wp_trim_words(get_the_content(), 85, '…'); ?>
                   </div>
                 </a>
               </div>

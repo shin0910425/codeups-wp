@@ -14,7 +14,7 @@
   <div class="page-information__icon-image1">
     <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
   </div>
-  <div class="page-informaition__inner inner">
+  <div class="page-information__inner inner">
     <div class="page-information-tab">
       <div class="information-tab">
         <ul class="information-tab__menu">

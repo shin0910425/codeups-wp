@@ -1,54 +1,52 @@
 <aside class="page-blog__sidebar">
+
+  <?php
+  if (is_active_sidebar('sidebar-widgets')) {
+    dynamic_sidebar('sidebar-widgets');
+  }
+  ?>
+
   <ul class="page-blog__sidebar-items">
     <li class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">人気記事</h3>
-      <ul class="page-blog__ranking-items">
-        <li class="page-blog__ranking-item">
-          <article class="page-blog__ranking ranking-1st">
-            <a class="page-blog__ranking-link" href="<?php echo esc_url(home_url('/blog/ranking-1st')); ?>">
-              <div class="page-blog__ranking-img-wrap">
-                <div class="page-blog__ranking-img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog-card_img1.jpg" alt="黄色い魚が">
-                </div>
-              </div>
-              <div class="page-blog__wrap">
-                <time class="page-blog__date" datetime="2023-11-17">2023.11.17</time>
-                <p class="page-blog__ranking-title">ライセンス取得</p>
-              </div>
-            </a>
-          </article>
-        </li>
-        <li class="page-blog__ranking-item">
-          <article class="page-blog__ranking ranking-2nd">
-            <a class="page-blog__ranking-link" href="<?php echo esc_url(home_url('/blog/ranking-2nd')); ?>">
-              <div class="page-blog__ranking-img-wrap">
-                <div class="page-blog__ranking-img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img2.jpg" alt="海亀が泳いでいる">
-                </div>
-              </div>
-              <div class="page-blog__wrap">
-                <time class="page-blog__date" datetime="2023-11-17">2023.11.17</time>
-                <p class="page-blog__ranking-title">ウミガメと泳ぐ</p>
-              </div>
-            </a>
-          </article>
-        </li>
-        <li class="page-blog__ranking-item">
-          <article class="page-blog__ranking ranking-3rd">
-            <a class="page-blog__ranking-link" href="<?php echo esc_url(home_url('/blog/ranking-3rd')); ?>">
-              <div class="page-blog__ranking-img-wrap">
-                <div class="page-blog__ranking-img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog_img3.jpg" alt="カクレクマノミの画像">
-                </div>
-              </div>
-              <div class="page-blog__wrap">
-                <time class="page-blog__date" datetime="2023-11-17">2023.11.17</time>
-                <p class="page-blog__ranking-title">カクレクマノミ</p>
-              </div>
-            </a>
-          </article>
-        </li>
-      </ul>
+      <?php
+      $args = array(
+        "post_type" => "post",
+        "posts_per_page" => 3,
+        "orderby" => "date",
+        "order" => "DESC",
+      );
+      $the_query = new WP_Query($args);
+      ?>
+      <?php if ($the_query->have_posts()) : ?>
+        <ul class="page-blog__ranking-items">
+          <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <li class="page-blog__ranking-item">
+              <article class="page-blog__ranking ranking-1st">
+                <a href="<?php the_permalink(); ?>" class="page-blog__ranking-link">
+                  <div class="page-blog__ranking-img-wrap">
+                    <div class="page-blog__ranking-img">
+                      <div class="page-blog__ranking-img">
+                        <?php if (has_post_thumbnail()) : ?>
+                          <?php the_post_thumbnail('full', array('class' => 'img')); ?>
+                        <?php else : ?>
+                          <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
+                        <?php endif; ?>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="page-blog__wrap">
+                    <time datetime="<?php the_time('c') ?>" class="page-blog__date"><?php the_time('Y.m.d') ?></time>
+                    <p class="page-blog__ranking-title"><?php the_title(); ?></p>
+                  </div>
+                </a>
+              </article>
+            </li>
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
+        </ul>
+      <?php endif; ?>
     </li>
 
     <li class="page-blog__sidebar-item">
@@ -135,31 +133,17 @@
     <li class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">アーカイブ</h3>
       <div class="page-blog__box">
-        <div class="page-blog__year2">2023</div>
-        <ul class="page-blog__category-items">
-          <li class="page-blog__category-item">
-            <a class="page-blog__category-month" href="#">3月</a>
-          </li>
-          <li class="page-blog__category-item">
-            <a class="page-blog__category-month" href="#">2月</a>
-          </li>
-          <li class="page-blog__category-item">
-            <a class="page-blog__category-month" href="#">1月</a>
-          </li>
+        <ul class="page-blog__year">
+          <?php wp_get_archives('type=yearly'); ?>
         </ul>
-        <div class="page-blog__year2">2022</div>
         <ul class="page-blog__category-items">
-          <li class="page-blog__category-item">
-            <a class="page-blog__category-month" href="#">3月</a>
-          </li>
-          <li class="page-blog__category-item">
-            <a class="page-blog__category-month" href="#">2月</a>
-          </li>
-          <li class="page-blog__category-item">
-            <a class="page-blog__category-month" href="#">1月</a>
-          </li>
-        </ul>
-      </div>
+          <?php wp_get_archives('type=monthly'); ?>
+
+
+
     </li>
+  </ul>
+  </div>
+  </li>
   </ul>
 </aside>

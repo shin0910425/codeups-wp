@@ -219,14 +219,32 @@
   flex-shrink: 0;
 }
 
+// .page-blog__ranking-img {
+//   width: 100%;
+// }
+
+// .page-blog__ranking-img img {
+//   width: 100%;
+//   aspect-ratio: 121/90;
+//   object-fit: cover;
+// }
+
 .page-blog__ranking-img {
-  width: 100%;
+  // position: relative;
+  // overflow: hidden;
+  height: 0;
+  padding-top: calc(90 / 121 * 100%);
+  /* アスペクト比 121:90 */
 }
 
 .page-blog__ranking-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  aspect-ratio: 121/90;
+  height: 100%;
   object-fit: cover;
+  /* 画像が指定された領域に収められるように調整 */
 }
 
 .page-blog__wrap {

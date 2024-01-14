@@ -3,7 +3,7 @@
 <!-- 下層ページのメインビュー -->
 <div class="sub-mv sub-mv__blog">
   <div class="sub-mv__header">
-    <h1 class="sub-mv__title">Blog</h1>
+    <h1 class="sub-mv__title">月別一覧</h1>
   </div>
 </div>
 
@@ -77,7 +77,4 @@
     </div>
   </div>
 </section>
-
-
-
 <?php get_footer(); ?>

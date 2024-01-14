@@ -270,7 +270,7 @@ jQuery(function ($) {
 // sideber 三角開閉２------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
-  const yearLinks = document.querySelectorAll('.page-blog__year2');
+  const yearLinks = document.querySelectorAll('.js-year');
 
   yearLinks.forEach(yearLink => {
     yearLink.addEventListener('click', function () {

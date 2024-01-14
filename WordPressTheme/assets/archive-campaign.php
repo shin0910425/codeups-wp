@@ -32,8 +32,8 @@
                 <div class="page-campaign-card__container">
                   <div class="page-campaign-card__link">
                     <div class="page-campaign-card__link-img">
-                      <?php if (get_the_post_thumbnail()) : ?>
-                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
+                      <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full'); ?>
                       <?php else : ?>
                         <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
                       <?php endif; ?>
@@ -55,7 +55,8 @@
                       <div class="page-campaign-card_box u-desktop">
                         <p class="page-campaign-card_text"><?php the_excerpt(); ?>
                         </p>
-                        <time class="page-campaign-card__time" datetime="2023-06-01">2023/6/1-9/30</time>
+                        <time class="page-campaign-card__time" datetime="<?php echo esc_attr(date('Y-m-d', strtotime('2023-06-01'))); ?>">2023/6/1-9/30</time>
+
                         <p class="page-campaign-card_contact-text">ご予約・お問い合わせはコチラ</p>
                         <div class="page-campaign-card__button">
                           <a href="#" class="button"><span>Contact&nbsp;us</span></a>

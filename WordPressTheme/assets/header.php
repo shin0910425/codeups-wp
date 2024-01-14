@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html <?php language_attributes(); ?>>
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="robots" content="noindex" />
@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <!-- header -->
   <header class="header header-layout header-layout__404">
