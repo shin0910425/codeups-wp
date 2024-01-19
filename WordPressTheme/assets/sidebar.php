@@ -133,11 +133,43 @@
     <li class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">アーカイブ</h3>
       <div class="page-blog__box">
-        <ul class="page-blog__year">
+        <?php
+        // 現在の年を取得
+        $current_year = date('Y');
+
+        // 過去の年（例：ブログが始まった年）から現在の年までのループ
+        for ($year = 2023; $year <= $current_year; $year++) { // 2010年から現在まで（2010はブログが開始した年に応じて変更）
+          echo '<h2>' . $year . '年</h2>';
+          echo '<ul>';
+
+          // 1月から12月までのループ
+          for ($month = 1; $month <= 12; $month++) {
+            // 月を二桁のフォーマットにする（例：01, 02）
+            $month_padded = str_pad($month, 2, '0', STR_PAD_LEFT);
+
+            // WP_Queryを使用して月別の投稿数を取得
+            $query = new WP_Query([
+              'year' => $year,
+              'monthnum' => $month,
+              'posts_per_page' => -1 // すべての投稿を取得
+            ]);
+
+            // 投稿数
+            $post_count = $query->post_count;
+
+            // リンクを表示（アーカイブページへのリンク）
+            echo '<li><a href="' . get_month_link($year, $month) . '">' . $month_padded . '月 (' . $post_count . '記事)</a></li>';
+          }
+
+          echo '</ul>';
+        }
+        ?>
+
+        <!-- <ul class="page-blog__year">
           <?php wp_get_archives('type=yearly'); ?>
         </ul>
         <ul class="page-blog__category-items">
-          <?php wp_get_archives('type=monthly'); ?>
+          <?php wp_get_archives('type=monthly'); ?> -->
 
 
 
