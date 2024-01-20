@@ -25,7 +25,7 @@
       <table class="page-price__box">
         <tbody>
           <?php
-          $price_group = SCF::get('price-group1');
+          $price_group = SCF::get( 'price-group1', get_page_by_path('price')->ID);
           foreach ($price_group as $fields) :
           ?>
             <tr class="page-price__list-item">
@@ -33,6 +33,7 @@
               <td class="page-price__list-money">&yen;<?php echo $fields['price-money1']; ?></td>
             </tr>
           <?php endforeach; ?>
+
         </tbody>
       </table>
     </div>
@@ -41,13 +42,12 @@
         <div class="page-price__sub-title">体験ダイビング</div>
         <div class="page-price__img">
           <img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon1.svg" alt="">
-
         </div>
       </div>
       <table class="page-price__box">
         <tbody>
           <?php
-          $price_group = SCF::get('price-group2');
+          $price_group = SCF::get('price-group2', get_page_by_path('price')->ID);
           foreach ($price_group as $fields) :
           ?>
             <tr class="page-price__list-item">
@@ -68,7 +68,7 @@
       <table class="page-price__box">
         <tbody>
           <?php
-          $price_group = SCF::get('price-group3');
+          $price_group = SCF::get('price-group3', get_page_by_path('price')->ID);
           foreach ($price_group as $fields) :
           ?>
             <tr class="page-price__list-item">
@@ -87,20 +87,9 @@
         </div>
       </div>
       <table class="page-price__box">
-        <!-- <tbody>
-          <?php
-          $price_group = SCF::get('price-group4');
-          foreach ($price_group as $fields) :
-          ?>
-            <tr class="page-price__list-item">
-              <td class="page-price__list-menu"><?php echo $fields['price-menu4']; ?><br class="u-mobile"></td>
-              <td class="page-price__list-money">&yen;<?php echo $fields['price-money4']; ?></td>
-            </tr>
-          <?php endforeach; ?>
-        </tbody> -->
         <tbody>
           <?php
-          $price_group = SCF::get('price-group4');
+          $price_group = SCF::get('price-group4', get_page_by_path('price')->ID);
           foreach ($price_group as $fields) :
           ?>
             <tr class="page-price__list-item">

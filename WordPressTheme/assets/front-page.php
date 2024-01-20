@@ -368,43 +368,56 @@
         </div>
         <div class="price__list-body">
           <h3 class="price__sub-title">ライセンス講習</h3>
-          <dl class="price__list-item">
-            <dt class="price__list-menu">オープンウォーターダイバーコース</dt>
-            <dd class="price__list-money">&yen;50,000</dd>
-            <dt class="price__list-menu">アドバンスドオープンウォーターコース</dt>
-            <dd class="price__list-money">&yen;60,000</dd>
-            <dt class="price__list-menu">レスキュー＋EFRコース</dt>
-            <dd class="price__list-money">&yen;70,000</dd>
-          </dl>
+          <?php
+          // Front Pageに表示するためのコード
+          // Smart Custom Fieldsから価格情報を取得
+          $front_page_price_group = SCF::get('price-group1', get_page_by_path('price')->ID);
+          // テーブルの表示
+          if ($front_page_price_group) :
+          ?>
+            <?php foreach ($front_page_price_group as $fields) : ?>
+              <dl class="price__list-item">
+                <dt class="price__list-menu"><?php echo $fields['price-menu1']; ?></dt>
+                <dd class="price__list-money">&yen;<?php echo $fields['price-money1']; ?></dd>
+              </dl>
+            <?php endforeach; ?>
+          <?php endif; ?>
           <h3 class="price__sub-title">体験ダイビング</h3>
-          <dl class="price__list-item">
-            <dt class="price__list-menu">ビーチ体験ダイビング(半日)</dt>
-            <dd class="price__list-money">&yen;7,000</dd>
-            <dt class="price__list-menu">ビーチ体験ダイビング(1日)</dt>
-            <dd class="price__list-money">&yen;14,000</dd>
-            <dt class="price__list-menu">ボート体験ダイビング(半日)</dt>
-            <dd class="price__list-money">&yen;10,000</dd>
-            <dt class="price__list-menu">ボート体験ダイビング(1日)</dt>
-            <dd class="price__list-money">&yen;18,000</dd>
-          </dl>
+          <?php
+          $front_page_price_group = SCF::get('price-group2', get_page_by_path('price')->ID);
+          if ($front_page_price_group) :
+          ?>
+            <?php foreach ($front_page_price_group as $fields) : ?>
+              <dl class="price__list-item">
+                <dt class="price__list-menu"><?php echo $fields['price-menu2']; ?><?php echo $fields['price-menu2-sub']; ?></dt>
+                <dd class="price__list-money">&yen;<?php echo $fields['price-money2']; ?></dd>
+              </dl>
+            <?php endforeach; ?>
+          <?php endif; ?>
           <h3 class="price__sub-title">ファンダイビング</h3>
-          <dl class="price__list-item">
-            <dt class="price__list-menu">ビーチダイビング(2ダイブ)</dt>
-            <dd class="price__list-money">&yen;10,000</dd>
-            <dt class="price__list-menu">ボートダイビング(2ダイブ)</dt>
-            <dd class="price__list-money">&yen;18,000</dd>
-            <dt class="price__list-menu">スペシャルダイビング(2ダイブ)</dt>
-            <dd class="price__list-money">&yen;24,000</dd>
-            <dt class="price__list-menu">ナイトダイビング(1ダイブ)</dt>
-            <dd class="price__list-money">&yen;10,000</dd>
-          </dl>
+          <?php
+          $front_page_price_group = SCF::get('price-group3', get_page_by_path('price')->ID);
+          if ($front_page_price_group) :
+          ?>
+            <?php foreach ($front_page_price_group as $fields) : ?>
+              <dl class="price__list-item">
+                <dt class="price__list-menu"><?php echo $fields['price-menu3']; ?><?php echo $fields['price-menu3-sub']; ?></dt>
+                <dd class="price__list-money">&yen;<?php echo $fields['price-money3']; ?></dd>
+              </dl>
+            <?php endforeach; ?>
+          <?php endif; ?>
           <h3 class="price__sub-title">スペシャルダイビング</h3>
-          <dl class="price__list-item">
-            <dt class="price__list-menu">貸切ダイビング(2ダイブ)</dt>
-            <dd class="price__list-money">&yen;24,000</dd>
-            <dt class="price__list-menu">1日ダイビング(3ダイブ)</dt>
-            <dd class="price__list-money">&yen;32,000</dd>
-          </dl>
+          <?php
+          $front_page_price_group = SCF::get('price-group4', get_page_by_path('price')->ID);
+          if ($front_page_price_group) :
+          ?>
+            <?php foreach ($front_page_price_group as $fields) : ?>
+              <dl class="price__list-item">
+                <dt class="price__list-menu"><?php echo $fields['price-menu4']; ?><?php echo $fields['price-menu4-sub']; ?></dt>
+                <dd class="price__list-money">&yen;<?php echo $fields['price-money4']; ?></dd>
+              </dl>
+            <?php endforeach; ?>
+          <?php endif; ?>
         </div>
       </div>
       <div class="price__button">
