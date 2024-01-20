@@ -944,8 +944,8 @@ body.active {
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
-	line-height: 1;
-	padding: 1rem;
+	line-height: 1.5;
+	padding: 1rem 3.125rem 1rem 1rem;
 	position: relative;
 }
 
@@ -988,7 +988,7 @@ body.active {
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
-	line-height: 1;
+	line-height: 1.5;
 	padding: 1.5rem 1rem;
 }
 

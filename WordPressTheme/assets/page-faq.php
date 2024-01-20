@@ -17,58 +17,17 @@
   <div class="page-faq__inner inner">
     <div class="page-faq__body">
       <ul class="faq-list">
-        <li class="faq-list__item">
-          <p class="faq-list__item-question js-faq-question">ここに質問が入ります。</p>
-          <p class="faq-list__item-answer">
-            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-          </p>
-        </li>
-        <li class="faq-list__item">
-          <p class="faq-list__item-question js-faq-question">ここに質問が入ります。</p>
-          <p class="faq-list__item-answer">
-            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-          </p>
-        </li>
-        <li class="faq-list__item">
-          <p class="faq-list__item-question js-faq-question">
-            ここに質問が入ります。
-          </p>
-          <p class="faq-list__item-answer">
-            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-          </p>
-        </li>
-        <li class="faq-list__item">
-          <p class="faq-list__item-question js-faq-question">
-            ここに質問が入ります。
-          </p>
-          <p class="faq-list__item-answer">
-            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-          </p>
-        </li>
-        <li class="faq-list__item">
-          <p class="faq-list__item-question js-faq-question">
-            ここに質問が入ります。
-          </p>
-          <p class="faq-list__item-answer">
-            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-          </p>
-        </li>
-        <li class="faq-list__item">
-          <p class="faq-list__item-question js-faq-question">
-            ここに質問が入ります。
-          </p>
-          <p class="faq-list__item-answer">
-            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-          </p>
-        </li>
-        <li class="faq-list__item">
-          <p class="faq-list__item-question js-faq-question">
-            ここに質問が入ります。
-          </p>
-          <p class="faq-list__item-answer">
-            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-          </p>
-        </li>
+        <?php
+        $faq_group = SCF::get('faq-group', get_page_by_path('faq')->ID);
+        foreach ($faq_group as $fields) :
+        ?>
+          <li class="faq-list__item">
+            <p class="faq-list__item-question js-faq-question"><?php echo $fields['faq-question']; ?></p>
+            <p class="faq-list__item-answer">
+              <?php echo $fields['faq-answer']; ?>
+            </p>
+          </li>
+        <?php endforeach; ?>
       </ul>
     </div>
   </div>
