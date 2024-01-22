@@ -18,10 +18,16 @@
   <div class="page-campaign__inner inner">
     <div class="page-campaign__tab">
       <div class="page-campaign__tab-list">
-        <a href="#" class="page-campaign__tab-item active" data-filter="catAll">ALL</a>
-        <a href="#" class="page-campaign__tab-item" data-filter="catInfo">ライセンス講習</a>
-        <a href="#" class="page-campaign__tab-item" data-filter="catEvent">体験ダイビング</a>
-        <a href="#" class="page-campaign__tab-item" data-filter="catRecruit">ファンダイビング</a>
+        <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-campaign__tab-item active" data-filter="catAll">ALL</a>
+        <?php
+        $args = [
+          'taxonomy' => 'campaign_tag'
+        ];
+        $terms = get_terms($args);
+        foreach ($terms as $term) {
+          echo '<div class="page-campaign__tab-item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+        }
+        ?>
       </div>
 
       <ul class="page-campaign__contents">
@@ -40,7 +46,14 @@
                     </div>
                     <div class="page-campaign-card__body">
                       <div class="page-campaign-card__mete">
-                        <p class="page-campaign-card__tag"><?php the_tags(); ?></p>
+                        <p class="page-campaign-card__tag">
+                          <?php
+                          $terms = get_the_terms($post->ID, 'campaign_tag');
+                          foreach ($terms as $term) {
+                            echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                          }
+                          ?>
+                        </p>
                       </div>
                       <div class="page-campaign-card__body-head">
                         <h3 class="page-campaign-card__title"><?php the_title(); ?></h3>
@@ -48,14 +61,17 @@
                       <div class="page-campaign-card__charge">
                         <p class="page-campaign-card__charge-text">全部コミコミ(お一人様)</p>
                         <div class="page-campaign-card__charge-box">
-                          <p class="page-campaign-card__charge-price-1">&yen;56,000</p>
-                          <p class="page-campaign-card__charge-price-2">&yen;46,000</p>
+                          <p class="page-campaign-card__charge-price-1">&yen;<?php the_field('campaign_price_1'); ?></p>
+                          <p class="page-campaign-card__charge-price-2">&yen;<?php the_field('campaign_price_2'); ?></p>
                         </div>
                       </div>
                       <div class="page-campaign-card_box u-desktop">
                         <p class="page-campaign-card_text"><?php the_excerpt(); ?>
                         </p>
-                        <time class="page-campaign-card__time" datetime="<?php echo esc_attr(date('Y-m-d', strtotime('2023-06-01'))); ?>">2023/6/1-9/30</time>
+                        <time class="page-campaign-card__time" datetime="<?php echo esc_attr(date('Y-m-d', strtotime(get_field('campaign_date_start')))); ?>">
+                          <?php echo esc_html(get_field('campaign_date_display_start')); ?>-<?php echo esc_html(get_field('campaign_date_display_end')); ?>
+                        </time>
+
 
                         <p class="page-campaign-card_contact-text">ご予約・お問い合わせはコチラ</p>
                         <div class="page-campaign-card__button">

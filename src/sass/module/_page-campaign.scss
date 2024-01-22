@@ -83,13 +83,17 @@
 }
 
 .page-campaign__tab-item {
-
   width: rem(150);
   max-width: 100%;
 
   @include mq("md") {
     width: rem(162);
   }
+}
+
+.page-campaign__tab-item a {
+  display: inline-block;
+  width: 100%;
 }
 
 .page-campaign__contents {

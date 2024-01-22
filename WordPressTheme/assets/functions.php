@@ -96,24 +96,55 @@ add_filter('register_post_type_args','post_has_archive',10,2);
 // add_action('pre_get_posts', 'change_posts_per_page');
 
 
-// カスタム投稿タイプ【ブログ】：メインクエリの変更（アーカイブページにて表示件数を9件にする）
-function change_set_blog($query)
+// カスタム投稿タイプ【campaign】：メインクエリの変更（アーカイブページにて表示件数を9件にする）
+// カスタム投稿タイプの設定【campaign】
+// function register_custom_post_type()
+// {
+//   $args = array(
+//     'public' => true,
+//     'label'  => 'Campaigns',
+//     // 他の設定も追加可能
+//   );
+//   register_post_type('campaign', $args);
+// }
+// add_action('init', 'register_custom_post_type');
+
+/* -------------------------------------------------
+カスタム投稿タイプのアーカイブページの表示設定変更【campaign】：メインクエリの変更（アーカイブページにて表示件数を9件にする）
+-------------------------------------------------- */
+function change_set_campaign($query)
 {
   if (is_admin() || !$query->is_main_query()) {
     return;
   }
-  if ($query->is_post_type_archive('campaign')) {
+  if ($query->is_post_type_archive('campaign') || is_tax(['campaign_category', 'campaign_tag'])) {
     $query->set('posts_per_page', '4');
     return;
   }
 }
-add_action('pre_get_posts', 'change_set_blog');
+add_action('pre_get_posts', 'change_set_campaign');
 
-//　カスタム投稿タイプ【ブログ】：アーカイブページ抜粋文の長さ変更
+/* -------------------------------------------------
+カスタム投稿タイプのアーカイブページの表示設定変更【voice】：メインクエリの変更（アーカイブページにて表示件数を9件にする）
+-------------------------------------------------- */
+function change_set_voice($query)
+{
+  if (is_admin() || !$query->is_main_query()) {
+    return;
+  }
+  if ($query->is_post_type_archive('voice') || is_tax(['voice_category', 'campaign_tag'])) {
+    $query->set('posts_per_page', '6');
+    return;
+  }
+}
+add_action('pre_get_posts', 'change_set_voice');
+/* -------------------------------------------------
+ カスタム投稿タイプ【voice】：アーカイブページ抜粋文の長さ変更
+-------------------------------------------------- */
 function change_excerpt_length()
 {
   $length = 80;
-  if (is_post_type_archive('voice')) {
+  if (is_post_type_archive('campaign') || is_tax(['campaign_category', 'campaign_tag'])) {
     return 50; //リターンした時点で処理は終了する
   }
   return $length; // デフォルト110文字

@@ -2644,6 +2644,11 @@ body.active {
 	width: 9.375rem;
 }
 
+.page-campaign__tab-item a {
+	display: inline-block;
+	width: 100%;
+}
+
 .page-campaign__contents {
 	align-items: center;
 	display: flex;
@@ -3194,6 +3199,11 @@ body.active {
 .page-voice__tab-item {
 	max-width: 100%;
 	width: 9.375rem;
+}
+
+.page-voice__tab-item a {
+	display: inline-block;
+	width: 100%;
 }
 
 .page-voice__contents {

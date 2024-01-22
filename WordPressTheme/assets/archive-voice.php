@@ -17,10 +17,16 @@
   <div class="page-voice__inner inner">
     <div class="page-voice__tub page-voice__tab">
       <div class="page-voice__tab-list">
-        <a href="#" class="page-voice__tab-item active" data-filter="catAll">ALL</a>
-        <a href="#" class="page-voice__tab-item" data-filter="catCourse">ライセンス講習</a>
-        <a href="#" class="page-voice__tab-item" data-filter="catExperience">体験ダイビング</a>
-        <a href="#" class="page-voice__tab-item" data-filter="catDiv">ファンダイビング</a>
+        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-voice__tab-item active" data-filter="catAll">ALL</a>
+        <?php
+        $args = [
+          'taxonomy' => 'voice_tag'
+        ];
+        $terms = get_terms($args);
+        foreach ($terms as $term) {
+          echo '<div class="page-voice__tab-item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+        }
+        ?>
       </div>
 
       <ul class="page-voice__contents">
@@ -48,12 +54,7 @@
                         }
                         ?>
                       </div>
-                      <!-- <?php $cat = get_the_category();
-                            $cat = $cat[0]; {
-                              echo $cat->name;
-                            } ?> -->
-                      <!-- </p> -->
-                      <!-- <p class="voice-card__tag"><?php the_tags(''); ?></p> -->
+
                     </div>
                     <h2 class="voice-card__title"><?php the_title(); ?></h2>
                   </div>

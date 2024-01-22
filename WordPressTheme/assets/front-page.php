@@ -39,121 +39,62 @@
 
 <main>
   <!-- campaign -->
-  <section id="campaign" class="campaign top-campaign-layout">
+  <!-- <section id="campaign" class="campaign top-campaign-layout">
     <div class="campaign__inner inner">
       <div class="campaign__title section-header">
         <p class="section-header__sub">Campaign</p>
         <h2 class="section-header__main">キャンペーン</h2>
       </div>
-
-      <div class="campaign__box">
-        <div class="swiper campaign-cards js-campaign-swiper">
+      <div class="swiper campaign-cards js-campaign-swiper">
+        <div class="campaign__box">
           <ul class="swiper-wrapper campaign-cards__items">
-            <li class="swiper-slide campaign-cards__item">
-              <div class="campaign-card">
-                <div class="campaign-card__container">
-                  <a href="<?php echo esc_url(home_url('/blog')); ?>" class="campaign-card__link">
-                    <div>
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img1.jpg" alt="魚の群れ">
-                    </div>
-                    <div class="campaign-card__body">
-                      <div class="campaign-card__mete">
-                        <p class="campaign-card__tag">ライセンス講習</p>
-                      </div>
-                      <div class="campaign-card__body-head">
-                        <h3 class="campaign-card__title">ライセンス取得</h3>
-                      </div>
-                      <div class="campaign-card__charge">
-                        <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
-                        <div class="campaign-card__charge-box">
-                          <p class="campaign-card__charge-price-1">&yen;56,000</p>
-                          <p class="campaign-card__charge-price-2">&yen;46,000</p>
+            <?php
+            $args = [
+              'post_type' => 'campaign',
+              'posts_per_page' => 3
+            ];
+            $the_query = new WP_Query($args);
+            if ($the_query->have_posts()) :
+              while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+                <li class="swiper-slide campaign-cards__item">
+                  <div class="campaign-card">
+                    <div class="campaign-card__container">
+                      <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="campaign-card__link">
+
+                        <div>
+                          <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail(array('223,334')); ?>
+                          <?php else : ?>
+                            <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
+                          <?php endif; ?>
                         </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="swiper-slide campaign-cards__item">
-              <div class="campaign-card">
-                <div class="campaign-card__container">
-                  <a href="<?php echo esc_url(home_url('/blog')); ?>" class="campaign-card__link">
-                    <div>
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img2.jpg" alt="船と海の風景">
-                    </div>
-                    <div class="campaign-card__body">
-                      <div class="campaign-card__mete">
-                        <p class="campaign-card__tag">体験ダイビング</p>
-                      </div>
-                      <div class="campaign-card__body-head">
-                        <h3 class="campaign-card__title">貸切体験ダイビング</h3>
-                      </div>
-                      <div class="campaign-card__charge">
-                        <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
-                        <div class="campaign-card__charge-box">
-                          <p class="campaign-card__charge-price-1">&yen;24,000</p>
-                          <p class="campaign-card__charge-price-2">&yen;18,000</p>
+                        <div class="campaign-card__body">
+                          <div class="campaign-card__mete">
+                            <p class="campaign-card__tag">ライセンス講習</p>
+                          </div>
+                          <div class="campaign-card__body-head">
+                            <h3 class="campaign-card__title"><?php the_title(); ?></h3>
+                          </div>
+                          <div class="campaign-card__charge">
+                            <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
+                            <div class="campaign-card__charge-box">
+                              <p class="campaign-card__charge-price-1">&yen;<?php the_field('campaign_price_1'); ?></p>
+                              <p class="campaign-card__charge-price-2">&yen;<?php the_field('campaign_price_2'); ?></p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      </a>
                     </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="swiper-slide campaign-cards__item">
-              <div class="campaign-card">
-                <div class="campaign-card__container">
-                  <a href="<?php echo esc_url(home_url('/blog')); ?>" class="campaign-card__link">
-                    <div>
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img3.jpg" alt="光っているクラゲ">
-                    </div>
-                    <div class="campaign-card__body">
-                      <div class="campaign-card__mete">
-                        <p class="campaign-card__tag">体験ダイビング</p>
-                      </div>
-                      <div class="campaign-card__body-head">
-                        <h3 class="campaign-card__title">ナイトダイビング</h3>
-                      </div>
-                      <div class="campaign-card__charge">
-                        <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
-                        <div class="campaign-card__charge-box">
-                          <p class="campaign-card__charge-price-1">&yen;10,000</p>
-                          <p class="campaign-card__charge-price-2">&yen;8,000</p>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="swiper-slide campaign-cards__item">
-              <div class="campaign-card">
-                <div class="campaign-card__container">
-                  <a href="<?php echo esc_url(home_url('/blog')); ?>" class="campaign-card__link">
-                    <div>
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img4.jpg" alt="ダイビングをしている様子">
-                    </div>
-                    <div class="campaign-card__body">
-                      <div class="campaign-card__mete">
-                        <p class="campaign-card__tag">ファンダイビング</p>
-                      </div>
-                      <div class="campaign-card__body-head">
-                        <h3 class="campaign-card__title">貸切ファンダイビング</h3>
-                      </div>
-                      <div class="campaign-card__charge">
-                        <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
-                        <div class="campaign-card__charge-box">
-                          <p class="campaign-card__charge-price-1">&yen;20,000</p>
-                          <p class="campaign-card__charge-price-2">&yen;16,000</p>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
+                  </div>
+                </li>
+            <?php endwhile;
+              wp_reset_postdata();
+            else :
+              echo esc_html('No campaigns found');
+            endif;
+            ?>
+
         </div>
       </div>
       <div class="campaign__swiper-btn">
@@ -164,7 +105,7 @@
     <div class="campaign__button">
       <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
     </div>
-  </section>
+  </section> -->
 
   <!-- about -->
   <section id="about" class="about top-about-layout">
