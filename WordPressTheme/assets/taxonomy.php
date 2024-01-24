@@ -47,12 +47,12 @@
                     <div class="page-campaign-card__body">
                       <div class="page-campaign-card__mete">
                         <p class="page-campaign-card__tag">
-                          <?php
+                          <!-- <?php
                           $terms = get_the_terms($post->ID, 'campaign_tag');
                           foreach ($terms as $term) {
                             echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
                           }
-                          ?>
+                          ?> -->
                         </p>
                       </div>
                       <div class="page-campaign-card__body-head">

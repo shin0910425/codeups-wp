@@ -132,7 +132,7 @@ function change_set_voice($query)
   if (is_admin() || !$query->is_main_query()) {
     return;
   }
-  if ($query->is_post_type_archive('voice') || is_tax(['voice_category', 'campaign_tag'])) {
+  if ($query->is_post_type_archive('voice') || is_tax(['voice_category', 'voice_tag'])) {
     $query->set('posts_per_page', '6');
     return;
   }
@@ -196,3 +196,14 @@ add_action('widgets_init', 'my_widgets_register');
 //   return $link_html;
 // }
 // add_filter('get_archives_link', 'add_nen_year_archives');
+
+// functions.php での例
+// functions.php での例
+// function custom_taxonomy() {
+//     register_taxonomy('voice_category', 'your_custom_post_type', array(
+//         'label' => 'Voice Categories',
+//         // その他の設定...
+//     ));
+// }
+// add_action('init', 'custom_taxonomy');
+
