@@ -32,3 +32,44 @@
 .form-input.form-error ::placeholder {
   color: $white;
 }
+
+// /* エラー時のプレースホルダーの色を変更 */
+// .wpcf7-form-control:not(.wpcf7-submit)::placeholder {
+//   color: red;
+//   /* ここで希望の色を指定 */
+// }
+
+/* エラー時の入力フィールドのスタイル */
+span.wpcf7-form-control-wrap .wpcf7-not-valid {
+  border: 1px solid red;
+  background-color: rgba(201, 72, 0, 0.20);
+}
+
+/* エラーメッセージのスタイル */
+.wpcf7-response-output.wpcf7-validation-errors,
+.wpcf7-not-valid-tip {
+  color: red;
+  font-size: 0.9em;
+}
+
+/* 非表示にするスタイルが適用されている場合は、以下のスタイルを削除またはコメントアウト */
+.wpcf7-not-valid-tip {
+  // display: none;
+  /* この行を削除またはコメントアウト */
+}
+
+/* エラーメッセージを1行にして、入力フィールドの上に表示 */
+span.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+  display: block;
+  position: absolute;
+  top: -67px;
+  /* 入力フィールドの上に配置するための調整。値は必要に応じて変更してください。 */
+  left: -50px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+  color: red;
+}
+

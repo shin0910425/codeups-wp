@@ -4,34 +4,25 @@
   <div class="mv__inner">
     <div class="mv__slider js-mv-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <picture>
-            <source media="(max-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>/images/common/top-sp_img1.jpg">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/top-pc_img1.jpg" width="1440" alt="亀が泳いでいる">
-          </picture>
-        </div>
-        <div class="swiper-slide">
-          <picture>
-            <source media="(max-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>/images/common/top-sp_img2.jpg">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/top-pc_img2.jpg" width="1440" alt="亀とダイバー">
-          </picture>
-        </div>
-        <div class="swiper-slide">
-          <picture>
-            <source media="(max-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>/images/common/top-sp_img3.jpg">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/top-pc_img3.jpg" width="1440" alt="綺麗な海に船">
-          </picture>
-        </div>
-        <div class="swiper-slide">
-          <picture>
-            <source media="(max-width: 767px)" srcset="<?php echo get_theme_file_uri(); ?>/images/common/top-sp_img4.jpg">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/top-pc_img4.jpg" width="1440" alt="キレイな砂浜と青空">
-          </picture>
-        </div>
+        <?php
+        // ACFフィールドから値を取得
+        for ($i = 1; $i <= 4; $i++) {
+          $slide_img_pc = get_field('slide_img_pc_' . $i);
+          $slide_img_sp = get_field('slide_img_sp_' . $i);
+        ?>
+          <div class="swiper-slide">
+            <picture>
+              <source media="(max-width: 767px)" srcset="<?php echo esc_url($slide_img_sp); ?>">
+              <img src="<?php echo esc_url($slide_img_pc); ?>" width="1440" alt="スライダー画像 <?php echo $i; ?>">
+            </picture>
+          </div>
+        <?php
+        }
+        ?>
       </div>
       <div class="mv__header">
-        <h2 class="mv__title">DIVING</h2>
-        <p class="mv__subtitle">into the ocean</p>
+        <h2 class="mv__title"><?php the_field('mv_title'); ?></h2>
+        <p class="mv__subtitle"><?php the_field('mv_subtitle'); ?></p>
       </div>
     </div>
   </div>
@@ -39,24 +30,27 @@
 
 <main>
   <!-- campaign -->
-  <!-- <section id="campaign" class="campaign top-campaign-layout">
+  <section id="campaign" class="campaign top-campaign-layout">
     <div class="campaign__inner inner">
       <div class="campaign__title section-header">
         <p class="section-header__sub">Campaign</p>
         <h2 class="section-header__main">キャンペーン</h2>
       </div>
-      <div class="swiper campaign-cards js-campaign-swiper">
-        <div class="campaign__box">
+
+      <div class="campaign__box">
+        <div class="swiper campaign-cards js-campaign-swiper">
           <ul class="swiper-wrapper campaign-cards__items">
             <?php
-            $args = [
-              'post_type' => 'campaign',
-              'posts_per_page' => 3
-            ];
-            $the_query = new WP_Query($args);
-            if ($the_query->have_posts()) :
-              while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            $args = array(
+              'post_type'      => 'campaign',
+              'posts_per_page' => 4
+            );
 
+            $the_query = new WP_Query($args);
+
+            if ($the_query->have_posts()) :
+              while ($the_query->have_posts()) : $the_query->the_post();
+            ?>
                 <li class="swiper-slide campaign-cards__item">
                   <div class="campaign-card">
                     <div class="campaign-card__container">
@@ -88,24 +82,27 @@
                     </div>
                   </div>
                 </li>
-            <?php endwhile;
-              wp_reset_postdata();
+            <?php
+              endwhile;
+              wp_reset_postdata(); // サブループの後にリセット
             else :
               echo esc_html('No campaigns found');
             endif;
             ?>
-
+          </ul>
         </div>
       </div>
+
       <div class="campaign__swiper-btn">
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
     </div>
+
     <div class="campaign__button">
-      <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
+      <a href="#" class="button"><span>view&nbsp;more</span></a>
     </div>
-  </section> -->
+  </section>
 
   <!-- about -->
   <section id="about" class="about top-about-layout">

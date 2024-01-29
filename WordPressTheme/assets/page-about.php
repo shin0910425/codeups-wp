@@ -32,9 +32,7 @@
         <h3 class="page-about__sub-title">Dive into<br>
           the Ocean</h3>
         <div class="page-about__text-box">
-          <p class="page-about__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-            ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-
+          <?php the_content(); ?>
         </div>
       </div>
     </div>
@@ -46,94 +44,34 @@
     <div class="page-about__gallery about-gallery-layout">
       <div class="about-gallery">
         <div class="about-gallery__list gallery-list">
-          <div class="gallery-list__box">
-            <div class="gallery-list__item js-modal-open" data-target="1">
-              <div class="gallery-list__item gallery-list__big1">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img1.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-              </div>
-            </div>
-            <div class="gallery-list__modal modal js-modal js-modal-close" id="1">
-              <div class="modal__inner">
-                <div class="modal__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img1.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
+          <?php
+          $gallery_group = SCF::get('gallery-group', get_page_by_path('about')->ID);
+
+          if ($gallery_group) {
+            foreach ($gallery_group as $index => $fields) :
+              $image_url = $fields['gallery-image'];
+          ?>
+              <div class="gallery-list__box">
+                <div class="gallery-list__item js-modal-open" data-target="<?php echo $index + 1; ?>">
+                  <div class="gallery-list__item">
+                    <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
+                  </div>
+                </div>
+                <div class="gallery-list__modal modal js-modal js-modal-close" id="<?php echo $index + 1; ?>">
+                  <div class="modal__inner">
+                    <div class="modal__img">
+                      <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="gallery-list__box">
-            <div class="gallery-list__item js-modal-open" data-target="2">
-              <div class="gallery-list__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img2.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-              </div>
-            </div>
-            <div class="gallery-list__modal modal js-modal js-modal-close" id="2">
-              <div class="modal__inner">
-                <div class="modal__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img2.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="gallery-list__box">
-            <div class="gallery-list__item js-modal-open" data-target="3">
-              <div class="gallery-list__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img3.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-              </div>
-            </div>
-            <div class="gallery-list__modal modal js-modal js-modal-close" id="3">
-              <div class="modal__inner">
-                <div class="modal__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img3.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="gallery-list__box">
-            <div class="gallery-list__item js-modal-open" data-target="4">
-              <div class="gallery-list__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img4.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-              </div>
-            </div>
-            <div class="gallery-list__modal modal js-modal js-modal-close" id="4">
-              <div class="modal__inner">
-                <div class="modal__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img4.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="gallery-list__box">
-            <div class="gallery-list__item js-modal-open" data-target="5">
-              <div class="gallery-list__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img5.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-              </div>
-            </div>
-            <div class="gallery-list__modal modal js-modal js-modal-close" id="5">
-              <div class="modal__inner">
-                <div class="modal__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img5.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="gallery-list__box">
-            <div class="gallery-list__item js-modal-open" data-target="6">
-              <div class="gallery-list__item">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img6.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-              </div>
-            </div>
-            <div class="gallery-list__modal modal js-modal js-modal-close" id="6">
-              <div class="modal__inner">
-                <div class="modal__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/about-gallery_img6.jpg" alt="珊瑚礁の周りを多くの魚が泳いでいる">
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php
+            endforeach;
+          }
+          ?>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 

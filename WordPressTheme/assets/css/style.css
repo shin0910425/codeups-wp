@@ -1218,6 +1218,41 @@ body.active {
 	color: #fff;
 }
 
+/* エラー時の入力フィールドのスタイル */
+
+span.wpcf7-form-control-wrap .wpcf7-not-valid {
+	background-color: rgba(201, 72, 0, 0.2);
+	border: 1px solid red;
+}
+
+/* エラーメッセージのスタイル */
+
+.wpcf7-response-output.wpcf7-validation-errors,
+.wpcf7-not-valid-tip {
+	color: red;
+	font-size: 0.9em;
+}
+
+/* 非表示にするスタイルが適用されている場合は、以下のスタイルを削除またはコメントアウト */
+
+.wpcf7-not-valid-tip { /* この行を削除またはコメントアウト */
+}
+
+/* エラーメッセージを1行にして、入力フィールドの上に表示 */
+
+span.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+	color: red;
+	display: block;
+	font-size: 0.9em; /* 入力フィールドの上に配置するための調整。値は必要に応じて変更してください。 */
+	left: -50px;
+	overflow: hidden;
+	position: absolute;
+	text-overflow: ellipsis;
+	top: -67px;
+	white-space: nowrap;
+	width: 100%;
+}
+
 .form-radio label {
 	display: block;
 }

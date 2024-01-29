@@ -23,9 +23,9 @@
             <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
           </div>
           <div class="page-contact__inner inner">
-            <div class="page-contact__error-wrap">
+            <!-- <div class="page-contact__error-wrap">
               <p class="page-contact__error-text"><span>※</span>必須項目が入力されていません。<br class="u-mobile">入力してください。</p>
-            </div>
+            </div> -->
             <?php echo do_shortcode('[contact-form-7 id="2aa6578" title="お問い合わせ"]'); ?>
 
             <!-- <form class="contact__form form" action="">

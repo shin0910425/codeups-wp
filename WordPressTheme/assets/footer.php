@@ -161,6 +161,11 @@
    </div>
  </footer>
  <?php wp_footer(); ?>
+ <script>
+   document.addEventListener('wpcf7:invalid', function(event) {
+     location.href = 'http://codeups-wp.local/contact-error/';
+   });
+ </script>
  </body>
 
  </html>
