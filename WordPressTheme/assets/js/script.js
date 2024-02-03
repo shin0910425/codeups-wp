@@ -252,20 +252,3 @@ jQuery(function ($) {
     $("html,body").css("overflow", "initial");
   });
 });
-
-// contact エラー ------------------------------------------
-
-document.addEventListener('wpcf7invalid', function (event) {
-  var form = event.target;
-  var errorDivs = form.querySelectorAll('.wpcf7-response-output');
-
-  // 各エラーDIVにカスタムメッセージを設定
-  errorDivs.forEach(function (errorDiv) {
-    if (errorDiv && errorDiv.textContent.trim() === "") {
-      errorDiv.textContent = '※必須項目が入力されていません。入力してください。';
-    }
-  });
-});
-
-
-

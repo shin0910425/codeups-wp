@@ -18,10 +18,10 @@
   <div class="page-campaign__inner inner">
     <div class="page-campaign__tab">
       <div class="page-campaign__tab-list">
-        <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-campaign__tab-item active" data-filter="catAll">ALL</a>
+        <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-campaign__tab-item" data-filter="catAll">ALL</a>
         <?php
         $args = [
-          'taxonomy' => 'campaign_tag'
+          'taxonomy' => 'campaign_category'
         ];
         $terms = get_terms($args);
         foreach ($terms as $term) {
@@ -47,12 +47,12 @@
                     <div class="page-campaign-card__body">
                       <div class="page-campaign-card__mete">
                         <p class="page-campaign-card__tag">
-                          <!-- <?php
-                          $terms = get_the_terms($post->ID, 'campaign_tag');
+                          <?php
+                          $terms = get_the_terms($post->ID, 'campaign_category');
                           foreach ($terms as $term) {
                             echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
                           }
-                          ?> -->
+                          ?>
                         </p>
                       </div>
                       <div class="page-campaign-card__body-head">

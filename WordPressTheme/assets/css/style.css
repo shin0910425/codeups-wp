@@ -158,19 +158,17 @@ body.active {
 	margin-top: 2.5rem;
 }
 
-.breadcrumb.breadcrumb-layout__404 {
-	background-color: #408F95;
-	color: #fff;
-	margin-top: -2.8125rem;
-	padding-top: 5.625rem;
+.breadcrumb-layout {
+	margin-top: 0.5rem;
+}
+
+.breadcrumb-layout__404 {
+	margin-top: -1.25rem;
+	padding-top: 6.625rem;
 }
 
 .footer-layout {
 	margin-top: 6.5625rem;
-}
-
-.footer-layout__404 {
-	margin-top: 0;
 }
 
 .header-layout {
@@ -428,7 +426,12 @@ body.active {
 }
 
 .breadcrumb {
-	margin-top: 0.5rem;
+	color: #0D2936;
+}
+
+.breadcrumb--404 {
+	background-color: #408F95;
+	color: #fff;
 }
 
 .button {
@@ -1225,32 +1228,64 @@ span.wpcf7-form-control-wrap .wpcf7-not-valid {
 	border: 1px solid red;
 }
 
-/* エラーメッセージのスタイル */
-
-.wpcf7-response-output.wpcf7-validation-errors,
-.wpcf7-not-valid-tip {
-	color: red;
-	font-size: 0.9em;
+span.wpcf7-form-control-wrap .wpcf7-not-valid.form__privacy-text.form-checkbox {
+	border: none;
 }
+
+/* エラーメッセージのスタイル */
 
 /* 非表示にするスタイルが適用されている場合は、以下のスタイルを削除またはコメントアウト */
 
-.wpcf7-not-valid-tip { /* この行を削除またはコメントアウト */
+.wpcf7-not-valid-tip {
+	display: none; /* この行を削除またはコメントアウト */
 }
 
-/* エラーメッセージを1行にして、入力フィールドの上に表示 */
-
-span.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
-	color: red;
-	display: block;
-	font-size: 0.9em; /* 入力フィールドの上に配置するための調整。値は必要に応じて変更してください。 */
-	left: -50px;
-	overflow: hidden;
-	position: absolute;
-	text-overflow: ellipsis;
-	top: -67px;
-	white-space: nowrap;
+.wpcf7 form .wpcf7-response-output {
+	border: none;
+	color: #C94800;
+	display: inline-block;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.5;
+	padding-bottom: 2.5rem;
+	text-align: left;
 	width: 100%;
+}
+
+/* form__privacyの線を消す */
+
+span.wpcf7-form-control-wrap .wpcf7-not-valid {
+	border: none;
+}
+
+/*デフォルトのスタイルを無効化する*/
+
+/*デフォルトのスタイルを無効化し、初期背景色を白に設定*/
+
+input[type=submit] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: var(--white); /* テキスト色を初期状態で緑に */
+	border: 1px solid var(--green3); /* CSS変数を使用 */
+	color: var(--green3); /* 枠線を緑に */
+	transition: background-color 0.2s, color 0.2s; /* 背景色とテキスト色のトランジションを追加 */
+}
+
+/* ホバー時のスタイル */
+
+input[type=submit]:hover {
+	background-color: var(--green3); /* 背景色を緑に */
+	color: var(--white); /* テキスト色を白に */
+}
+
+span.wpcf7-spinner {
+	display: none;
+}
+
+.submit-btn-wrapper {
+	text-align: center;
 }
 
 .form-radio label {
@@ -3863,9 +3898,13 @@ html {
 	margin-top: 5rem;
 }
 
-.breadcrumb.breadcrumb-layout__404 {
-	margin-top: -2.1875rem;
-	padding-top: 6.25rem;
+.breadcrumb-layout {
+	margin-top: 0.5rem;
+}
+
+.breadcrumb-layout__404 {
+	margin-top: -1.25rem;
+	padding-top: 7.25rem;
 }
 
 .footer-layout {
@@ -4072,10 +4111,6 @@ html {
 
 .blog__button {
 	margin-top: 4.375rem;
-}
-
-.breadcrumb {
-	margin-top: 0.5rem;
 }
 
 .button:hover::after {
@@ -4390,6 +4425,10 @@ html {
 
 .form-checkbox label:not(:first-of-type) {
 	margin-top: 0;
+}
+
+.wpcf7 form .wpcf7-response-output {
+	text-align: center;
 }
 
 .form-radio label {

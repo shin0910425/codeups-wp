@@ -17,14 +17,14 @@
   <div class="page-voice__inner inner">
     <div class="page-voice__tub page-voice__tab">
       <div class="page-voice__tab-list">
-        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-voice__tab-item active" data-filter="catAll">ALL</a>
+        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-voice__tab-item" data-filter="catAll">ALL</a>
         <?php
         $args = [
-          'taxonomy' => 'voice_tag'
+          'taxonomy' => 'voice_category'
         ];
         $terms = get_terms($args);
         foreach ($terms as $term) {
-          echo '<div class="page-voice__tab-item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+          echo '<div class="page-voice__tab-item js-voice-content"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
         }
         ?>
       </div>
@@ -37,18 +37,21 @@
                 <div class="voice-card__box">
                   <div class="voice-card__item">
                     <div class="voice-card__mete">
-                      <!-- <p class="voice-card__category"> -->
-                      <div class="voice-card__category">
-                        <?php
-                        $terms = get_the_terms($post->ID, 'voice_category');
-                        foreach ($terms as $term) {
-                          echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                        }
-                        ?>
-                      </div>
+                          <?php
+                          // voice-meta グループフィールドからサブフィールドの値を取得
+                          $voice_meta = get_field('voice-meta');
+
+                          // voice-age と voice-sex の値を変数に格納
+                          $voice_age = $voice_meta['voice-age'];
+                          $voice_sex = $voice_meta['voice-sex'];
+                          ?>
+                          <div class="voice-card__category">
+                            <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
+                          </div>
+
                       <div class="voice-card__tag">
                         <?php
-                        $terms = get_the_terms($post->ID, 'voice_tag');
+                        $terms = get_the_terms($post->ID, 'voice_category');
                         foreach ($terms as $term) {
                           echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
                         }

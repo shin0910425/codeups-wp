@@ -1,8 +1,10 @@
 @use "global" as *;
 
 .breadcrumb {
-  margin-top: rem(8);
-  @include mq("md") {
-    margin-top: rem(8);
-  }
+  color: $green;
+}
+
+.breadcrumb--404 {
+  background-color: $green3;
+  color: $white;
 }

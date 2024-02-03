@@ -45,31 +45,80 @@ span.wpcf7-form-control-wrap .wpcf7-not-valid {
   background-color: rgba(201, 72, 0, 0.20);
 }
 
-/* エラーメッセージのスタイル */
-.wpcf7-response-output.wpcf7-validation-errors,
-.wpcf7-not-valid-tip {
-  color: red;
-  font-size: 0.9em;
+span.wpcf7-form-control-wrap .wpcf7-not-valid.form__privacy-text.form-checkbox {
+  border: none;
 }
+
+/* エラーメッセージのスタイル */
+// .wpcf7-response-output.wpcf7-validation-errors,
+// .wpcf7-not-valid-tip {
+//   color: red;
+//   font-size: 0.9em;
+// }
 
 /* 非表示にするスタイルが適用されている場合は、以下のスタイルを削除またはコメントアウト */
 .wpcf7-not-valid-tip {
-  // display: none;
+  display: none;
   /* この行を削除またはコメントアウト */
 }
 
-/* エラーメッセージを1行にして、入力フィールドの上に表示 */
-span.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
-  display: block;
-  position: absolute;
-  top: -67px;
-  /* 入力フィールドの上に配置するための調整。値は必要に応じて変更してください。 */
-  left: -50px;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 0.9em;
-  color: red;
+.wpcf7 form .wpcf7-response-output {
+  padding-bottom: rem(40);
+    font-size: rem(14);
+    font-family: $jp-family;
+    font-weight: $regular;
+    line-height: 1.5;
+    color: $red;
+    border: none;
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    // text-indent: rem(-7);
+    @include mq("md") {
+     text-align: center;
+    }
 }
 
+    /* form__privacyの線を消す */
+span.wpcf7-form-control-wrap .wpcf7-not-valid {
+  border: none;
+}
+
+/*デフォルトのスタイルを無効化する*/
+// input[type="submit"] {
+//   appearance: none;
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   color: $white;
+// }
+
+/*デフォルトのスタイルを無効化し、初期背景色を白に設定*/
+input[type="submit"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: var(--white);
+  /* CSS変数を使用 */
+  color: var(--green3);
+  /* テキスト色を初期状態で緑に */
+  border: 1px solid var(--green3);
+  /* 枠線を緑に */
+  transition: background-color .2s, color .2s;
+  /* 背景色とテキスト色のトランジションを追加 */
+}
+
+/* ホバー時のスタイル */
+input[type="submit"]:hover {
+  background-color: var(--green3);
+  /* 背景色を緑に */
+  color: var(--white);
+  /* テキスト色を白に */
+}
+
+span.wpcf7-spinner {
+  display: none;
+}
+
+.submit-btn-wrapper {
+  text-align: center;
+}
