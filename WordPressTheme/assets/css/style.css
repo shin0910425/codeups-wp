@@ -191,7 +191,7 @@ body.active {
 	margin-top: 3.25rem;
 }
 
-.page-campaign--layout {
+.page-blog__sidebar--layout {
 	margin-top: 1.875rem;
 }
 
@@ -591,6 +591,10 @@ body.active {
 	padding-bottom: 0;
 }
 
+.campaign-card__title-center {
+	text-align: center;
+}
+
 .campaign-card__charge-text {
 	border-top: 0.0625rem solid #408F95;
 	color: #0D2936;
@@ -673,13 +677,6 @@ body.active {
 .campaign__button {
 	margin-top: 2.8125rem;
 	text-align: center;
-}
-
-.swiper-slide {
-	align-items: center;
-	display: flex;
-	height: auto;
-	justify-content: center;
 }
 
 /* sp時のスタイル */
@@ -2513,6 +2510,14 @@ span.wpcf7-spinner {
 	padding: 0.25rem 0;
 }
 
+.page-blog__category-items {
+	display: none; /* デフォルトでは非表示 */
+}
+
+.page-blog__year2.active + .page-blog__category-items {
+	display: block; /* activeクラスが適用された隣接する要素は表示 */
+}
+
 .page-blog__category-item::before {
 	background: url(../images/common/triangle-right_img.png) center/cover;
 	content: "";
@@ -3923,7 +3928,7 @@ html {
 	margin-top: 9.375rem;
 }
 
-.page-campaign--layout {
+.page-blog__sidebar--layout {
 	margin-top: 1.875rem;
 }
 
@@ -4185,10 +4190,6 @@ html {
 
 .campaign__button {
 	margin-top: 3.75rem;
-}
-
-.swiper-slide {
-	margin: 0 auto;
 }
 
 .swiper-button-prev {

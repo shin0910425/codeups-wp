@@ -100,7 +100,7 @@
     </div>
 
     <div class="campaign__button">
-      <a href="#" class="button"><span>view&nbsp;more</span></a>
+      <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button"><span>view&nbsp;more</span></a>
     </div>
   </section>
 
@@ -131,7 +131,7 @@
             <p class="about__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
               ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
             <div class="about__button">
-              <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
+              <a href="<?php echo esc_url(home_url('/about')); ?>" class="button"><span>view&nbsp;more</span></a>
             </div>
           </div>
         </div>
@@ -158,7 +158,7 @@
           <p class="information__text">当店はダイビングライセンス（Cカード）世界最大の教育機関PADI<br class="u-desktop">の「正規店」として店舗登録されています。<br>
             正規登録店として、安心安全に初めての方でも安心安全にライセン<br class="u-desktop">ス取得をサポート致します。</p>
           <div class="information__button">
-            <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
+            <a href="<?php echo esc_url(home_url('/information')); ?>" class="button"><span>view&nbsp;more</span></a>
           </div>
         </div>
       </div>
@@ -231,55 +231,70 @@
         <h2 class="section-header__main">お客様の声</h2>
       </div>
       <ul class="voice__cards voice-cards">
-        <li class="voice-cards__item voice-card">
-          <a href="<?php echo esc_url(home_url('/blog')); ?>" class="voice-card__link">
-            <div class="voice-card__box">
-              <div class="voice-card__item">
-                <div class="voice-card__mete">
-                  <p class="voice-card__category">20代(女性)</p>
-                  <p class="voice-card__tag">ライセンス講習</p>
+        <?php
+        $args = array(
+          'post_type'      => 'voice',
+          'posts_per_page' => 2
+        );
+
+        $the_query = new WP_Query($args);
+
+        if ($the_query->have_posts()) :
+          while ($the_query->have_posts()) : $the_query->the_post();
+        ?>
+            <li class="voice-cards__item voice-card">
+              <a href="<?php echo esc_url(home_url('/voice')); ?>" class="voice-card__link">
+                <div class="voice-card__box">
+                  <div class="voice-card__item">
+                    <div class="voice-card__mete">
+                      <p class="voice-card__category">
+                        <?php
+                        // voice-meta グループフィールドからサブフィールドの値を取得
+                        $voice_meta = get_field('voice-meta');
+
+                        // voice-age と voice-sex の値を変数に格納
+                        $voice_age = $voice_meta['voice-age'];
+                        $voice_sex = $voice_meta['voice-sex'];
+                        ?>
+                      <div class="voice-card__category">
+                        <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
+                      </div>
+                      </p>
+                      <p class="voice-card__tag">
+                        <?php
+                        $terms = get_the_terms($post->ID, 'voice_category');
+                        foreach ($terms as $term) {
+                          echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                        }
+                        ?></p>
+                    </div>
+                    <p class="voice-card__title"><?php the_title(); ?></p>
+                  </div>
+                  <div class="voice-card__image">
+                    <div class="js-scroll colorbox-scroll"><span class="js-motion-txt colorbox-motion-txt"><span class="js-motion-inner colorbox-motion-inner">
+                          <?php if (get_the_post_thumbnail()) : ?>
+                            <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
+                          <?php else : ?>
+                            <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                          <?php endif; ?>
+                        </span></span></div>
+                  </div>
                 </div>
-                <p class="voice-card__title">ここにタイトルが入ります。ここにタイトル</p>
-              </div>
-              <div class="voice-card__image">
-                <div class="js-scroll colorbox-scroll"><span class="js-motion-txt colorbox-motion-txt"><span class="js-motion-inner colorbox-motion-inner">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/voice_img1.jpg" alt="帽子を被った女性">
-                    </span></span></div>
-              </div>
-            </div>
-            <div class="voice-card__body">
-              <p class="voice-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                ここにテキストが入ります。ここにテキストが入ります。</p>
-            </div>
-          </a>
-        </li>
-        <li class="voice-cards__item voice-card">
-          <a href="<?php echo esc_url(home_url('/blog')); ?>" class="voice-card__link">
-            <div class="voice-card__box">
-              <div class="voice-card__item">
-                <div class="voice-card__mete">
-                  <p class="voice-card__category">20代(男性)</p>
-                  <p class="voice-card__tag">ファンダイビング</p>
+                <div class="voice-card__body">
+                  <p class="voice-card__text"><?php the_content(); ?></p>
                 </div>
-                <p class="voice-card__title">ここにタイトルが入ります。ここにタイトル</p>
-              </div>
-              <div class="voice-card__image">
-                <div class="js-scroll colorbox-scroll"><span class="js-motion-txt colorbox-motion-txt"><span class="js-motion-inner colorbox-motion-inner">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/voice_img2.jpg" alt="笑顔の男性">
-                    </span></span></div>
-              </div>
-            </div>
-            <div class="voice-card__body">
-              <p class="voice-card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                ここにテキストが入ります。ここにテキストが入ります。</p>
-            </div>
-          </a>
-        </li>
+              </a>
+            </li>
+        <?php
+          endwhile;
+          wp_reset_postdata(); // サブループの後にリセット
+        else :
+          echo esc_html('No campaigns found');
+        endif;
+        ?>
       </ul>
       <div class="voice__button">
-        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
+        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
     </div>
   </section>

@@ -175,7 +175,7 @@ function change_excerpt_length()
 {
   $length = 80;
   if (is_post_type_archive('campaign') || is_tax(['campaign_category', 'campaign_tag'])) {
-    return 50; //リターンした時点で処理は終了する
+    return 150; //リターンした時点で処理は終了する
   }
   return $length; // デフォルト110文字
 }

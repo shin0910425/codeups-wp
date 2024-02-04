@@ -33,18 +33,16 @@
 
 .swiper-wrapper {}
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
+// .swiper-slide {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: auto;
 
-  @include mq("md") {
-    // width: rem(333);
-    // max-width: 100%;
-    margin: 0 auto;
-  }
-}
+//   @include mq("md") {
+//     margin: 0 auto;
+//   }
+// }
 
 /* sp時のスタイル */
 @media screen and (max-width: 767px) {

@@ -350,6 +350,16 @@
   padding: rem(4) 0;
 }
 
+.page-blog__category-items {
+  display: none;
+  /* デフォルトでは非表示 */
+}
+
+.page-blog__year2.active+.page-blog__category-items {
+  display: block;
+  /* activeクラスが適用された隣接する要素は表示 */
+}
+
 .page-blog__category-item::before {
   content: "";
   background: url(../images/common/triangle-right_img.png) center/cover;

@@ -51,128 +51,146 @@
 
     <li class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">口コミ</h3>
-      <ul class="page-blog__ranking-items">
-        <li class="page-blog__ranking-item">
-          <article class="page-blog__reviews">
-            <a class="page-blog__reviews-link" href="<?php echo esc_url(home_url('/voice')); ?>">
-              <div class="page-blog__reviews-img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/common/side-voice_img.jpg" alt="省略">
-              </div>
-              <div class="page-blog__reviews-tag">30代(カップル)</div>
-              <p class="page-blog__reviews-title">ここにタイトルが入ります。ここにタイトル</p>
-            </a>
-            <div class="page-blog__reviews-button">
-              <a href="#" class="button"><span>view&nbsp;more</span></a>
-            </div>
-          </article>
-        </li>
-      </ul>
+      <?php
+      $args = array(
+        "post_type" => "voice",
+        "posts_per_page" => 1,
+        "orderby" => "date",
+        "order" => "DESC",
+      );
+      $the_query = new WP_Query($args);
+      ?>
+      <?php if ($the_query->have_posts()) : ?>
+        <ul class="page-blog__ranking-items">
+          <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <li class="page-blog__ranking-item">
+              <article class="page-blog__reviews">
+                <a class="page-blog__reviews-link" href="<?php echo esc_url(home_url('/voice')); ?>">
+                  <div class="page-blog__reviews-img">
+                    <?php if (get_the_post_thumbnail()) : ?>
+                      <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
+                    <?php else : ?>
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                    <?php endif; ?>
+                  </div>
+                  <div class="page-blog__reviews-tag">
+                    <?php
+                    // voice-meta グループフィールドからサブフィールドの値を取得
+                    $voice_meta = get_field('voice-meta');
+
+                    // voice-age と voice-sex の値を変数に格納
+                    $voice_age = $voice_meta['voice-age'];
+                    $voice_sex = $voice_meta['voice-sex'];
+                    ?>
+                    <div class="voice-card__category">
+                      <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
+                    </div>
+                  </div>
+                  <p class="page-blog__reviews-title"><?php the_title(); ?></p>
+                </a>
+                <div class="page-blog__reviews-button">
+                  <a href="<?php echo esc_url(home_url('/voice')); ?>" class="button"><span>view&nbsp;more</span></a>
+                </div>
+              </article>
+            </li>
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
+        </ul>
+      <?php endif; ?>
+
     </li>
 
     <li class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">キャンペーン</h3>
-      <ul class="page-blog__ranking-items">
-        <li class="page-blog-cards__item page-campaign--layout">
-          <div class="page-blog-card">
-            <div class="page-blog-card__container">
-              <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-blog-card__link">
-                <div>
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img1.jpg" alt="魚の群れ">
-                </div>
-                <div class="page-blog-card__body">
-                  <div class="page-blog-card__mete">
-                    <p class="page-blog-card__tag">ライセンス講習</p>
-                  </div>
-                  <div class="page-blog-card__body-head">
-                    <h3 class="page-blog-card__title">ライセンス取得</h3>
-                  </div>
-                  <div class="page-blog-card__charge">
-                    <p class="page-blog-card__charge-text">全部コミコミ(お一人様)</p>
-                    <div class="page-blog-card__charge-box">
-                      <p class="page-blog-card__charge-price-1">&yen;56,000</p>
-                      <p class="page-blog-card__charge-price-2">&yen;46,000</p>
+      <?php
+      $args = array(
+        "post_type" => "campaign",
+        "posts_per_page" => 2,
+        "orderby" => "date",
+        "order" => "DESC",
+      );
+      $the_query = new WP_Query($args);
+      ?>
+      <?php if ($the_query->have_posts()) : ?>
+        <ul class="campaign-cards__items">
+          <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <li class="campaign-cards__item page-blog__sidebar--layout">
+
+              <div class="campaign-card">
+                <div class="campaign-card__container">
+                  <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="campaign-card__link">
+
+                    <div>
+                      <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail(array('223,334')); ?>
+                      <?php else : ?>
+                        <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
+                      <?php endif; ?>
                     </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
-        <li class="page-blog-cards__item page-campaign--layout">
-          <div class="page-blog-card">
-            <div class="page-blog-card__container">
-              <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-blog-card__link">
-                <div>
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/campaign_img2.jpg" alt="船と海の風景">
-                </div>
-                <div class="page-blog-card__body">
-                  <div class="page-blog-card__mete">
-                    <p class="page-blog-card__tag">体験ダイビング</p>
-                  </div>
-                  <div class="page-blog-card__body-head">
-                    <h3 class="page-blog-card__title">貸切体験ダイビング</h3>
-                  </div>
-                  <div class="page-blog-card__charge">
-                    <p class="page-blog-card__charge-text">全部コミコミ(お一人様)</p>
-                    <div class="page-blog-card__charge-box">
-                      <p class="page-blog-card__charge-price-1">&yen;24,000</p>
-                      <p class="page-blog-card__charge-price-2">&yen;18,000</p>
+                    <div class="campaign-card__body">
+
+                      <div class="campaign-card__body-head">
+                        <h3 class="campaign-card__title campaign-card__title-center"><?php the_title(); ?></h3>
+                      </div>
+                      <div class="campaign-card__charge">
+                        <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
+                        <div class="campaign-card__charge-box">
+                          <p class="campaign-card__charge-price-1">&yen;<?php the_field('campaign_price_1'); ?></p>
+                          <p class="campaign-card__charge-price-2">&yen;<?php the_field('campaign_price_2'); ?></p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
-              </a>
-            </div>
-          </div>
-        </li>
-      </ul>
+              </div>
+
+            </li>
+
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
+        </ul>
+      <?php endif; ?>
       <div class="page-blog__reviews-button">
-        <a href="#" class="button"><span>view&nbsp;more</span></a>
+        <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
     </li>
 
     <li class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">アーカイブ</h3>
-      <div class="page-blog__box">
-        <?php
-        // 現在の年を取得
-        $current_year = date('Y');
+      <div class="page-blog__box js-year">
+        <div class="page-blog__sidebar-item">
+          <?php
+          global $wpdb;
+          // データベースからユニークな年を取得（2022年以降）
+          $years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' AND YEAR(post_date) >= 2022 ORDER BY post_date DESC");
 
-        // 過去の年（例：ブログが始まった年）から現在の年までのループ
-        for ($year = 2023; $year <= $current_year; $year++) { // 2010年から現在まで（2010はブログが開始した年に応じて変更）
-          echo '<h2>' . $year . '年</h2>';
-          echo '<ul>';
+          foreach ($years as $year) {
+            echo '<div class="page-blog__box">';
+            echo "<div class='page-blog__year2 js-year' data-year='{$year}'>{$year}</div>";
+            echo '<ul class="page-blog__category-items hidden">';
 
-          // 1月から12月までのループ
-          for ($month = 1; $month <= 12; $month++) {
-            // 月を二桁のフォーマットにする（例：01, 02）
-            $month_padded = str_pad($month, 2, '0', STR_PAD_LEFT);
+            // その年の各月に投稿があるか確認
+            for ($month = 1; $month <= 12; $month++) {
+              $query = new WP_Query([
+                'year' => $year,
+                'monthnum' => $month,
+                'post_status' => 'publish',
+                'posts_per_page' => -1, // すべての投稿を取得
+              ]);
 
-            // WP_Queryを使用して月別の投稿数を取得
-            $query = new WP_Query([
-              'year' => $year,
-              'monthnum' => $month,
-              'posts_per_page' => -1 // すべての投稿を取得
-            ]);
-
-            // 投稿数
-            $post_count = $query->post_count;
-
-            // リンクを表示（アーカイブページへのリンク）
-            echo '<li><a href="' . get_month_link($year, $month) . '">' . $month_padded . '月 (' . $post_count . '記事)</a></li>';
+              if ($query->have_posts()) {
+                $month_name = date_i18n('F', mktime(0, 0, 0, $month, 10)); // 月の名前を取得
+                echo '<li class="page-blog__category-item">';
+                // 月別アーカイブへのリンク
+                echo '<a class="page-blog__category-month" href="' . get_month_link($year, $month) . '">' . $month_name . '</a>';
+                echo '</li>';
+              }
+            }
+            echo '</ul>';
+            echo '</div>';
           }
-
-          echo '</ul>';
-        }
-        ?>
-
-        <!-- <ul class="page-blog__year">
-          <?php wp_get_archives('type=yearly'); ?>
-        </ul>
-        <ul class="page-blog__category-items">
-          <?php wp_get_archives('type=monthly'); ?> -->
-
-
-
+          ?>
+        </div>
     </li>
   </ul>
   </div>

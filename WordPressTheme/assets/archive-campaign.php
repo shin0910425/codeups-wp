@@ -66,16 +66,18 @@
                         </div>
                       </div>
                       <div class="page-campaign-card_box u-desktop">
-                        <p class="page-campaign-card_text"><?php the_excerpt(); ?>
-                        </p>
+                        <?php
+                        // PHPの出力を変数に保存
+                        $excerpt = get_the_excerpt();
+                        ?>
+
+                        <p class="page-campaign-card_text"><?php echo $excerpt; ?></p>
                         <time class="page-campaign-card__time" datetime="<?php echo esc_attr(date('Y-m-d', strtotime(get_field('campaign_date_start')))); ?>">
                           <?php echo esc_html(get_field('campaign_date_display_start')); ?>-<?php echo esc_html(get_field('campaign_date_display_end')); ?>
                         </time>
-
-
                         <p class="page-campaign-card_contact-text">ご予約・お問い合わせはコチラ</p>
                         <div class="page-campaign-card__button">
-                          <a href="#" class="button"><span>Contact&nbsp;us</span></a>
+                          <a href="<?php echo esc_url(home_url('/contact')); ?>" class="button"><span>Contact&nbsp;us</span></a>
                         </div>
                       </div>
                     </div>
