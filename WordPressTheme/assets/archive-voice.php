@@ -33,7 +33,7 @@
         <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
             <li class="page-voice__item voice-card" data-category="catCourse">
-              <a href="#" class="voice-card__link">
+              <div class="voice-card__link">
                 <div class="voice-card__box">
                   <div class="voice-card__item">
                     <div class="voice-card__mete">
@@ -74,7 +74,7 @@
                 <div class="voice-card__body">
                   <p class="voice-card__text"><?php the_content(); ?></p>
                 </div>
-              </a>
+              </div>
             </li>
         <?php endwhile;
         endif; ?>

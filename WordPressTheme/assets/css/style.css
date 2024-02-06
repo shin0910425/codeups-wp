@@ -407,10 +407,6 @@ body.active {
 	gap: 2.5rem;
 }
 
-.blog {
-	position: relative;
-}
-
 .blog__inner {
 	max-width: 37.5rem;
 	width: 100%;
@@ -4085,7 +4081,7 @@ html {
 }
 
 .blog {
-	padding-top: 5.25rem;
+	position: relative;
 }
 
 .blog__bg {

@@ -1,4 +1,18 @@
 <?php get_header(); ?>
+<?php
+$home = esc_url(home_url('/'));
+$campaign = esc_url(home_url('/campaign/'));
+$about = esc_url(home_url('/about/'));
+$information = esc_url(home_url('/information/'));
+$blog = esc_url(home_url('/blog/'));
+$voice = esc_url(home_url('/voice/'));
+$price = esc_url(home_url('/price/'));
+$faq = esc_url(home_url('/faq/'));
+$privacypolicy = esc_url(home_url('/privacypolicy/'));
+$termsofservise = esc_url(home_url('/terms-of-service/'));
+$contact = esc_url(home_url('/contact/'));
+$sitemap = esc_url(home_url('/sitemap/'));
+?>
 
 <section class="mv">
   <div class="mv__inner">
@@ -100,7 +114,7 @@
     </div>
 
     <div class="campaign__button">
-      <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button"><span>view&nbsp;more</span></a>
+      <a href="<?php echo $campaign; ?>" class="button"><span>view&nbsp;more</span></a>
     </div>
   </section>
 
@@ -131,7 +145,7 @@
             <p class="about__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
               ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
             <div class="about__button">
-              <a href="<?php echo esc_url(home_url('/about')); ?>" class="button"><span>view&nbsp;more</span></a>
+              <a href="<?php echo $about; ?>" class="button"><span>view&nbsp;more</span></a>
             </div>
           </div>
         </div>
@@ -158,7 +172,7 @@
           <p class="information__text">当店はダイビングライセンス（Cカード）世界最大の教育機関PADI<br class="u-desktop">の「正規店」として店舗登録されています。<br>
             正規登録店として、安心安全に初めての方でも安心安全にライセン<br class="u-desktop">ス取得をサポート致します。</p>
           <div class="information__button">
-            <a href="<?php echo esc_url(home_url('/information')); ?>" class="button"><span>view&nbsp;more</span></a>
+            <a href="<?php echo $information; ?>" class="button"><span>view&nbsp;more</span></a>
           </div>
         </div>
       </div>
@@ -212,7 +226,7 @@
       <?php endif; ?>
 
       <div class="blog__button">
-        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
+        <a href="<?php echo $blog; ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
     </div>
   </section>
@@ -294,7 +308,7 @@
         ?>
       </ul>
       <div class="voice__button">
-        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="button"><span>view&nbsp;more</span></a>
+        <a href="<?php echo $voice; ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
     </div>
   </section>
@@ -374,7 +388,7 @@
         </div>
       </div>
       <div class="price__button">
-        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="button"><span>view&nbsp;more</span></a>
+        <a href="<?php echo $price; ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
     </div>
   </section>
