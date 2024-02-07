@@ -58,17 +58,6 @@
           );
           the_posts_pagination($args);
           ?>
-
-          <!-- <div class="wp-pagination">
-            <a class="prev page-numbers" href="">&lsaquo;</a>
-            <span aria-current="page" class="page-numbers current">1</span>
-            <a class="page-numbers" href="">2</a>
-            <a class="page-numbers" href="">3</a>
-            <a class="page-numbers" href="">4</a>
-            <a class="page-numbers" href="">5</a>
-            <a class="page-numbers" href="">6</a>
-            <a class="next page-numbers" href="">&rsaquo;</a>
-          </div> -->
         </nav>
       </div>
 

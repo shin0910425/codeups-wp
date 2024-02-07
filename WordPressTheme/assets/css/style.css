@@ -5194,6 +5194,10 @@ html {
 	text-align: left;
 }
 
+.page-sitemap__box {
+	margin: 0;
+}
+
 .page-sitemap__nav-left,
 .page-sitemap__nav-right {
 	display: inline-block;

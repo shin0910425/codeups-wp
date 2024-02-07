@@ -72,10 +72,9 @@
                           <?php echo esc_html(get_field('campaign_date_display_start')); ?>-<?php echo esc_html(get_field('campaign_date_display_end')); ?>
                         </time>
 
-
                         <p class="page-campaign-card_contact-text">ご予約・お問い合わせはコチラ</p>
                         <div class="page-campaign-card__button">
-                          <a href="#" class="button"><span>Contact&nbsp;us</span></a>
+                          <a href="<?php echo esc_url(home_url('/contact')); ?>" class="button"><span>Contact&nbsp;us</span></a>
                         </div>
                       </div>
                     </div>
