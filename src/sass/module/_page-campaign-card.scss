@@ -18,7 +18,7 @@
 }
 
 .page-campaign-card__link {
-  max-width: rem(280);
+  // max-width: rem(280);
   width: 100%;
 
   @include mq("md") {
@@ -121,6 +121,7 @@
   align-items: flex-end;
   flex-grow: 1;
   width: 100%;
+  justify-content: center;
 
   @include mq("md") {
     justify-content: center;

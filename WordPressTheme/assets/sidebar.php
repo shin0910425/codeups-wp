@@ -135,8 +135,8 @@
                       <div class="campaign-card__charge">
                         <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
                         <div class="campaign-card__charge-box">
-                          <p class="campaign-card__charge-price-1">&yen;<?php the_field('campaign_price_1'); ?></p>
-                          <p class="campaign-card__charge-price-2">&yen;<?php the_field('campaign_price_2'); ?></p>
+                          <p class="campaign-card__charge-price-1 campaign-card__charge-price-1--size">&yen;<?php the_field('campaign_price_1'); ?></p>
+                          <p class="campaign-card__charge-price-2 campaign-card__charge-price-2--size">&yen;<?php the_field('campaign_price_2'); ?></p>
                         </div>
                       </div>
                     </div>

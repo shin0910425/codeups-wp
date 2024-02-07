@@ -159,6 +159,9 @@
 
 .footer__box {
   margin-top: rem(12);
+  @include mq("md") {
+    margin: 0;
+  }
 }
 
 .item-child-list a {

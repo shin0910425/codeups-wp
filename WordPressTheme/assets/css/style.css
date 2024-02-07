@@ -407,6 +407,10 @@ body.active {
 	gap: 2.5rem;
 }
 
+.blog {
+	position: relative;
+}
+
 .blog__inner {
 	max-width: 37.5rem;
 	width: 100%;
@@ -606,6 +610,7 @@ body.active {
 	align-items: flex-end;
 	display: flex;
 	flex-grow: 1;
+	justify-content: center;
 	width: 100%;
 }
 
@@ -626,12 +631,20 @@ body.active {
 	text-decoration-thickness: 0.1875rem;
 }
 
+.campaign-card__charge-price-1.campaign-card__charge-price-1--size {
+	font-size: 1.25rem;
+}
+
 .campaign-card__charge-price-2 {
 	color: #408F95;
 	font-size: 1.875rem;
 	font-weight: 700;
 	line-height: 1;
 	margin-left: 1rem;
+}
+
+.campaign-card__charge-price-2.campaign-card__charge-price-2--size {
+	font-size: 2rem;
 }
 
 .card__body.charge {
@@ -657,7 +670,6 @@ body.active {
 .campaign-cards__item {
 	height: auto;
 	max-width: 100%;
-	width: 17.5rem;
 }
 
 .campaign__inner {
@@ -1674,7 +1686,7 @@ span.wpcf7-spinner {
 	color: #fff;
 }
 
-.information-tab__menu-icon {
+.information-tab__icon {
 	display: none;
 }
 
@@ -2553,7 +2565,6 @@ span.wpcf7-spinner {
 }
 
 .page-campaign-card__link {
-	max-width: 17.5rem;
 	width: 100%;
 }
 
@@ -2611,6 +2622,7 @@ span.wpcf7-spinner {
 	align-items: flex-end;
 	display: flex;
 	flex-grow: 1;
+	justify-content: center;
 	width: 100%;
 }
 
@@ -2731,7 +2743,6 @@ span.wpcf7-spinner {
 
 .page-campaign__content {
 	max-width: 100%;
-	width: 17.5rem;
 }
 
 .page-contact-thanks {
@@ -4081,7 +4092,7 @@ html {
 }
 
 .blog {
-	position: relative;
+	padding-top: 5.25rem;
 }
 
 .blog__bg {
@@ -4382,6 +4393,10 @@ html {
 	text-align: left;
 }
 
+.footer__box {
+	margin: 0;
+}
+
 .footer__nav-left,
 .footer__nav-right {
 	display: inline-block;
@@ -4536,7 +4551,7 @@ html {
 	margin-left: 5.625rem;
 }
 
-.information-tab__menu-icon {
+.information-tab__icon {
 	display: block;
 	height: 4rem;
 	max-width: 100%;

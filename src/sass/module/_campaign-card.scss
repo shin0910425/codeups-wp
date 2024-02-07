@@ -122,6 +122,7 @@
   align-items: flex-end;
   flex-grow: 1;
   width: 100%;
+  justify-content: center;
 }
 
 .campaign-card__charge-price-1 {
@@ -145,6 +146,10 @@
   }
 }
 
+.campaign-card__charge-price-1.campaign-card__charge-price-1--size {
+  font-size: rem(20);
+}
+
 .campaign-card__charge-price-2 {
   font-size: rem(30);
   font-weight: $bold;
@@ -155,6 +160,10 @@
   @include mq("md") {
     font-size: rem(40);
   }
+}
+
+.campaign-card__charge-price-2.campaign-card__charge-price-2--size {
+  font-size: rem(32);
 }
 
 .card__body.charge {
