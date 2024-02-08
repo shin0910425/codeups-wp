@@ -6,8 +6,8 @@
   }
   ?>
 
-  <ul class="page-blog__sidebar-items">
-    <li class="page-blog__sidebar-item">
+  <div class="page-blog__sidebar-items">
+    <div class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">人気記事</h3>
       <?php
       $args = array(
@@ -47,9 +47,9 @@
           <?php wp_reset_postdata(); ?>
         </ul>
       <?php endif; ?>
-    </li>
+    </div>
 
-    <li class="page-blog__sidebar-item">
+    <div class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">口コミ</h3>
       <?php
       $args = array(
@@ -98,9 +98,9 @@
         </ul>
       <?php endif; ?>
 
-    </li>
+    </div>
 
-    <li class="page-blog__sidebar-item">
+    <div class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">キャンペーン</h3>
       <?php
       $args = array(
@@ -153,9 +153,9 @@
       <div class="page-blog__reviews-button">
         <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
-    </li>
+    </div>
 
-    <li class="page-blog__sidebar-item">
+    <div class="page-blog__sidebar-item">
       <h3 class="page-blog__sidebar-title">アーカイブ</h3>
       <div class="page-blog__box js-year">
         <div class="page-blog__sidebar-item">
@@ -191,9 +191,8 @@
           }
           ?>
         </div>
-    </li>
-  </ul>
+      </div>
+    </div>
   </div>
-  </li>
-  </ul>
+
 </aside>

@@ -653,11 +653,6 @@ body.active {
 	margin-top: auto;
 }
 
-.campaign__button {
-	margin-top: 2.8125rem;
-	text-align: center;
-}
-
 .campaign-cards {
 	margin-right: calc(50% - 49.5vw);
 	padding-bottom: 0.625rem;
@@ -670,6 +665,7 @@ body.active {
 .campaign-cards__item {
 	height: auto;
 	max-width: 100%;
+	width: 17.5rem;
 }
 
 .campaign__inner {
@@ -685,6 +681,11 @@ body.active {
 .campaign__button {
 	margin-top: 2.8125rem;
 	text-align: center;
+}
+
+.swiper-slide {
+	align-items: center;
+	height: auto;
 }
 
 /* sp時のスタイル */
@@ -3445,7 +3446,7 @@ span.wpcf7-spinner {
 }
 
 .price__list-body {
-	margin-top: 2.4375rem;
+	margin-top: 1.4375rem;
 }
 
 .price__list-body dl {
@@ -3463,7 +3464,7 @@ span.wpcf7-spinner {
 }
 
 .price__sub-title:not(:first-child) {
-	margin-top: 3rem;
+	margin-top: 1.6875rem;
 }
 
 .price__list-item {
@@ -3988,7 +3989,7 @@ html {
 }
 
 .top-information-layout {
-	margin-top: 8.5625rem;
+	margin-top: 9.875rem;
 }
 
 .top-price-layout {
@@ -4053,7 +4054,7 @@ html {
 
 .about__body {
 	display: flex;
-	margin-top: 1.25rem;
+	margin-top: 0.25rem;
 	position: absolute;
 	right: 0;
 	top: 28%;
@@ -4122,7 +4123,7 @@ html {
 }
 
 .blog__button {
-	margin-top: 4.375rem;
+	margin-top: 5.375rem;
 }
 
 .button:hover::after {
@@ -4179,10 +4180,6 @@ html {
 	font-size: 2.5rem;
 }
 
-.campaign__button {
-	margin-top: 3.75rem;
-}
-
 .campaign-cards {
 	position: relative;
 }
@@ -4196,7 +4193,11 @@ html {
 }
 
 .campaign__button {
-	margin-top: 3.75rem;
+	margin-top: 4.75rem;
+}
+
+.swiper-slide {
+	margin: 0 auto;
 }
 
 .swiper-button-prev {
@@ -4589,7 +4590,7 @@ html {
 }
 
 .information {
-	padding-bottom: 6.75rem;
+	padding-bottom: 4.0625rem;
 	padding-top: 6.0625rem;
 }
 
@@ -4631,7 +4632,7 @@ html {
 .mv__header {
 	left: 50%;
 	text-align: center;
-	transform: translate(-50%, 0%);
+	transform: translate(-50%, -40%);
 	width: 100%;
 }
 
@@ -4808,7 +4809,7 @@ html {
 }
 
 .campaign__button {
-	margin-top: 3.75rem;
+	margin-top: 4.75rem;
 }
 
 .page-blog-detail__body {
@@ -5311,7 +5312,7 @@ html {
 }
 
 .price__sub-title:not(:first-child) {
-	margin-top: 2.625rem;
+	margin-top: 1.375rem;
 }
 
 .price__list-item {
@@ -5536,7 +5537,7 @@ html {
 }
 
 .voice__button {
-	margin-top: 5rem;
+	margin-top: 4rem;
 }
 
 }

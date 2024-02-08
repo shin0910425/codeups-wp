@@ -27,22 +27,24 @@
   margin-top: rem(45);
 
   @include mq("md") {
-    margin-top: rem(60);
+    margin-top: rem(76);
   }
 }
 
 .swiper-wrapper {}
 
-// .swiper-slide {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: auto;
 
-//   @include mq("md") {
-//     margin: 0 auto;
-//   }
-// }
+//pc無しにする
+.swiper-slide {
+  // display: flex;
+  // justify-content: center;
+  align-items: center;
+  height: auto;
+
+  @include mq("md") {
+    margin: 0 auto;
+  }
+}
 
 /* sp時のスタイル */
 @media screen and (max-width: 767px) {

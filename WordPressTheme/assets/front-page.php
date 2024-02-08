@@ -72,7 +72,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
 
                         <div>
                           <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail(array('223,334')); ?>
+                            <?php the_post_thumbnail('full'); ?>
                           <?php else : ?>
                             <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
                           <?php endif; ?>
@@ -215,7 +215,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                     </div>
                   </div>
                   <div class="blog-card__body">
-                    <p class="blog-card__text"><?php echo wp_trim_words(get_the_content(), 85, '…'); ?>
+                    <p class="blog-card__text"><?php echo wp_trim_words(get_the_content(), 85, '…'); ?></p>
                   </div>
                 </a>
               </div>

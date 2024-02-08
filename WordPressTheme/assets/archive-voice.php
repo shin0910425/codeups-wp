@@ -10,6 +10,7 @@
 <!-- パンくず -->
 <?php get_template_part('parts/breadcrumb') ?>
 
+<main>
 <section class="page-voice page-voice-layout">
   <div class="page-voice__icon-image1">
     <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">

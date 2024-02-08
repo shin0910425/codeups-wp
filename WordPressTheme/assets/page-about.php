@@ -10,69 +10,69 @@
 <!-- パンくず -->
 <?php get_template_part('parts/breadcrumb') ?>
 
-
-<section id="about" class="page-about page-about-layout">
-  <div class="page-about__icon-image1">
-    <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
-  </div>
-  <div class="page-about__icon-image">
-    <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img4.png" alt="キンギョハナダイのアイコン">
-  </div>
-  <div class="page-about__inner inner">
-    <div class="page-about__container">
-      <div class="page-about__img-box">
-        <div class="page-about__image-1">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/about_img1.jpg" alt="屋根の上にシーサーの置き物">
+<main>
+  <section id="about" class="page-about page-about-layout">
+    <div class="page-about__icon-image1">
+      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+    </div>
+    <div class="page-about__icon-image">
+      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img4.png" alt="キンギョハナダイのアイコン">
+    </div>
+    <div class="page-about__inner inner">
+      <div class="page-about__container">
+        <div class="page-about__img-box">
+          <div class="page-about__image-1">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/common/about_img1.jpg" alt="屋根の上にシーサーの置き物">
+          </div>
+          <div class="page-about__image-2">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/common/about_img2.jpg" alt="魚の群れ">
+          </div>
         </div>
-        <div class="page-about__image-2">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/about_img2.jpg" alt="魚の群れ">
+        <div class="page-about__body">
+          <h3 class="page-about__sub-title">Dive into<br>
+            the Ocean</h3>
+          <div class="page-about__text-box">
+            <?php the_content(); ?>
+          </div>
         </div>
       </div>
-      <div class="page-about__body">
-        <h3 class="page-about__sub-title">Dive into<br>
-          the Ocean</h3>
-        <div class="page-about__text-box">
-          <?php the_content(); ?>
-        </div>
+      <div class="page-about__title section-header">
+        <p class="section-header__sub">Gallery</p>
+        <h2 class="section-header__main">フォト</h2>
       </div>
-    </div>
-    <div class="page-about__title section-header">
-      <p class="section-header__sub">Gallery</p>
-      <h2 class="section-header__main">フォト</h2>
-    </div>
 
-    <div class="page-about__gallery about-gallery-layout">
-      <div class="about-gallery">
-        <div class="about-gallery__list gallery-list">
-          <?php
-          $gallery_group = SCF::get('gallery-group', get_page_by_path('about')->ID);
+      <div class="page-about__gallery about-gallery-layout">
+        <div class="about-gallery">
+          <div class="about-gallery__list gallery-list">
+            <?php
+            $gallery_group = SCF::get('gallery-group', get_page_by_path('about')->ID);
 
-          if ($gallery_group) {
-            foreach ($gallery_group as $index => $fields) :
-              $image_url = $fields['gallery-image'];
-          ?>
-              <div class="gallery-list__box">
-                <div class="gallery-list__item js-modal-open" data-target="<?php echo $index + 1; ?>">
-                  <div class="gallery-list__item">
-                    <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
-                  </div>
-                </div>
-                <div class="gallery-list__modal modal js-modal js-modal-close" id="<?php echo $index + 1; ?>">
-                  <div class="modal__inner">
-                    <div class="modal__img">
+            if ($gallery_group) {
+              foreach ($gallery_group as $index => $fields) :
+                $image_url = $fields['gallery-image'];
+            ?>
+                <div class="gallery-list__box">
+                  <div class="gallery-list__item js-modal-open" data-target="<?php echo $index + 1; ?>">
+                    <div class="gallery-list__item">
                       <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
                     </div>
                   </div>
+                  <div class="gallery-list__modal modal js-modal js-modal-close" id="<?php echo $index + 1; ?>">
+                    <div class="modal__inner">
+                      <div class="modal__img">
+                        <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-          <?php
-            endforeach;
-          }
-          ?>
+            <?php
+              endforeach;
+            }
+            ?>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<?php get_footer(); ?>
+  <?php get_footer(); ?>
