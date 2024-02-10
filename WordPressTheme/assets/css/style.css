@@ -2408,6 +2408,7 @@ span.wpcf7-spinner {
 
 .page-blog__ranking-img img {
 	-o-object-fit: cover;
+	aspect-ratio: 121/90;
 	height: 100%;
 	left: 0;
 	object-fit: cover;
