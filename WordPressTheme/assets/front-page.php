@@ -259,19 +259,18 @@ $sitemap = esc_url(home_url('/sitemap/'));
           while ($the_query->have_posts()) : $the_query->the_post();
         ?>
             <li class="voice-cards__item voice-card">
-              <a href="<?php echo esc_url(home_url('/voice')); ?>" class="voice-card__link">
+              <div class="voice-card__link">
                 <div class="voice-card__box">
                   <div class="voice-card__item">
                     <div class="voice-card__mete">
-                      <p class="voice-card__category">
-                        <?php
-                        // voice-meta グループフィールドからサブフィールドの値を取得
-                        $voice_meta = get_field('voice-meta');
+                      <?php
+                      // voice-meta グループフィールドからサブフィールドの値を取得
+                      $voice_meta = get_field('voice-meta');
 
-                        // voice-age と voice-sex の値を変数に格納
-                        $voice_age = $voice_meta['voice-age'];
-                        $voice_sex = $voice_meta['voice-sex'];
-                        ?></p>
+                      // voice-age と voice-sex の値を変数に格納
+                      $voice_age = $voice_meta['voice-age'];
+                      $voice_sex = $voice_meta['voice-sex'];
+                      ?>
                       <div class="voice-card__category">
                         <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
                       </div>
@@ -286,7 +285,6 @@ $sitemap = esc_url(home_url('/sitemap/'));
                         }
                         ?>
                       </ul>
-
                     </div>
                     <p class="voice-card__title"><?php the_title(); ?></p>
                   </div>
@@ -303,7 +301,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                 <div class="voice-card__body">
                   <p class="voice-card__text"><?php the_content(); ?></p>
                 </div>
-              </a>
+              </div>
             </li>
         <?php
           endwhile;
