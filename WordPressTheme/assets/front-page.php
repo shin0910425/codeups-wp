@@ -271,7 +271,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                         // voice-age と voice-sex の値を変数に格納
                         $voice_age = $voice_meta['voice-age'];
                         $voice_sex = $voice_meta['voice-sex'];
-                        ?>
+                        ?></p>
                       <div class="voice-card__category">
                         <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
                       </div>
