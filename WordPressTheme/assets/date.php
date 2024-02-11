@@ -32,7 +32,9 @@
                         <?php endif; ?>
                       </div>
                       <div class="blog-card__mete">
-                        <time class="blog-card__time"><?php the_time('Y.m/d') ?></time>
+                        <!-- <time class="blog-card__time"><?php the_time('Y.m/d') ?></time> -->
+                        <time class="blog-card__time" datetime="<?php echo get_the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
+
                         <h3 class="blog-card__title"><?php the_title(); ?></h3>
                       </div>
                     </div>

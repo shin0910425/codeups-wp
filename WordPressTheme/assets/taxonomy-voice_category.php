@@ -47,17 +47,28 @@
                         $voice_sex = $voice_meta['voice-sex'];
                         ?>
                         <div class="voice-card__category">
-                          <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
+                          <div class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</div>
                         </div>
 
-                        <div class="voice-card__tag">
+                        <!-- <div class="voice-card__tag">
                           <?php
                           $terms = get_the_terms($post->ID, 'voice_category');
                           foreach ($terms as $term) {
                             echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
                           }
                           ?>
-                        </div>
+                        </div> -->
+                        <ul class="voice-card__tag">
+                          <?php
+                          $terms = get_the_terms($post->ID, 'voice_category');
+                          if (!empty($terms) && !is_wp_error($terms)) {
+                            foreach ($terms as $term) {
+                              echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+                            }
+                          }
+                          ?>
+                        </ul>
+
 
                       </div>
                       <h2 class="voice-card__title"><?php the_title(); ?></h2>

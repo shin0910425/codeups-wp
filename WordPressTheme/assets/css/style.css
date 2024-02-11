@@ -2720,10 +2720,6 @@ span.wpcf7-spinner {
 	font-weight: 500;
 }
 
-.page-campaign__tab-list a:hover:after {
-	display: 500;
-}
-
 .page-campaign__tab-item {
 	max-width: 100%;
 	width: 9.375rem;
@@ -3274,10 +3270,6 @@ span.wpcf7-spinner {
 	background: #408F95;
 	color: #fff;
 	font-weight: 500;
-}
-
-.page-voice__tab-list a:hover:after {
-	display: 500;
 }
 
 .page-voice__tab-item {

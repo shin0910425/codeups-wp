@@ -22,7 +22,9 @@
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <div class="page-blog-detail__mete">
-                <time datetime="<?php the_time('c') ?>" class="blog-card__time"><?php the_time('Y.m/d') ?></time>
+                <!-- <time datetime="<?php the_time('c') ?>" class="blog-card__time"><?php the_time('Y.m/d') ?></time> -->
+                <time class="blog-card__time" datetime="<?php echo get_the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
+
               </div>
               <div class="page-blog-detail__container">
                 <h2 class="page-blog-detail__title"><?php the_title(); ?></h2>

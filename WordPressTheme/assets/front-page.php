@@ -210,7 +210,9 @@ $sitemap = esc_url(home_url('/sitemap/'));
                       <?php the_post_thumbnail('medium', array('class' => 'img')); ?>
                     </div>
                     <div class="blog-card__mete">
-                      <time class="blog-card__time"><?php echo get_the_date('Y.m/d'); ?></time>
+                      <!-- <time class="blog-card__time"><?php echo get_the_date('Y.m/d'); ?></time> -->
+                      <time class="blog-card__time" datetime="<?php echo get_the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
+
                       <h3 class="blog-card__title"><?php the_title(); ?></h3>
                     </div>
                   </div>
@@ -274,13 +276,24 @@ $sitemap = esc_url(home_url('/sitemap/'));
                         <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
                       </div>
                       </p>
-                      <p class="voice-card__tag">
+                      <!-- <p class="voice-card__tag">
                         <?php
                         $terms = get_the_terms($post->ID, 'voice_category');
                         foreach ($terms as $term) {
                           echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
                         }
-                        ?></p>
+                        ?></p> -->
+                      <ul class="voice-card__tag">
+                        <?php
+                        $terms = get_the_terms($post->ID, 'voice_category');
+                        if (!empty($terms) && !is_wp_error($terms)) {
+                          foreach ($terms as $term) {
+                            echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+                          }
+                        }
+                        ?>
+                      </ul>
+
                     </div>
                     <p class="voice-card__title"><?php the_title(); ?></p>
                   </div>
