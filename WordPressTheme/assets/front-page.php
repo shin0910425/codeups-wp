@@ -275,14 +275,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                       <div class="voice-card__category">
                         <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
                       </div>
-                      </p>
-                      <!-- <p class="voice-card__tag">
-                        <?php
-                        $terms = get_the_terms($post->ID, 'voice_category');
-                        foreach ($terms as $term) {
-                          echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
-                        }
-                        ?></p> -->
+
                       <ul class="voice-card__tag">
                         <?php
                         $terms = get_the_terms($post->ID, 'voice_category');
