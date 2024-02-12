@@ -83,7 +83,7 @@
                     </div>
                   </div>
                   <div class="voice-card__body">
-                    <p class="voice-card__text"><?php the_content(); ?></p>
+                    <div class="voice-card__text"><?php the_content(); ?></div>
                   </div>
                 </div>
               </li>

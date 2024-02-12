@@ -18,7 +18,7 @@
     <div class="page-voice__inner inner">
       <div class="page-voice__tub page-voice__tab">
         <div class="page-voice__tab-list">
-          <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-voice__tab-item" data-filter="catAll">ALL</a>
+          <div class="page-voice__tab-item" data-filter="catAll">ALL</div>
           <?php
           $args = [
             'taxonomy' => 'voice_category'
@@ -34,7 +34,7 @@
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <li class="page-voice__item voice-card" data-category="catCourse">
-                <a href="#" class="voice-card__link">
+                <div class="voice-card__link">
                   <div class="voice-card__box">
                     <div class="voice-card__item">
                       <div class="voice-card__mete">
@@ -84,9 +84,9 @@
                     </div>
                   </div>
                   <div class="voice-card__body">
-                    <p class="voice-card__text"><?php the_content(); ?></p>
+                    <div class="voice-card__text"><?php the_content(); ?></div>
                   </div>
-                </a>
+                </div>
               </li>
           <?php endwhile;
           endif; ?>
