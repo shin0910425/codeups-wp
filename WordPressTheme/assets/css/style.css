@@ -668,7 +668,7 @@ body.active {
 	width: 17.5rem;
 }
 
-.campaign-cards__item--sideber-size {
+.campaign-cards__item.campaign-cards__item--sideber-size {
 	height: auto;
 	max-width: 100%;
 	width: 100%;
