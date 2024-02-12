@@ -665,7 +665,6 @@ body.active {
 .campaign-cards__item {
 	height: auto;
 	max-width: 100%;
-	width: 17.5rem;
 }
 
 .campaign__inner {
