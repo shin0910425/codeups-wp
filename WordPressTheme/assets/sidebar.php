@@ -114,7 +114,7 @@
       <?php if ($the_query->have_posts()) : ?>
         <ul class="campaign-cards__items">
           <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-            <li class="campaign-cards__item page-blog__sidebar--layout">
+            <li class="campaign-cards__item campaign-cards__item--sideber-size page-blog__sidebar--layout">
 
               <div class="campaign-card">
                 <div class="campaign-card__container">
