@@ -18,7 +18,7 @@
     <div class="page-voice__inner inner">
       <div class="page-voice__tub page-voice__tab">
         <div class="page-voice__tab-list">
-          <div class="page-voice__tab-item" data-filter="catAll">ALL</div>
+          <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-voice__tab-item" data-filter="catAll">ALL</a>
           <?php
           $args = [
             'taxonomy' => 'voice_category'
