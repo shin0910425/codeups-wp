@@ -158,10 +158,6 @@ body.active {
 	margin-top: 2.5rem;
 }
 
-.breadcrumb-layout {
-	margin-top: 0.5rem;
-}
-
 .breadcrumb-layout__404 {
 	margin-top: -1.25rem;
 	padding-top: 6.625rem;
@@ -191,11 +187,7 @@ body.active {
 	margin-top: 3.25rem;
 }
 
-.page-blog__sidebar--layout {
-	margin-top: 1.875rem;
-}
-
-.campaign-layout {
+.page-campaign-layout {
 	margin-top: 3.25rem;
 }
 
@@ -240,7 +232,7 @@ body.active {
 }
 
 .top-contact-layout {
-	margin-top: 5.125rem;
+	margin-top: 6rem;
 }
 
 .top-information-layout {
@@ -427,6 +419,7 @@ body.active {
 
 .breadcrumb {
 	color: #0D2936;
+	margin-top: 0.5rem;
 }
 
 .breadcrumb--404 {
@@ -895,6 +888,18 @@ body.active {
 	margin-top: 0.25rem;
 }
 
+.content__tel {
+	margin-top: -19px;
+}
+
+.content__time {
+	margin-top: 4px;
+}
+
+.content__holiday {
+	margin-top: 3px;
+}
+
 .contact__box form {
 	display: none;
 }
@@ -918,7 +923,7 @@ body.active {
 }
 
 .contact__title.section-header {
-	margin-top: 3.125rem;
+	margin-top: 2.6875rem;
 }
 
 .contact-title.section-header__sub span {
@@ -939,7 +944,7 @@ body.active {
 }
 
 .contact__button {
-	margin-top: 1.875rem;
+	margin-top: 2.5rem;
 	text-align: center;
 }
 
@@ -1009,7 +1014,7 @@ body.active {
 
 .footer {
 	background-color: #408F95;
-	padding-bottom: 2.9375rem;
+	padding-bottom: 3.5rem;
 	padding-top: 1.5625rem;
 }
 
@@ -1032,15 +1037,13 @@ body.active {
 }
 
 .footer__logo {
-	max-width: 8.5rem;
-	padding-left: 0.9375rem;
+	max-width: 7.6875rem;
 	width: 100%;
 }
 
 .footer__icon {
 	display: flex;
-	margin-left: 0.9375rem;
-	margin-top: 0.9375rem;
+	margin-top: 1.1875rem;
 }
 
 .footer__icon img {
@@ -1050,7 +1053,7 @@ body.active {
 }
 
 .footer__icon-instagram {
-	margin-left: 0.625rem;
+	margin-left: 1.0625rem;
 }
 
 .footer__nav {
@@ -1060,7 +1063,7 @@ body.active {
 .footer__nav-body {
 	display: flex;
 	justify-content: center;
-	margin-top: 1.5625rem;
+	margin-top: -0.1875rem;
 	width: 100%;
 }
 
@@ -1082,7 +1085,7 @@ body.active {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.125;
-	padding: 0.75rem;
+	margin-top: 1.5rem;
 }
 
 .sp-nav__sub-list a {
@@ -1096,7 +1099,7 @@ body.active {
 	font-size: 1rem;
 	font-weight: 700;
 	line-height: 1.125;
-	padding: 0.75rem;
+	margin-top: 2.4375rem;
 }
 
 .footer__box {
@@ -1120,7 +1123,7 @@ body.active {
 }
 
 .footer__copyright {
-	margin-top: 1.5625rem;
+	margin-top: 2.25rem;
 }
 
 .footer__copyright small {
@@ -1811,8 +1814,8 @@ span.wpcf7-spinner {
 .inner {
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
 	width: 100%;
 }
 
@@ -2580,8 +2583,9 @@ span.wpcf7-spinner {
 	-o-object-fit: cover;
 	aspect-ratio: 280/188;
 	height: auto;
+	max-width: 100%;
 	object-fit: cover;
-	width: 100%;
+	width: 17.5rem;
 }
 
 .page-campaign-card__body {
@@ -2612,7 +2616,7 @@ span.wpcf7-spinner {
 	font-weight: normal;
 	line-height: 1.5;
 	margin-top: 0.25rem;
-	padding-bottom: 0;
+	padding-bottom: 0.625rem;
 }
 
 .page-campaign-card__charge-text {
@@ -2622,7 +2626,8 @@ span.wpcf7-spinner {
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.7142;
-	padding-top: 1rem;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5625rem;
 	text-align: center;
 }
 
@@ -2643,7 +2648,6 @@ span.wpcf7-spinner {
 	font-size: 1.25rem;
 	font-weight: 700;
 	line-height: 1;
-	padding: 0 0.125rem 0.1875rem 1.0625rem;
 	text-decoration: none;
 	text-decoration-color: #C94800;
 	text-decoration-line: line-through;
@@ -2657,6 +2661,10 @@ span.wpcf7-spinner {
 	font-weight: 700;
 	line-height: 1;
 	margin-left: 1rem;
+}
+
+.page-campaign-card__button {
+	margin-top: 1rem;
 }
 
 .page-campaign {
@@ -2678,12 +2686,11 @@ span.wpcf7-spinner {
 }
 
 .page-campaign__tab-list {
-	grid-gap: 22px;
+	grid-gap: 1rem 1.3125rem;
 	display: grid;
-	gap: 22px;
+	gap: 1rem 1.3125rem;
 	grid-template-columns: repeat(2, 1fr);
 	list-style-type: none;
-	margin-top: 3.3125rem;
 	max-width: 100%;
 	padding: 0;
 }
@@ -2696,7 +2703,7 @@ span.wpcf7-spinner {
 	font-size: 0.875rem;
 	line-height: 1;
 	margin-left: 2px;
-	padding: 6px 6px 6px;
+	padding: 0.5rem 0.375rem;
 	position: relative;
 	text-align: center;
 }
@@ -2728,7 +2735,7 @@ span.wpcf7-spinner {
 
 .page-campaign__tab-item {
 	max-width: 100%;
-	width: 9.375rem;
+	width: 10.125rem;
 }
 
 .page-campaign__tab-item a {
@@ -2742,7 +2749,7 @@ span.wpcf7-spinner {
 	flex-direction: column;
 	gap: 2.5rem;
 	justify-content: center;
-	margin-top: 2.5rem;
+	margin-top: 2.1875rem;
 }
 
 .page-campaign__content {
@@ -3303,7 +3310,7 @@ span.wpcf7-spinner {
 }
 
 .pagination {
-	margin-top: 4.6875rem;
+	margin-top: 4.1875rem;
 	text-align: center;
 }
 
@@ -3314,12 +3321,12 @@ span.wpcf7-spinner {
 	border: 2px solid #408F95;
 	color: #408F95;
 	display: inline-block;
-	height: 3.125rem;
+	height: 2.375rem;
 	line-height: 1;
 	margin: 8px 12px;
-	padding: 0.8125rem 0;
+	padding: 0.5rem 0;
 	text-decoration: none;
-	width: 3.125rem;
+	width: 2.375rem;
 }
 
 .pagination a:hover {
@@ -3542,7 +3549,7 @@ span.wpcf7-spinner {
 	font-size: 0.75rem;
 	font-weight: 400;
 	line-height: 1.5;
-	margin-top: 0.25rem;
+	margin-top: -0.4375rem;
 	text-align: center;
 }
 
@@ -3617,7 +3624,6 @@ span.wpcf7-spinner {
 	align-items: center;
 	color: #fff;
 	display: flex;
-	font-family: "Gotu", sans-serif;
 	font-size: 2.5rem;
 	font-weight: 400;
 	justify-content: center;
@@ -3910,17 +3916,13 @@ html {
 	margin-top: 5rem;
 }
 
-.breadcrumb-layout {
-	margin-top: 0.5rem;
-}
-
 .breadcrumb-layout__404 {
 	margin-top: -1.25rem;
 	padding-top: 7.25rem;
 }
 
 .footer-layout {
-	margin-top: 9.25rem;
+	margin-top: 10.0625rem;
 }
 
 .page-404-layout {
@@ -3935,11 +3937,7 @@ html {
 	margin-top: 9.375rem;
 }
 
-.page-blog__sidebar--layout {
-	margin-top: 1.875rem;
-}
-
-.campaign-layout {
+.page-campaign-layout {
 	margin-top: 9.375rem;
 }
 
@@ -3984,7 +3982,7 @@ html {
 }
 
 .top-contact-layout {
-	margin-top: 9.5rem;
+	margin-top: 8.5625rem;
 }
 
 .top-information-layout {
@@ -4264,7 +4262,7 @@ html {
 
 .contact__icon-image {
 	height: 8.625rem;
-	top: -3.75rem;
+	top: -2.75rem;
 	width: 18.75rem;
 }
 
@@ -4272,7 +4270,7 @@ html {
 	box-shadow: 0.125rem 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.25);
 	display: inline-block;
 	max-width: 67.5rem;
-	padding: 3.25rem 7rem 5.6875rem 3.125rem;
+	padding: 3.25rem 7rem 5rem 3.125rem;
 	width: 100%;
 }
 
@@ -4283,7 +4281,7 @@ html {
 
 .contact__contain {
 	border-right: 0.0625rem solid #408F95;
-	margin-top: 1rem;
+	margin-top: 1.625rem;
 	padding-right: 5.125rem;
 }
 
@@ -4315,7 +4313,7 @@ html {
 
 .contact__body {
 	margin-left: 5rem;
-	margin-top: 2.25rem;
+	margin-top: 2.6875rem;
 }
 
 .contact__title.section-header {
@@ -4370,9 +4368,9 @@ html {
 }
 
 .footer__logo {
-	margin-left: -0.9375rem;
-	margin-top: 0.625rem;
-	max-width: 13.25rem;
+	margin-left: -0.125rem;
+	margin-top: 0.3125rem;
+	max-width: 12.375rem;
 }
 
 .footer__icon {
@@ -4386,15 +4384,19 @@ html {
 }
 
 .footer__nav-body {
-	margin-top: 0.875rem;
+	margin-top: 1.8125rem;
 }
 
 .footer__nav-item a {
 	text-align: left;
 }
 
+.footer__nav-item a {
+	margin-top: 0rem;
+}
+
 .footer__box {
-	margin: 0;
+	margin-top: 0rem;
 }
 
 .footer__nav-left,
@@ -4419,11 +4421,11 @@ html {
 
 .footer__nav-item {
 	display: block;
-	margin-bottom: 0.625rem;
+	padding-bottom: 2.3125rem;
 }
 
 .footer__copyright {
-	margin-top: 3.5rem;
+	margin-top: 2.6875rem;
 }
 
 .footer__copyright small {
@@ -4907,16 +4909,16 @@ html {
 }
 
 .page-campaign-card__link {
-	max-width: 32.5rem;
 	width: 100%;
 }
 
 .page-campaign-card__link img {
 	aspect-ratio: 520/347;
+	width: 32.5rem;
 }
 
 .page-campaign-card__body {
-	padding: 1.4375rem 1rem 2.375rem;
+	padding: 1.5rem 1.4375rem 2.75rem;
 }
 
 .page-campaign-card__mete {
@@ -4931,7 +4933,7 @@ html {
 
 .page-campaign-card__title {
 	font-size: 1.5rem;
-	margin-top: 0rem;
+	margin-top: 0.25rem;
 	padding-bottom: 0.5rem;
 }
 
@@ -4939,6 +4941,7 @@ html {
 	letter-spacing: 0.05em;
 	line-height: 1.5;
 	padding-bottom: 0.5rem;
+	padding-top: 1.5rem;
 }
 
 .page-campaign-card__charge-box {
@@ -4951,6 +4954,7 @@ html {
 
 .page-campaign-card__charge-price-2 {
 	font-size: 2.5rem;
+	margin-left: 2.3125rem;
 }
 
 .page-campaign-card_box {
@@ -4991,7 +4995,7 @@ html {
 }
 
 .page-campaign-card__button {
-	margin-top: 1rem;
+	margin-top: 0.75rem;
 	text-align: center;
 }
 
@@ -5003,7 +5007,7 @@ html {
 
 .page-campaign__tab-list {
 	display: flex;
-	margin-top: 9.375rem;
+	gap: 2rem;
 }
 
 .page-campaign__tab-item {
@@ -5011,10 +5015,10 @@ html {
 }
 
 .page-campaign__contents {
-	grid-gap: 2.5rem;
+	grid-gap: 4.75rem 2.5rem;
 	align-items: normal;
 	display: grid;
-	gap: 2.5rem;
+	gap: 4.75rem 2.5rem;
 	grid-template-columns: repeat(2, 1fr);
 }
 
@@ -5267,6 +5271,10 @@ html {
 	width: 100%;
 }
 
+.pagination {
+	margin-top: 4.375rem;
+}
+
 .pc-nav__item a {
 	padding: 0 max(0.6875rem, min(1.3vw, 1.125rem));
 }
@@ -5348,6 +5356,10 @@ html {
 	font-size: 2.5rem;
 }
 
+.section-header__main {
+	margin-top: -0.25rem;
+}
+
 .section-header__sub.section-header__sub--white {
 	color: #fff;
 }
@@ -5362,6 +5374,7 @@ html {
 
 .sub-mv__header {
 	text-align: center;
+	top: 58%;
 	width: 100%;
 }
 

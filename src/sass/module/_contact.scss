@@ -21,7 +21,7 @@
   height: rem(50);
 
   @include mq("md") {
-    top: rem(-60);
+    top: rem(-44);
     width: rem(300);
     height: rem(138);
   }
@@ -41,7 +41,7 @@
     display: inline-block;
     max-width: rem(1080);
     width: 100%;
-    padding: rem(52) rem(112) rem(91) rem(50);
+    padding: rem(52) rem(112) rem(80) rem(50);
     box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   }
 }
@@ -58,7 +58,7 @@
   width: 100%;
 
   @include mq("md") {
-    margin-top: rem(16);
+    margin-top: rem(26);
     padding-right: rem(82);
     border-right: rem(1) solid $green3;
   }
@@ -120,6 +120,25 @@
   margin-top: rem(4);
 }
 
+.content__address {
+  // margin-top: 10px;
+}
+
+.content__tel {
+  margin-top: -19px;
+// padding-bottom: 20px;
+}
+
+.content__time {
+  margin-top: 4px;
+
+}
+
+.content__holiday {
+  margin-top: 3px;
+
+}
+
 .contact__box form {
   display: none;
 }
@@ -154,7 +173,7 @@
 .contact__body {
   @include mq("md") {
     margin-left: rem(80);
-    margin-top: rem(36);
+    margin-top: rem(43);
   }
 }
 
@@ -171,7 +190,7 @@
 // }
 
 .contact__title.section-header {
-  margin-top: rem(50);
+  margin-top: rem(43);
 
   @include mq("md") {
     margin-top: 0;
@@ -198,7 +217,7 @@
 }
 
 .contact__button {
-  margin-top: rem(30);
+  margin-top: rem(40);
   text-align: center;
 
   @include mq("md") {

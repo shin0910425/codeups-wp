@@ -36,13 +36,14 @@
 
 .section-header__main {
   font-size: rem(12);
-  margin-top: rem(4);
+  margin-top: rem(-7);
   font-family: $jp-family;
   font-weight: $regular;
   line-height: 1.5;
   color: $green3;
   text-align: center;
   @include mq("md") {
+  margin-top: rem(-4);
     // padding-bottom: rem(80);
   }
 }

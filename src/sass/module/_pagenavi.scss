@@ -1,8 +1,11 @@
 @use "global" as *;
 
 .pagination {
-  margin-top: rem(75);
+  margin-top: rem(67);
   text-align: center;
+  @include mq("md") {
+  margin-top: rem(70);
+  }
 }
 
 .pagination a,
@@ -12,9 +15,9 @@
   text-decoration: none;
   // border-radius: 6px;
   background: #fff;
-  width: rem(50);
-  height: rem(50);
-  padding: rem(13) 0;
+  width: rem(38);
+  height: rem(38);
+  padding: rem(8) 0;
   border: 2px solid $green3;
   color: $green3;
   line-height: 1;

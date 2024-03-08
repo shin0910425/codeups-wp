@@ -22,19 +22,21 @@
   width: 100%;
 
   @include mq("md") {
-    max-width: rem(520);
+    // max-width: rem(520);
     width: 100%;
   }
 }
 
 .page-campaign-card__link img {
-  width: 100%;
+  width: rem(280);
+  max-width: 100%;
   aspect-ratio: 280/188;
   object-fit: cover;
   height: auto;
 
   @include mq("md") {
     aspect-ratio: 520/347;
+    width: rem(520);
   }
 }
 
@@ -48,7 +50,7 @@
   padding-bottom: rem(24);
 
   @include mq("md") {
-    padding: rem(23) rem(16) rem(38);
+    padding: rem(24) rem(23) rem(44);
   }
 }
 
@@ -82,7 +84,7 @@
 }
 
 .page-campaign-card__title {
-  padding-bottom: 0;
+  padding-bottom: rem(10);
   border: none;
   font-size: rem(16);
   line-height: 1.5;
@@ -94,13 +96,14 @@
 
   @include mq("md") {
   font-size: rem(24);
-    margin-top: rem(0);
+    margin-top: rem(4);
     padding-bottom: rem(8);
   }
 }
 
 .page-campaign-card__charge-text {
-  padding-top: rem(16);
+  padding-top: rem(9);
+  padding-bottom: rem(8);
   font-size: rem(14);
   font-family: $jp-family;
   font-weight: $regular;
@@ -110,6 +113,7 @@
   border-top: rem(1) solid $green3;
 
   @include mq("md") {
+    padding-top: rem(24);
     padding-bottom: rem(8);
     line-height: 1.5;
     letter-spacing: 0.05em;
@@ -142,7 +146,7 @@
   background-size: 100% rem(3);
   background-repeat: repeat-x;
   text-decoration: none;
-  padding: 0 rem(2) rem(3) rem(17);
+  // padding: 0 rem(2) rem(3) rem(17);
 
   @include mq("md") {
     font-size: rem(24);
@@ -158,6 +162,7 @@
 
   @include mq("md") {
     font-size: rem(40);
+  margin-left: rem(37);
   }
 }
 
@@ -207,8 +212,9 @@
 }
 
 .page-campaign-card__button {
-  @include mq("md") {
     margin-top: rem(16);
+  @include mq("md") {
+    margin-top: rem(12);
     text-align: center;
   }
 }

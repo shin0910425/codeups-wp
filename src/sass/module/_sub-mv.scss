@@ -9,6 +9,7 @@
 
   @include mq("md") {
     width: 100%;
+    top: 58%;
     text-align: center;
   }
 }
@@ -20,7 +21,7 @@
   // padding-top: rem(94);
   font-size: rem(40);
   font-weight: $regular;
-  font-family: $en-family;
+  // font-family: $en-family;
   line-height: 1;
   // letter-spacing: 0.05em;
   // text-indent: 0.52em;

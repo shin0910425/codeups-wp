@@ -92,7 +92,7 @@
     </div>
   </section>
 
-  <nav class="pagination u-desktop">
+  <nav class="pagination">
     <!-- ============= ページング ============= -->
     <?php
     $args = [

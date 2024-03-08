@@ -1,12 +1,12 @@
 @use "global" as *;
 
-.breadcrumb-layout {
-  margin-top: rem(8);
+// .breadcrumb-layout {
+//   margin-top: rem(8);
 
-  @include mq("md") {
-    margin-top: rem(8);
-  }
-}
+//   @include mq("md") {
+//     margin-top: rem(8);
+//   }
+// }
 
 .breadcrumb-layout__404 {
   margin-top: rem(-20);
