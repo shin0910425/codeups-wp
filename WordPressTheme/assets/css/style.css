@@ -183,6 +183,10 @@ body.active {
 	margin-top: 3.125rem;
 }
 
+.page-blog__sidebar-layout {
+	margin-top: 1.5rem;
+}
+
 .page-blog-layout {
 	margin-top: 3.25rem;
 }
@@ -201,6 +205,7 @@ body.active {
 
 .page-information-layout {
 	margin-top: 7.5rem;
+	padding-bottom: 0.4375rem;
 }
 
 .page-price-layout {
@@ -834,8 +839,8 @@ body.active {
 .contact__icon-image {
 	height: 3.125rem;
 	position: absolute;
-	right: calc(50% - min(48.5vw, 41.875rem));
-	top: -0.625rem;
+	right: calc(50% - min(46.5vw, 41.875rem));
+	top: -1.4375rem;
 	width: 6.8125rem;
 	z-index: 10;
 }
@@ -944,7 +949,7 @@ body.active {
 }
 
 .contact__button {
-	margin-top: 2.5rem;
+	margin-top: 1.8125rem;
 	text-align: center;
 }
 
@@ -1555,7 +1560,7 @@ span.wpcf7-spinner {
 
 .gallery-list__box:nth-of-type(6n+1) img,
 .gallery-list__box:nth-of-type(6n+6) img {
-	aspect-ratio: 300/440;
+	aspect-ratio: 300/454;
 }
 
 .header {
@@ -1681,7 +1686,7 @@ span.wpcf7-spinner {
 	cursor: pointer;
 	font-size: 0.875rem;
 	line-height: 1.5;
-	padding: 0.625rem 0.75rem;
+	padding: 0.5rem 0.9375rem;
 	text-align: center;
 	width: -moz-fit-content;
 	width: fit-content;
@@ -1737,7 +1742,7 @@ span.wpcf7-spinner {
 	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 1;
-	padding-bottom: 0.5rem;
+	padding-bottom: 0.3125rem;
 }
 
 .information-tab__text {
@@ -1894,7 +1899,7 @@ span.wpcf7-spinner {
 
 .mv__title {
 	color: #fff;
-	font-family: "Gotu", sans-serif;
+	font-family: "Lato", sans-serif;
 	font-size: 2.4375rem;
 	font-weight: 400;
 	letter-spacing: 0.52em;
@@ -1978,7 +1983,7 @@ span.wpcf7-spinner {
 	height: 3.4375rem;
 	left: calc(50% - min(48.5vw, 38.75rem));
 	position: absolute;
-	top: 33.625rem;
+	top: 32.25rem;
 	width: 7.5rem;
 	z-index: 10;
 }
@@ -1993,8 +1998,6 @@ span.wpcf7-spinner {
 }
 
 .page-about__container {
-	margin: auto;
-	margin-top: 4.1875rem;
 	max-width: 37.5rem;
 	position: relative;
 	width: 100%;
@@ -2007,7 +2010,6 @@ span.wpcf7-spinner {
 	justify-content: flex-end;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 1.6875rem;
 	max-width: 37.5rem;
 	position: relative;
 	width: 100%;
@@ -2039,7 +2041,7 @@ span.wpcf7-spinner {
 }
 
 .page-about__body {
-	margin-top: 3.125rem;
+	margin-top: 2.375rem;
 	padding-bottom: 2.5rem;
 }
 
@@ -2048,7 +2050,7 @@ span.wpcf7-spinner {
 	font-family: "Gotu", sans-serif;
 	font-size: 2.5rem;
 	font-weight: 400;
-	left: 5%;
+	left: 7%;
 	line-height: 1;
 	position: absolute;
 	top: 5%;
@@ -2072,7 +2074,7 @@ span.wpcf7-spinner {
 }
 
 .page-about__gallery {
-	padding-bottom: 1.625rem;
+	padding-bottom: 0.625rem;
 }
 
 .page-blog-card {
@@ -2301,6 +2303,7 @@ span.wpcf7-spinner {
 	display: grid;
 	gap: 2.5rem;
 	grid-template-columns: repeat(1, 1fr);
+	padding-bottom: 0.3125rem;
 }
 
 .page-blog__link {
@@ -2319,8 +2322,9 @@ span.wpcf7-spinner {
 }
 
 .page-blog__date {
-	font-size: 0.875rem;
+	font-size: 0.75rem;
 	line-height: 1;
+	vertical-align: top;
 }
 
 .page-blog__category {
@@ -2354,11 +2358,13 @@ span.wpcf7-spinner {
 }
 
 .page-blog__sidebar {
-	margin-top: 5rem;
+	margin-top: 4.5625rem;
+	padding: 0 1.25rem;
 }
 
 .page-blog__sidebar-item {
 	margin-top: 1.5rem;
+	padding-bottom: 1.25rem;
 }
 
 .page-blog__sidebar-item + .page-blog__sidebar-item {
@@ -2374,7 +2380,7 @@ span.wpcf7-spinner {
 	font-size: 1.5rem;
 	font-weight: 400;
 	line-height: 1;
-	padding: 0.8125rem 0 0.8125rem 0.5rem;
+	padding-left: 1.0625rem;
 }
 
 .page-blog__sidebar-title::before {
@@ -2477,8 +2483,8 @@ span.wpcf7-spinner {
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1.5rem;
 	font-weight: 500;
-	line-height: 1;
-	margin-top: 0.5rem;
+	line-height: 1.5;
+	margin-top: 0.25rem;
 }
 
 .page-blog__reviews-button {
@@ -2504,9 +2510,9 @@ span.wpcf7-spinner {
 	background: url(../images/common/triangle-right_img.png) center/cover;
 	content: "";
 	display: inline-block;
-	height: 1.5rem;
+	height: 1.125rem;
 	margin-right: 0.5rem;
-	width: 1.5rem;
+	width: 1.125rem;
 }
 
 .page-blog__year2.active::before {
@@ -2541,9 +2547,9 @@ span.wpcf7-spinner {
 	background: url(../images/common/triangle-right_img.png) center/cover;
 	content: "";
 	display: inline-block;
-	height: 1.5rem;
+	height: 1.125rem;
 	margin-right: 0.5rem;
-	width: 1.5rem;
+	width: 1.125rem;
 }
 
 .page-blog__category-month {
@@ -2866,9 +2872,9 @@ span.wpcf7-spinner {
 .page-information__icon-image1 {
 	display: block;
 	height: 3.4375rem;
-	left: calc(50% - min(48.5vw, 40rem));
+	left: calc(50% - min(46.5vw, 40rem));
 	position: absolute;
-	top: -1.5625rem;
+	top: -6rem;
 	width: 7.5rem;
 	z-index: -10;
 }
@@ -3528,6 +3534,8 @@ span.wpcf7-spinner {
 	font-size: 2rem;
 	font-weight: 400;
 	line-height: 1.25;
+	margin-left: 0.25rem;
+	margin-top: -0.1875rem;
 	text-align: center;
 }
 
@@ -3549,7 +3557,7 @@ span.wpcf7-spinner {
 	font-size: 0.75rem;
 	font-weight: 400;
 	line-height: 1.5;
-	margin-top: -0.4375rem;
+	margin-top: 0.25rem;
 	text-align: center;
 }
 
@@ -3624,6 +3632,7 @@ span.wpcf7-spinner {
 	align-items: center;
 	color: #fff;
 	display: flex;
+	font-family: "Lato", sans-serif;
 	font-size: 2.5rem;
 	font-weight: 400;
 	justify-content: center;
@@ -3930,7 +3939,12 @@ html {
 }
 
 .page-about-layout {
-	margin-top: 11.125rem;
+	margin-top: 9.125rem;
+	padding-bottom: 0.5rem;
+}
+
+.page-blog__sidebar-layout {
+	margin-top: 1.875rem;
 }
 
 .page-blog-layout {
@@ -3950,7 +3964,7 @@ html {
 }
 
 .page-information-layout {
-	margin-top: 9.375rem;
+	margin-top: 9.0625rem;
 }
 
 .page-price-layout {
@@ -3975,6 +3989,7 @@ html {
 
 .top-blog-layout {
 	margin-top: 0rem;
+	padding-top: 5.25rem;
 }
 
 .top-campaign-layout {
@@ -4089,10 +4104,6 @@ html {
 	grid-template-columns: repeat(3, 1fr);
 }
 
-.blog {
-	padding-top: 5.25rem;
-}
-
 .blog__bg {
 	height: 60.168%;
 	left: 0;
@@ -4145,7 +4156,11 @@ html {
 }
 
 .campaign-card__body {
-	padding: 1.4375rem 1rem 2.375rem;
+	padding: 1.4375rem 1rem 1.5625rem;
+}
+
+.campaign-card__body--small {
+	padding: 0.3125rem 1rem 1.5625rem;
 }
 
 .campaign-card__mete {
@@ -4511,6 +4526,15 @@ html {
 	grid-row: span 2;
 }
 
+.gallery-list__box img {
+	aspect-ratio: 580/359;
+}
+
+.gallery-list__box:nth-of-type(6n+1) img,
+.gallery-list__box:nth-of-type(6n+6) img {
+	aspect-ratio: 492/764;
+}
+
 .header {
 	height: 5.625rem;
 }
@@ -4546,7 +4570,7 @@ html {
 	font-size: 1.5rem;
 	justify-content: center;
 	line-height: 1;
-	padding: 1.875rem;
+	padding: 0.75rem 1.875rem;
 }
 
 .information-tab__menu-item + .information-tab__menu-item {
@@ -4557,12 +4581,15 @@ html {
 	display: block;
 	height: 4rem;
 	max-width: 100%;
-	padding-right: 0.5rem;
 	width: 4rem;
 }
 
 .information-tab__content {
-	margin-top: 1.5rem;
+	margin-top: 1.75rem;
+}
+
+.information-tab__content-item {
+	padding: 1.4375rem 1.5625rem;
 }
 
 .information-tab__body {
@@ -4573,6 +4600,7 @@ html {
 	align-content: center;
 	display: grid;
 	justify-content: center;
+	margin-top: 0.9375rem;
 	max-width: 30.75rem;
 	place-content: center;
 	width: 100%;
@@ -4675,7 +4703,7 @@ html {
 
 .page-about__icon-image1 {
 	height: 8.625rem;
-	top: 42.9375rem;
+	top: 41.125rem;
 	width: 18.75rem;
 	z-index: -10;
 }
@@ -4685,7 +4713,7 @@ html {
 	height: 8.625rem;
 	position: absolute;
 	right: calc(50% - min(48.5vw, 39.8125rem));
-	top: 90.25rem;
+	top: 89.1875rem;
 	width: 18.75rem;
 	z-index: 10;
 }
@@ -4701,7 +4729,6 @@ html {
 }
 
 .page-about__img-box {
-	margin-top: 2.625rem;
 	max-width: 67.5rem;
 }
 
@@ -4733,8 +4760,8 @@ html {
 	display: flex;
 	margin-top: 1.25rem;
 	position: absolute;
-	right: 0;
-	top: 28%;
+	right: -1%;
+	top: 23%;
 	width: 82%;
 }
 
@@ -4749,7 +4776,7 @@ html {
 }
 
 .page-about__text-box {
-	margin-top: 0.125rem;
+	margin-top: 1.6875rem;
 	max-width: 27.5rem;
 	width: 100%;
 }
@@ -4839,13 +4866,9 @@ html {
 
 .page-blog__icon-image1 {
 	height: 8.625rem;
+	left: calc(50% - min(42.5vw, 40rem));
 	top: -4.375rem;
 	width: 18.75rem;
-}
-
-.page-blog__inner {
-	max-width: 75rem;
-	padding: 0 1.5625rem;
 }
 
 .page-blog__wrapper {
@@ -4905,7 +4928,12 @@ html {
 .page-blog__sidebar {
 	margin-left: 4rem;
 	margin-top: 0;
-	width: 27%;
+	padding: 0 0 0 1.25rem;
+	width: 29%;
+}
+
+.page-blog__sidebar-item {
+	margin-top: 0rem;
 }
 
 .page-campaign-card__link {
@@ -5068,6 +5096,7 @@ html {
 
 .page-information__icon-image1 {
 	height: 8.625rem;
+	left: calc(50% - min(42.5vw, 40rem));
 	top: -4.25rem;
 	width: 18.75rem;
 }
@@ -5354,6 +5383,7 @@ html {
 
 .section-header__sub {
 	font-size: 2.5rem;
+	margin-top: 0rem;
 }
 
 .section-header__main {

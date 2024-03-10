@@ -114,7 +114,7 @@
       <?php if ($the_query->have_posts()) : ?>
         <ul class="campaign-cards__items">
           <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-            <li class="campaign-cards__item-sideber page-blog__sidebar--layout">
+            <li class="campaign-cards__item-sideber page-blog__sidebar-layout">
 
               <div class="campaign-card">
                 <div class="campaign-card__container">
@@ -127,7 +127,7 @@
                         <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
                       <?php endif; ?>
                     </div>
-                    <div class="campaign-card__body">
+                    <div class="campaign-card__body campaign-card__body--small">
 
                       <div class="campaign-card__body-head">
                         <h3 class="campaign-card__title campaign-card__title-center"><?php the_title(); ?></h3>

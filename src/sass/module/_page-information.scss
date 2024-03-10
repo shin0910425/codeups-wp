@@ -8,16 +8,17 @@
 }
 
 .page-information__icon-image1 {
-position: absolute;
+  position: absolute;
   display: block;
   z-index: -10;
-  left: calc(50% - min(48.5vw, rem(640)));
-  top: rem(-25);
+  left: calc(50% - min(46.5vw, rem(640)));
+  top: rem(-96);
   height: rem(55);
   width: rem(120);
   @include mq("md") {
       top: rem(-68);
       height: rem(138);
+      left: calc(50% - min(42.5vw, rem(640)));
       width: rem(300);
   }
 }

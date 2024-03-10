@@ -49,7 +49,7 @@
             </ul>
           <?php endif; ?>
 
-          <nav class="pagination u-desktop">
+          <nav class="pagination">
 
             <!-- ============= ページング ============= -->
             <?php

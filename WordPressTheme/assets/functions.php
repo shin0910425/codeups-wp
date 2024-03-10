@@ -9,6 +9,8 @@ function add_custom_scripts()
   wp_enqueue_style('google-fonts1', '//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
   wp_enqueue_style('google-fonts2', '//fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap');
   wp_enqueue_style('google-fonts3', '//fonts.googleapis.com/css2?family=Gotu:wght@400;500;700&display=swap');
+  wp_enqueue_style('google-fonts4', '//fonts.googleapis.com/css2?family=Lato&display=swap');
+
 
   // swiperのCSSの追加
   wp_enqueue_style('swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.css', false);

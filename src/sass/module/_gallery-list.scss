@@ -68,9 +68,15 @@
   height: 100%;
   aspect-ratio: 580/369;
   object-fit: cover;
+  @include mq("md") {
+    aspect-ratio: 580/359;
+  }
 }
 
 .gallery-list__box:nth-of-type(6n+1) img,
 .gallery-list__box:nth-of-type(6n+6) img {
-  aspect-ratio: 300/440;
+  aspect-ratio: 300/454;
+   @include mq("md") {
+  aspect-ratio: 492/764;
+  }
 }

@@ -15,8 +15,8 @@
 .contact__icon-image {
   position: absolute;
   z-index: 10;
-  right: calc(50% - min(48.5vw, rem(670)));
-  top: rem(-10);
+  right: calc(50% - min(46.5vw, rem(670)));
+  top: rem(-23);
   width: rem(109);
   height: rem(50);
 
@@ -217,7 +217,7 @@
 }
 
 .contact__button {
-  margin-top: rem(40);
+  margin-top: rem(29);
   text-align: center;
 
   @include mq("md") {

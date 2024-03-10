@@ -30,8 +30,9 @@
                 <h2 class="page-blog-detail__title"><?php the_title(); ?></h2>
                 <div class="page-blog-detail__image">
                   <?php if (get_the_post_thumbnail()) : ?>
-                    <!-- <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像"> -->
                     <?php the_post_thumbnail('full', array('class' => 'img')); ?>
+                    <!-- <?php the_post_thumbnail(array(345, 231)); ?> -->
+                    <!-- <?php the_post_thumbnail(array(700, 468)); ?> -->
                   <?php else : ?>
                     <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
                   <?php endif; ?>
