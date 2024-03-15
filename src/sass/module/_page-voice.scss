@@ -38,16 +38,16 @@
 .page-voice__tab-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+    gap: rem(16) rem(21);
   // width: rem(375);
   max-width: 100%;
-  margin-top: rem(53);
+  // margin-top: rem(53);
   padding: 0;
   list-style-type: none;
 
   @include mq("md") {
     display: flex;
-    margin-top: rem(150);
+    gap: rem(32);
   }
 }
 
@@ -58,7 +58,7 @@
   background: $white;
   color: $green3;
   position: relative;
-  padding: 6px 6px 6px;
+  padding: rem(8) rem(6);
   cursor: pointer;
   text-align: center;
   line-height: 1;
@@ -94,7 +94,7 @@
 // }
 
 .page-voice__tab-item {
-  width: rem(150);
+  width: rem(162);
   max-width: 100%;
 
   @include mq("md") {

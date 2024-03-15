@@ -30,14 +30,13 @@
   gap: rem(16) rem(21);
   // width: rem(375);
   max-width: 100%;
-  // margin-top: rem(51);
+  // margin-top: rem(53);
   padding: 0;
   list-style-type: none;
 
   @include mq("md") {
     display: flex;
     gap: rem(32);
-    // margin-top: rem(150);
   }
 }
 

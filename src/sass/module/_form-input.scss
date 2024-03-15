@@ -63,7 +63,10 @@ span.wpcf7-form-control-wrap .wpcf7-not-valid.form__privacy-text.form-checkbox {
 }
 
 .wpcf7 form .wpcf7-response-output {
-  padding-bottom: rem(40);
+    padding-bottom: rem(25);
+    padding-right: rem(54);
+    padding-left: rem(54);
+    margin-top: 0;
     font-size: rem(14);
     font-family: $jp-family;
     font-weight: $regular;

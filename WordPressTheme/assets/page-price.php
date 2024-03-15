@@ -30,11 +30,10 @@
             foreach ($price_group as $fields) :
             ?>
               <tr class="page-price__list-item">
-                <td class="page-price__list-menu"><?php echo $fields['price-menu1']; ?><br class="u-mobile"></td>
+                <td class="page-price__list-menu"><?php echo $fields['price-menu1']; ?></td>
                 <td class="page-price__list-money">&yen;<?php echo $fields['price-money1']; ?></td>
               </tr>
             <?php endforeach; ?>
-
           </tbody>
         </table>
       </div>

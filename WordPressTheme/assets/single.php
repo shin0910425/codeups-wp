@@ -15,7 +15,7 @@
     <div class="page-blog__icon-image1">
       <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
-    <div class="page-blog__inner inner">
+    <div class="page-blog__inner inner page-blog-detail--inner">
       <div class="page-blog__wrapper">
 
         <div class="page-blog-detail__body">
@@ -31,8 +31,6 @@
                 <div class="page-blog-detail__image">
                   <?php if (get_the_post_thumbnail()) : ?>
                     <?php the_post_thumbnail('full', array('class' => 'img')); ?>
-                    <!-- <?php the_post_thumbnail(array(345, 231)); ?> -->
-                    <!-- <?php the_post_thumbnail(array(700, 468)); ?> -->
                   <?php else : ?>
                     <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
                   <?php endif; ?>
@@ -40,14 +38,7 @@
                 <p class="page-blog-detail__text">
                   <?php the_content(); ?>
                 </p>
-                <!-- <div class="page-blog-detail__image">
-                  <?php if (get_the_post_thumbnail()) : ?>
-                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
-                  <?php else : ?>
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
-                  <?php endif; ?>
-                </div>
-                <p class="page-blog-detail__text">
+                <!-- <p class="page-blog-detail__text">
                   <?php the_content(); ?>
                 </p> -->
 
@@ -55,13 +46,13 @@
                   <li class="page-blog-detail__item">リスト1</li>
                   <li class="page-blog-detail__item">リスト2</li>
                   <li class="page-blog-detail__item">リスト3</li>
-                </ul>
-                <p class="page-blog-detail__text">
+                </ul> -->
+                <!-- <p class="page-blog-detail__text">
                   <?php the_content(); ?>
                 </p> -->
               </div>
 
-              <nav class="pagination u-desktop">
+              <nav class="pagination pagination--detail">
                 <div class="wp-pagination">
                   <?php
                   $prev = get_previous_post();
@@ -75,12 +66,26 @@
                   }
                   ?>
                   <?php if (!empty($prev)) : ?>
-                    <a class="prev page-numbers" href="<?php echo $prev_url; ?>">&larr;</a>
+                    <a class="prev page-numbers" href="<?php echo $prev_url; ?>">&lt;</a>
                   <?php endif; ?>
                   <?php if (!empty($next)) : ?>
-                    <a class="next page-numbers" href="<?php echo $next_url; ?>">&rarr;</a>
+                    <a class="next page-numbers" href="<?php echo $next_url; ?>">&gt;</a>
                   <?php endif; ?>
                 </div>
+              </nav>
+
+              <nav class="pagination">
+
+                <!-- ============= ページング ============= -->
+                <?php
+                $args = array(
+                  'mid_size' => 2,
+                  'prev_text' => '<',
+                  'next_text' => '>',
+                  'screen_reader_text' => 'ページャー'
+                );
+                the_posts_pagination($args);
+                ?>
               </nav>
         </div>
 

@@ -33,7 +33,7 @@
 .form-checkbox input+span::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: rem(8);
   left: 0;
   transform: translateY(-50%);
   background: #fff;
@@ -47,7 +47,36 @@
   content: "";
   margin-top: rem(-2);
   position: absolute;
-  top: 50%;
+  top: rem(8);
+  left: 0;
+  transform: translateY(-50%) rotate(-45deg);
+  display: block;
+  width: rem(15);
+  height: rem(8);
+  border-bottom: rem(3) solid $red;
+  border-left: rem(3) solid $red;
+  transition: .3s;
+  opacity: 0;
+}
+
+.form-checkbox.form-checkbox--position input+span::before {
+  content: "";
+  position: absolute;
+  top: rem(16);
+  left: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid $green3;
+  display: block;
+  width: rem(15);
+  height: rem(15);
+}
+
+.form-checkbox.form-checkbox--position input+span::after {
+  content: "";
+  margin-top: rem(-2);
+  position: absolute;
+  top: rem(8);
   left: 0;
   transform: translateY(-50%) rotate(-45deg);
   display: block;

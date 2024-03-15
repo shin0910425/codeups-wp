@@ -42,7 +42,7 @@
 
         <dl class="form__wrap">
           <dt class="form__label">お問合わせ項目<span>必須</span></dt>
-          <dd class="form__checkbox form-checkbox">
+          <dd class="form__checkbox form-checkbox form-checkbox--position">
             <label><input type="checkbox" name="sns" value="Practice"><span>ダイビング講習について</span></label>
             <label><input type="checkbox" name="sns" value="Diving"><span>ファンデイビングについて</span></label>
             <label><input type="checkbox" name="sns" value="Experience"><span>体験ダイビングについて</span></label>
@@ -83,4 +83,4 @@
     </div>
   </div>
 
-<?php get_footer(); ?>
+  <?php get_footer(); ?>

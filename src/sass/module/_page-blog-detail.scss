@@ -1,5 +1,12 @@
 @use "global" as *;
 
+.page-blog-detail--inner.inner {
+  padding: 0 rem(15);
+  @include mq("md") {
+    padding: 0 rem(25);
+  }
+}
+
 .page-blog-detail__body {
 
   @include mq(md) {
@@ -45,6 +52,7 @@
   width: 100%;
   aspect-ratio: 345/231;
   object-fit: cover;
+  height: auto;
 
   @include mq(md) {
     aspect-ratio: 700/468;
@@ -52,7 +60,7 @@
 }
 
 .page-blog-detail__text {
-  margin-top: rem(24);
+  margin-top: rem(25);
   font-size: rem(16);
   color: $green;
   font-family: $jp-family;
@@ -104,4 +112,15 @@
     height: rem(18);
     margin-right: rem(9);
     vertical-align: middle;
+}
+
+.wp-block-image {
+  // margin-top: rem(27);
+  // padding-bottom: rem(27);
+}
+
+.wp-block-spacer {
+  @include mq("md") {
+    margin-top: rem(16);
+  }
 }

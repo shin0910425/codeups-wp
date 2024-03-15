@@ -16,7 +16,7 @@
       <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-voice__inner inner">
-      <div class="page-voice__tub page-voice__tab">
+      <div class="page-voice__tub">
         <div class="page-voice__tab-list">
           <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-voice__tab-item" data-filter="catAll">ALL</a>
           <?php
@@ -25,7 +25,7 @@
           ];
           $terms = get_terms($args);
           foreach ($terms as $term) {
-            echo '<div class="page-voice__tab-item js-voice-content"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+            echo '<div class="page-voice__tab-item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
           }
           ?>
         </div>
@@ -82,7 +82,7 @@
                           </span></span></div>
                     </div>
                   </div>
-                  <div class="voice-card__body">
+                  <div class="voice-card__body voice-card__body--layout">
                     <div class="voice-card__text"><?php the_content(); ?></div>
                   </div>
                 </div>
@@ -95,7 +95,7 @@
     </div>
   </section>
 
-  <nav class="pagination u-desktop">
+  <nav class="pagination">
     <div class="wp-pagination">
       <?php wp_pagenavi(); ?>
     </div>

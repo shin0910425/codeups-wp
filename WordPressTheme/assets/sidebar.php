@@ -1,4 +1,4 @@
-<aside class="page-blog__sidebar">
+<aside class="page-blog__sidebar page-blog__sidebar--detail">
 
   <?php
   if (is_active_sidebar('sidebar-widgets')) {

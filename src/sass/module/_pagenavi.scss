@@ -8,6 +8,11 @@
   }
 }
 
+.pagination--detail {
+  margin-top: rem(36);
+  @include mq("md") {}
+}
+
 .pagination a,
 .pagination span {
   display: inline-block;

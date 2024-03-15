@@ -169,6 +169,13 @@
   }
 }
 
+.page-blog__sidebar.page-blog__sidebar--detail {
+  padding: 0 rem(25);
+  @include mq("md") {
+    padding: 0 0 0 rem(21);
+  }
+}
+
 .page-blog__sidebar-item {
   margin-top: rem(24);
   padding-bottom: rem(20);
