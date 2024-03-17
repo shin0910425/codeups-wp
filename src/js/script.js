@@ -262,20 +262,22 @@ jQuery(function ($) {
   });
 });
 
-// sideber 三角開閉２------------------------------------------
+// 三角開閉２------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
   const yearLinks = document.querySelectorAll('.js-year');
 
   yearLinks.forEach(yearLink => {
     yearLink.addEventListener('click', function () {
-      this.classList.toggle('active'); // thisを使うことで、クリックされた要素に対してのみクラスを切り替えます。
-      const categoryItems = this.nextElementSibling; // nextElementSiblingを使って次の要素（月を表示するul要素）を取得します。
-      if (categoryItems.style.display === 'none' || categoryItems.style.display === '') {
+      this.classList.toggle('active');
+      const categoryItems = this.nextElementSibling;
+      // categoryItemsが存在するかどうかを確認
+      if (categoryItems && (categoryItems.style.display === 'none' || categoryItems.style.display === '')) {
         categoryItems.style.display = 'block';
-      } else {
+      } else if (categoryItems) {
         categoryItems.style.display = 'none';
       }
     });
   });
+
 });

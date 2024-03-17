@@ -20,6 +20,7 @@
   background-color: $green2;
   text-align: center;
   cursor: pointer;
+    transition: 0.3s;
 
   @include mq(md) {
   display: flex;

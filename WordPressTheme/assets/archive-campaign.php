@@ -16,16 +16,15 @@
       <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-campaign__inner inner">
-      <div class="page-campaign__tab">
-        <div class="page-campaign__tab-list">
-          <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-campaign__tab-item" data-filter="catAll">ALL</a>
+      <div class="page-campaign__tab page-tab">
+
+        <div class="page-tab_list">
+          <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-tab_item <?php echo is_post_type_archive('campaign') ? 'is-active' : '' ?>" data-filter="catAll">ALL</a>
           <?php
-          $args = [
-            'taxonomy' => 'campaign_category'
-          ];
+          $args = ['taxonomy' => 'campaign_category'];
           $terms = get_terms($args);
           foreach ($terms as $term) {
-            echo '<div class="page-campaign__tab-item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+            echo '<div class="page-tab_item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
           }
           ?>
         </div>

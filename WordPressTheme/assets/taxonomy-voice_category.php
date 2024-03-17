@@ -16,16 +16,17 @@
       <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-voice__inner inner">
-      <div class="page-voice__tub page-voice__tab">
-        <div class="page-voice__tab-list">
-          <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-voice__tab-item" data-filter="catAll">ALL</a>
+      <div class="page-voice__tub page-tab">
+
+        <div class="page-tab_list">
+          <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-tab_item <?php echo is_post_type_archive('voice') ? 'is-active' : '' ?>" data-filter="catAll">ALL</a>
           <?php
-          $args = [
-            'taxonomy' => 'voice_category'
-          ];
+          $args = ['taxonomy' => 'voice_category'];
           $terms = get_terms($args);
           foreach ($terms as $term) {
-            echo '<div class="page-voice__tab-item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+            // 現在表示されているタームがこのタームかどうかをチェック
+            $is_term_active = is_tax('voice_category', $term) ? 'is-active' : '';
+            echo '<div class="page-tab_item ' . $is_term_active . '"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
           }
           ?>
         </div>
