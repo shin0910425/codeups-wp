@@ -133,6 +133,7 @@
 
 .campaign-card__charge-price-1 {
   font-size: rem(20);
+  font-family: $en2-family;
   font-weight: $bold;
   line-height: 1;
   color: $green;
@@ -154,10 +155,12 @@
 
 .campaign-card__charge-price-1.campaign-card__charge-price-1--size {
   font-size: rem(20);
+  font-family: $en2-family;
 }
 
 .campaign-card__charge-price-2 {
   font-size: rem(30);
+  font-family: $en2-family;
   font-weight: $bold;
   line-height: 1;
   color: $green3;
@@ -170,6 +173,7 @@
 
 .campaign-card__charge-price-2.campaign-card__charge-price-2--size {
   font-size: rem(32);
+  font-family: $en2-family;
 }
 
 .card__body.charge {

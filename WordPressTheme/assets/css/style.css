@@ -636,6 +636,7 @@ body.active {
 	background-repeat: repeat-x;
 	background-size: 100% 0.1875rem;
 	color: #0D2936;
+	font-family: "Lato", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 700;
 	line-height: 1;
@@ -648,11 +649,13 @@ body.active {
 }
 
 .campaign-card__charge-price-1.campaign-card__charge-price-1--size {
+	font-family: "Lato", sans-serif;
 	font-size: 1.25rem;
 }
 
 .campaign-card__charge-price-2 {
 	color: #408F95;
+	font-family: "Lato", sans-serif;
 	font-size: 1.875rem;
 	font-weight: 700;
 	line-height: 1;
@@ -660,6 +663,7 @@ body.active {
 }
 
 .campaign-card__charge-price-2.campaign-card__charge-price-2--size {
+	font-family: "Lato", sans-serif;
 	font-size: 2rem;
 }
 
@@ -2717,6 +2721,7 @@ span.wpcf7-spinner {
 	background-repeat: repeat-x;
 	background-size: 100% 0.1875rem;
 	color: #0D2936;
+	font-family: "Lato", sans-serif;
 	font-size: 1.25rem;
 	font-weight: 700;
 	line-height: 1;
@@ -2729,6 +2734,7 @@ span.wpcf7-spinner {
 
 .page-campaign-card__charge-price-2 {
 	color: #408F95;
+	font-family: "Lato", sans-serif;
 	font-size: 1.875rem;
 	font-weight: 700;
 	line-height: 1;
