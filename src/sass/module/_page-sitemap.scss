@@ -56,7 +56,7 @@
 
 .page-sitemap__logo-body {
   margin-left: rem(0);
-  margin-top: rem(17);
+  // margin-top: rem(17);
 
   @include mq("md") {
     display: flex;
@@ -151,6 +151,8 @@
   font-family: $jp-family;
   font-weight: $regular;
   line-height: 1.125;
+  @include mq("md") {
+  }
 }
 
 .page-sitemap__nav-item a {
@@ -225,5 +227,23 @@
   @include mq("md") {
     display: block;
     margin-bottom: rem(10);
+
+  //   // 1番目と2番目の要素
+  //   &:nth-child(1),
+  //   &:nth-child(2) {
+  //     margin-left: 0px;
+  //   }
+
+  //   // 3番目と4番目の要素
+  //   &:nth-child(3),
+  //   &:nth-child(4) {
+  //     margin-left: 55px;
+  //   }
+
+  //   // 5番目の要素
+  //   &:nth-child(5),
+  //       &:nth-child(6) {
+  //     margin-left: 55px;
+  //   }
   }
 }

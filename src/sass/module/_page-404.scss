@@ -34,24 +34,24 @@
 
 .page-404__wrap {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 47%;
+  left: 58%;
   transform: translate(-50%, -50%);
   width: rem(260);
   max-width: 100%;
   @include mq("md") {
-  top: 53%;
-  left: 80%;
+  top: 57%;
+  left: 87%;
   }
 }
 
 .page-404__title {
   padding-top: rem(170);
   font-size: rem(80);
-  font-family: $en-family;
+  font-family: $en2-family;
   font-weight: $regular;
   line-height: 1;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.5em;
   color: $white;
   display: flex;
   text-align: center;
@@ -64,21 +64,26 @@
 }
 
 .page-404__text {
-  margin-top: rem(24);
+  margin-top: rem(43);
+  padding-bottom: rem(40);
   font-size: rem(16);
   font-family: $jp-family;
   font-weight: $regular;
   line-height: 1.5;
   color: $white;
   text-align: center;
+  @include mq("md") {
+    // padding-right: rem(20);
+  }
 }
 
 .page-404__button {
   text-align: center;
   padding-bottom: rem(100);
+  padding-right: rem(40);
 
   @include mq("md") {
-    margin-left: rem(41);
-    margin-top: rem(50);
+    margin-left: rem(-41);
+    margin-top: rem(45);
   }
 }

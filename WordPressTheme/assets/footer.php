@@ -13,7 +13,7 @@
   $sitemap = esc_url(home_url('/sitemap/'));
   ?>
  <!-- contact -->
- <?php if (!is_page('contact') && !is_404()) : ?>
+ <?php if (!is_page('contact') && !is_page('thanks') && !is_404()) : ?>
    <section id="contact" class="contact top-contact-layout">
      <div class="contact__icon-image">
        <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img4.png" alt="キンギョハナダイのアイコン">
@@ -27,7 +27,7 @@
              </div>
              <div class="contact__box">
                <div class="contact__form-item">
-                 <p class="content__address">沖縄県那覇市1-1</p>　
+                 <p class="content__address">沖縄県那覇市1-1</p>
                  <p class="content__tel">TEL:0120-000-0000</p>
                  <p class="content__time">営業時間:8:30-19:00</p>
                  <p class="content__holiday">定休日:毎週火曜日</p>
@@ -58,12 +58,15 @@
  </main>
 
  <footer>
-   <div id="footer" class="footer footer-layout<?php if (is_404()) {
-                                                  echo 'page-footer-layout--mt0';
+   <div id="footer" class="footer footer-layout <?php
+                                                if (is_page('291')) {
+                                                  echo 'footer-layout--thanks-special'; // 特定のページID(291)の場合に適用するクラス
+                                                } else if (is_404()) {
+                                                  echo 'page-footer-layout--mt0'; // 404ページの場合に適用するクラス
                                                 } ?>">
      <div class="footer__inner inner">
        <nav class="footer__nav">
-         <div class="footer__logo-body">
+         <div class="footer__logo-body footer__logo-body--404">
            <div class="footer__logo">
              <a href="<?php echo $home; ?>">
                <div>

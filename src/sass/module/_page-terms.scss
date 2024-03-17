@@ -29,7 +29,7 @@
 
   @include mq(md) {
     padding: 0 rem(25);
-    max-width: rem(750);
+    max-width: rem(849);
     position: relative;
     // display: flex;
   }
@@ -48,11 +48,12 @@
 }
 
 .page-terms__text-box {
-  margin-top: rem(40);
+  margin-top: rem(46);
+  @include mq("md") {}
 }
 
 .page-terms__text {
-  padding-bottom: rem(40);
+  padding-bottom: rem(31);
   font-size: rem(16);
   font-family: $jp-family;
   font-weight: $regular;
@@ -67,12 +68,15 @@
   font-weight: $regular;
   line-height: 2;
   color: $green;
+  @include mq("md") {
+  margin-top: rem(33);
+  }
 }
 
 .page-terms__text-block span {}
 
 .page-terms__text-number {
-  padding-left: rem(12);
+  padding-left: rem(20);
   font-size: rem(16);
   font-family: $jp-family;
   font-weight: $regular;

@@ -6,6 +6,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: $white;
+  width: rem(289);
+  max-width: 100%;
 
   @include mq("md") {
     width: 100%;

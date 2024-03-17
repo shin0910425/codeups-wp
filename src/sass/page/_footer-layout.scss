@@ -8,6 +8,13 @@
     }
 }
 
-// .footer-layout__404 {
-//   margin-top: 0;
-// }
+.footer-layout--thanks-special {
+  margin-top: rem(100);
+  @include mq("md") {
+    margin-top: rem(75);
+  }
+}
+
+.footer-layout.page-footer-layout--mt0 {
+  margin-top: 0;
+}

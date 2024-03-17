@@ -63,7 +63,7 @@
               </div>
             </li>
             <li class="page-sitemap__nav-item">
-              <div class="footer__box">
+              <div class="page-sitemap__box">
                 <a href="<?php echo esc_url(home_url('/price')); ?>">料金一覧</a>
               </div>
               <ul class="page-sitemap__sub-item">

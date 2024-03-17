@@ -345,11 +345,13 @@
   height: rem(18);
   margin-right: rem(8);
   background: url(../images/common/triangle-right_img.png) center/cover;
+  transition: 0.5s;
 }
 
 .page-blog__year2.active::before {
   background: url(../images/common/triangle-bottom_img.png) center/cover;
   transform: rotate(0deg);
+  transition: 0.5s;
 }
 
 .page-blog__category-items {
@@ -380,6 +382,7 @@
 .page-blog__category-item::before {
   content: "";
   background: url(../images/common/triangle-right_img.png) center/cover;
+  transition: 0.5s;
   display: inline-block;
   width: rem(18);
   height: rem(18);
@@ -398,6 +401,7 @@
     &::before {
       background: url(../images/common/triangle-bottom_img.png) center/cover;
       transform: rotate(0deg);
+      transition: 0.5s;
     }
   }
 }
