@@ -101,7 +101,7 @@
     ];
     the_posts_pagination($args);
     ?>
-    <div class="wp-pagination">
+    <div>
       <?php wp_pagenavi(); ?>
     </div>
   </nav>

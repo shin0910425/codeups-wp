@@ -253,6 +253,29 @@ jQuery(function ($) {
   });
 });
 
+// jQuery(function ($) {
+//   $(".js-modal-open").each(function () {
+//     $(this).on("click", function (e) {
+//       e.preventDefault();
+//       var target = $(this).data("target");
+//       var modal = document.getElementById(target);
+//       $(modal).fadeIn();
+
+//       // モーダルが表示されたときに、body要素にスクロールイベントハンドラを追加してスクロールを無効化する
+//       $("body").on("scroll.modal", function () {
+//         $(this).scrollTop(0);
+//       });
+//     });
+//   });
+//   $(".js-modal-close").on("click", function () {
+//     $(".js-modal").fadeOut();
+
+//     // モーダルが閉じられたときに、body要素からスクロールイベントハンドラを削除する
+//     $("body").off("scroll.modal");
+//   });
+// });
+
+
 // 三角開閉２------------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -53,7 +53,7 @@
               </div>
 
               <nav class="pagination pagination--detail">
-                <div class="wp-pagination">
+                <div>
                   <?php
                   $prev = get_previous_post();
                   if (!empty($prev)) {

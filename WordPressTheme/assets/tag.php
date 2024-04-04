@@ -65,7 +65,7 @@
   </section>
 
   <nav class="pagination u-desktop">
-    <div class="wp-pagination">
+    <div>
       <?php wp_pagenavi(); ?>
     </div>
   </nav>

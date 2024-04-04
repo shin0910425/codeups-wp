@@ -23,11 +23,12 @@
           foreach ($faq_group as $fields) :
           ?>
             <li class="faq-list__item">
-              <p class="faq-list__item-question js-faq-question"><?php echo $fields['faq-question']; ?></p>
+              <p class="faq-list__item-question js-faq-question is-open"><?php echo $fields['faq-question']; ?></p>
               <p class="faq-list__item-answer">
                 <?php echo $fields['faq-answer']; ?>
               </p>
             </li>
+            <?php $first = false; ?>
           <?php endforeach; ?>
         </ul>
       </div>

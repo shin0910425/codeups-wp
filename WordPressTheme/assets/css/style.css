@@ -158,10 +158,6 @@ body.active {
 	overflow: hidden;
 }
 
-.about-gallery-layout {
-	margin-top: 2.5rem;
-}
-
 .breadcrumb-layout__404 {
 	margin-top: -1.25rem;
 	padding-top: 6.625rem;
@@ -1031,7 +1027,7 @@ body.active {
 .faq-list__item-answer {
 	border: 0.0625rem solid #408F95;
 	color: #0D2936;
-	display: none;
+	display: block;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
@@ -1201,7 +1197,7 @@ body.active {
 	content: "";
 	display: block;
 	height: 0.5rem;
-	left: 0;
+	left: 0.1875rem;
 	margin-top: -0.125rem;
 	opacity: 0;
 	position: absolute;
@@ -2133,6 +2129,7 @@ span.wpcf7-spinner {
 }
 
 .page-about__gallery {
+	margin-top: 2.5rem;
 	padding-bottom: 0.625rem;
 }
 
@@ -2296,6 +2293,11 @@ span.wpcf7-spinner {
 	font-weight: 400;
 	line-height: 1.5;
 	margin-top: 1.5625rem;
+}
+
+.page-blog-detail__text p {
+	margin-top: 40px;
+	padding-bottom: 40px;
 }
 
 .page-blog-detail__list {
@@ -3543,10 +3545,6 @@ span.wpcf7-spinner {
 	text-align: center;
 }
 
-.section-header {
-	margin-bottom: 1.5rem;
-}
-
 .section-header__sub {
 	color: #0D2936;
 	font-family: "Gotu", sans-serif;
@@ -3948,10 +3946,6 @@ span.wpcf7-spinner {
 
 html {
 	font-size: 1.4814814815vw;
-}
-
-.about-gallery-layout {
-	margin-top: 5rem;
 }
 
 .breadcrumb-layout__404 {
@@ -4676,7 +4670,7 @@ html {
 
 .information__box {
 	display: flex;
-	margin-top: 2.1875rem;
+	margin-top: 2.5rem;
 }
 
 .information__image {
@@ -4843,6 +4837,7 @@ html {
 }
 
 .page-about__gallery {
+	margin-top: 5rem;
 	padding-bottom: 0;
 }
 
@@ -5439,10 +5434,6 @@ html {
 	margin-top: 4.5rem;
 }
 
-.section-header {
-	margin-bottom: 2.5rem;
-}
-
 .section-header__sub {
 	font-size: 2.5rem;
 	margin-top: 0rem;
@@ -5611,7 +5602,7 @@ html {
 	display: grid;
 	gap: 2.5rem;
 	grid-template-columns: repeat(2, 1fr);
-	margin-top: 1.875rem;
+	margin-top: 2.5rem;
 }
 
 .voice-cards__item {

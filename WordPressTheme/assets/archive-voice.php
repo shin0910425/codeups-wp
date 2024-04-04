@@ -95,7 +95,7 @@
   </section>
 
   <nav class="pagination">
-    <div class="wp-pagination">
+    <div>
       <?php wp_pagenavi(); ?>
     </div>
   </nav>
