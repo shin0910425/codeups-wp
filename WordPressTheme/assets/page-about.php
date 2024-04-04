@@ -52,13 +52,13 @@
                 $image_url = $fields['gallery-image'];
             ?>
                 <div class="gallery-list__box">
-                  <div class="gallery-list__item js-modal-open" data-target="<?php echo $index + 1; ?>">
+                  <div class="gallery-list__button js-modal-open" data-target="<?php echo $index + 1; ?>">
                     <div class="gallery-list__item">
                       <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
                     </div>
                   </div>
                   <div class="gallery-list__modal modal js-modal js-modal-close" id="<?php echo $index + 1; ?>">
-                    <div class="modal__inner">
+                    <div class="modal__body">
                       <div class="modal__img">
                         <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
                       </div>
