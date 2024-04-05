@@ -113,9 +113,9 @@
                  </div>
                  <ul class="footer__sub-item">
                    <li class="footer__sub-list">
-                     <a href="<?php echo $information; ?>">ライセンス講習</a>
-                     <a href="<?php echo $information; ?>">体験ダイビング</a>
-                     <a href="<?php echo $information; ?>">ファンダイビング</a>
+                     <a href="<?php echo $information; ?>" class="footer-tab-link" data-tab="tab01">ライセンス講習</a>
+                     <a href="<?php echo $information; ?>" class="footer-tab-link" data-tab="tab02">ファンダイビング</a>
+                     <a href="<?php echo $information; ?>" class="footer-tab-link" data-tab="tab03">体験ダイビング</a>
                    </li>
                  </ul>
                </li>
