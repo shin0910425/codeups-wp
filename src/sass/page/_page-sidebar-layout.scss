@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.page-blog__sidebar-layout {
+.page-sidebar-layout {
   margin-top: rem(24);
 
     @include mq("md") {

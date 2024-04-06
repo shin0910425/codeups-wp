@@ -191,10 +191,6 @@ body.active {
 	margin-top: 3.125rem;
 }
 
-.page-blog__sidebar-layout {
-	margin-top: 1.5rem;
-}
-
 .page-blog-layout {
 	margin-top: 3.25rem;
 }
@@ -223,6 +219,10 @@ body.active {
 .page-privacy-layout {
 	margin-top: 3.375rem;
 	padding-bottom: 0.625rem;
+}
+
+.page-sidebar-layout {
+	margin-top: 1.5rem;
 }
 
 .page-sitemap-layout {
@@ -684,7 +684,7 @@ body.active {
 	width: 17.5rem;
 }
 
-.campaign-cards__item-sideber {
+.campaign-cards__item-sidebar {
 	height: auto;
 	max-width: 100%;
 	width: 100%;
@@ -2850,25 +2850,25 @@ span.wpcf7-spinner {
 	text-indent: -0.75rem;
 }
 
-.page-blog__sidebar {
+.page-sidebar {
 	margin-top: 4.5625rem;
 	padding: 0 1.25rem;
 }
 
-.page-blog__sidebar.page-blog__sidebar--detail {
+.page-sidebar.page-sidebar--detail {
 	padding: 0 1.5625rem;
 }
 
-.page-blog__sidebar-item {
+.page-sidebar__item {
 	margin-top: 1.5rem;
 	padding-bottom: 1.25rem;
 }
 
-.page-blog__sidebar-item + .page-blog__sidebar-item {
+.page-sidebar__item + .page-sidebar__item {
 	margin-top: 4rem;
 }
 
-.page-blog__sidebar-title {
+.page-sidebar__title {
 	align-items: center;
 	border-left: 8px solid #408F95;
 	color: #0D2936;
@@ -2880,7 +2880,7 @@ span.wpcf7-spinner {
 	padding-left: 1.0625rem;
 }
 
-.page-blog__sidebar-title::before {
+.page-sidebar__title::before {
 	background: url(../images/common/sidebar-whale-icon_img.png) center/cover;
 	content: "";
 	display: inline-block;
@@ -2889,36 +2889,36 @@ span.wpcf7-spinner {
 	width: 3.125rem;
 }
 
-.page-blog__ranking-item {
+.page-sidebar__ranking-item {
 	margin-top: 1.5rem;
 }
 
-.page-blog__ranking-link {
+.page-sidebar__ranking-link {
 	box-shadow: 0.125rem 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.25);
 	display: flex;
 	padding: 1rem;
 }
 
-.page-blog__ranking-title {
+.page-sidebar__ranking-title {
 	flex-grow: 1;
 	font-size: 0.875rem;
 	font-weight: 700;
 	line-height: 1.3;
 }
 
-.page-blog__ranking-img-wrap {
+.page-sidebar__ranking-img-wrap {
 	flex-shrink: 0;
 	max-width: 7.5rem;
 	position: relative;
 	width: 100%;
 }
 
-.page-blog__ranking-img {
+.page-sidebar__ranking-img {
 	height: 0;
 	padding-top: 74.3801652893%; /* アスペクト比 121:90 */
 }
 
-.page-blog__ranking-img img {
+.page-sidebar__ranking-img img {
 	-o-object-fit: cover;
 	aspect-ratio: 121/90;
 	height: 100%;
@@ -2929,11 +2929,11 @@ span.wpcf7-spinner {
 	width: 100%; /* 画像が指定された領域に収められるように調整 */
 }
 
-.page-blog__wrap {
+.page-sidebar__wrap {
 	margin-left: 1rem;
 }
 
-.page-blog__category-link {
+.page-sidebar__category-link {
 	border-bottom: 1px solid #F0ECF4;
 	display: block;
 	font-size: 1.125rem;
@@ -2942,7 +2942,7 @@ span.wpcf7-spinner {
 	position: relative;
 }
 
-.page-blog__category-link::before {
+.page-sidebar__category-link::before {
 	border-right: 0.125rem solid #333;
 	border-top: 0.125rem solid #333;
 	content: "";
@@ -2955,18 +2955,18 @@ span.wpcf7-spinner {
 	width: 0.5rem;
 }
 
-.page-blog__reviews-img {
+.page-sidebar__reviews-img {
 	width: 100%;
 }
 
-.page-blog__reviews-img img {
+.page-sidebar__reviews-img img {
 	-o-object-fit: cover;
 	aspect-ratio: 294/218;
 	object-fit: cover;
 	width: 100%;
 }
 
-.page-blog__reviews-tag {
+.page-sidebar__reviews-tag {
 	color: #0D2936;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 0.75rem;
@@ -2975,7 +2975,7 @@ span.wpcf7-spinner {
 	margin-top: 1rem;
 }
 
-.page-blog__reviews-title {
+.page-sidebar__reviews-title {
 	color: #0D2936;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1.5rem;
@@ -2984,16 +2984,16 @@ span.wpcf7-spinner {
 	margin-top: 0.25rem;
 }
 
-.page-blog__reviews-button {
+.page-sidebar__reviews-button {
 	margin-top: 2.5rem;
 	text-align: center;
 }
 
-.page-blog__box {
+.page-sidebar__box {
 	margin-top: 1.5rem;
 }
 
-.page-blog__year2 {
+.page-sidebar__year2 {
 	color: #408F95;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 1.5rem;
@@ -3003,7 +3003,7 @@ span.wpcf7-spinner {
 
 /* CSS */
 
-.page-blog__year2::before {
+.page-sidebar__year2::before {
 	background: url(../images/common/triangle-right_img.png) center/cover;
 	content: "";
 	display: inline-block;
@@ -3013,35 +3013,35 @@ span.wpcf7-spinner {
 	width: 1.125rem;
 }
 
-.page-blog__year2.active::before {
+.page-sidebar__year2.active::before {
 	transform: rotate(90deg);
 	transition: 0.3s;
 }
 
-.page-blog__category-items {
+.page-sidebar__category-items {
 	display: none;
 	padding-left: 0.5rem;
 }
 
-.page-blog__category-items.active {
+.page-sidebar__category-items.active {
 	display: block;
 }
 
-.page-blog__category-item {
+.page-sidebar__category-item {
 	margin-left: 1.5rem;
 	margin-top: 0.25rem;
 	padding: 0.25rem 0;
 }
 
-.page-blog__category-items {
+.page-sidebar__category-items {
 	display: none; /* デフォルトでは非表示 */
 }
 
-.page-blog__year2.active + .page-blog__category-items {
+.page-sidebar__year2.active + .page-sidebar__category-items {
 	display: block; /* activeクラスが適用された隣接する要素は表示 */
 }
 
-.page-blog__category-item::before {
+.page-sidebar__category-item::before {
 	background: url(../images/common/triangle-right_img.png) center/cover;
 	content: "";
 	display: inline-block;
@@ -3051,7 +3051,7 @@ span.wpcf7-spinner {
 	width: 1.125rem;
 }
 
-.page-blog__category-month {
+.page-sidebar__category-month {
 	color: #408F95;
 	cursor: pointer;
 	font-family: "Noto Sans JP", sans-serif;
@@ -3060,7 +3060,7 @@ span.wpcf7-spinner {
 	line-height: 1;
 }
 
-.page-blog__category-month.active::before {
+.page-sidebar__category-month.active::before {
 	transform: rotate(90deg);
 	transition: 0.3s;
 }
@@ -3983,10 +3983,6 @@ html {
 	padding-bottom: 0.5rem;
 }
 
-.page-blog__sidebar-layout {
-	margin-top: 1.875rem;
-}
-
 .page-blog-layout {
 	margin-top: 9.375rem;
 }
@@ -4013,6 +4009,10 @@ html {
 
 .page-privacy-layout {
 	margin-top: 9.375rem;
+}
+
+.page-sidebar-layout {
+	margin-top: 1.875rem;
 }
 
 .page-sitemap-layout {
@@ -5234,18 +5234,18 @@ html {
 	margin-top: 3.125rem;
 }
 
-.page-blog__sidebar {
+.page-sidebar {
 	margin-left: 4rem;
 	margin-top: 0;
 	padding: 0 0 0 1.25rem;
 	width: 29%;
 }
 
-.page-blog__sidebar.page-blog__sidebar--detail {
+.page-sidebar.page-sidebar--detail {
 	padding: 0 0 0 1.3125rem;
 }
 
-.page-blog__sidebar-item {
+.page-sidebar__item {
 	margin-top: 0rem;
 }
 
