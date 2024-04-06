@@ -214,8 +214,43 @@ jQuery(function ($) {
     $(this).addClass('is-active');
     var number = $(this).data("number");
     $('#' + number).addClass('is-active');
+
+    // ヘッダーの高さ分(100px)下にスクロール
+    $('html, body').animate({
+      scrollTop: $('.information-tab').offset().top - 100 // タブがある要素の上端までスクロールし、さらに100px下にスクロール
+    }, 500);
+
+    // タブの色を変更
+    $('.information-tab__menu-item').removeClass('is-active'); // すべてのタブから 'is-active' クラスを削除
+    $(this).addClass('is-active'); // クリックされたタブに 'is-active' クラスを付ける
+  });
+
+  $('.footer-tab-link').on('click', function (event) {
+    event.preventDefault(); // リンクのデフォルトの挙動を無効化
+
+    // クリックされたリンクの data-tab 属性の値を取得
+    var tabId = $(this).attr('data-tab');
+
+    // すべてのタブメニューから 'is-active' クラスを削除し、クリックされたリンクに 'is-active' クラスを付ける
+    $('.js-tab-menu').removeClass('is-active');
+    $('.footer-tab-link').removeClass('is-active'); // すべてのフッターリンクから 'is-active' クラスを削除
+    $(this).addClass('is-active');
+
+    // すべてのタブコンテンツから 'is-active' クラスを削除し、クリックされたリンクの data-tab 属性の値に対応するタブコンテンツに 'is-active' クラスを付ける
+    $('.js-tab-content').removeClass('is-active');
+    $('#' + tabId).addClass('is-active');
+
+    // タブの色を変更
+    $('.information-tab__menu-item').removeClass('is-active'); // すべてのタブから 'is-active' クラスを削除
+    $('.information-tab__menu-item[data-number="' + tabId + '"]').addClass('is-active'); // クリックされたタブに 'is-active' クラスを付ける
+
+    // ヘッダーの高さ分(100px)下にスクロール
+    $('html, body').animate({
+      scrollTop: $('.information-tab').offset().top - 100 // タブがある要素の上端までスクロールし、さらに100px下にスクロール
+    }, 500);
   });
 });
+
 
 // faq アコーディオン------------------------------------------
 

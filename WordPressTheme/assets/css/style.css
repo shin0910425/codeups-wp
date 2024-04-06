@@ -3331,7 +3331,7 @@ span.wpcf7-spinner {
 	width: 100%;
 }
 
-.page-voice__contents {
+.page-voice__contents.voice__cards {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -5362,7 +5362,7 @@ html {
 	width: 18.75rem;
 }
 
-.page-voice__contents {
+.page-voice__contents.voice__cards {
 	grid-gap: 5rem 2.5rem;
 	align-items: normal;
 	display: grid;
