@@ -239,3 +239,7 @@ add_action('widgets_init', 'my_widgets_register');
 // }
 // add_action('init', 'custom_taxonomy');
 
+/* -------------------------------------------------
+ pタグ削除
+-------------------------------------------------- */
+remove_filter('the_content', 'wpautop');

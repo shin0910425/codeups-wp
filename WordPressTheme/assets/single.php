@@ -35,9 +35,9 @@
                     <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
                   <?php endif; ?>
                 </div>
-                <p class="page-blog-detail__text">
+                <div class="page-blog-detail__text">
                   <?php the_content(); ?>
-                </p>
+                </div>
                 <!-- <p class="page-blog-detail__text">
                   <?php the_content(); ?>
                 </p> -->
