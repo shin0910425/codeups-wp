@@ -96,9 +96,15 @@
                  </div>
                  <ul class="footer__sub-item">
                    <li class="footer__sub-list">
-                     <a href="<?php echo $campaign; ?>">ライセンス取得</a>
-                     <a href="<?php echo $campaign; ?>">貸切体験ダイビング</a>
-                     <a href="<?php echo $campaign; ?>">ナイトダイビング</a>
+                     <a href="<?php echo esc_url(home_url('/campaign')); ?>" <?php echo is_post_type_archive('campaign') ? 'class="is-active"' : '' ?>></a>
+                     <?php
+                      $args = ['taxonomy' => 'campaign_category'];
+                      $terms = get_terms($args);
+                      foreach ($terms as $term) {
+                        $term_link = get_term_link($term);
+                        echo '<a href="' . esc_url($term_link) . '" ' . (is_tax('campaign_category', $term->term_id) ? 'class="is-active"' : '') . '>' . $term->name . '</a>';
+                      }
+                      ?>
                    </li>
                  </ul>
                </li>
@@ -111,11 +117,12 @@
                  <div class="footer__box">
                    <a href="<?php echo $information; ?>">ダイビング情報</a>
                  </div>
+
                  <ul class="footer__sub-item">
                    <li class="footer__sub-list">
-                     <a href="<?php echo $information; ?>" class="footer-tab-link" data-tab="tab01">ライセンス講習</a>
-                     <a href="<?php echo $information; ?>" class="footer-tab-link" data-tab="tab02">ファンダイビング</a>
-                     <a href="<?php echo $information; ?>" class="footer-tab-link" data-tab="tab03">体験ダイビング</a>
+                     <a href="<?php echo esc_url($information); ?>?tab=tab01" class="footer-tab-link js-tab-list" data-tab="tab01">ライセンス講習</a>
+                     <a href="<?php echo esc_url($information); ?>?tab=tab02" class="footer-tab-link js-tab-list" data-tab="tab02">ファンダイビング</a>
+                     <a href="<?php echo esc_url($information); ?>?tab=tab03" class="footer-tab-link js-tab-list" data-tab="tab03">体験ダイビング</a>
                    </li>
                  </ul>
                </li>
@@ -139,15 +146,21 @@
                  </div>
                  <ul class="footer__sub-item">
                    <li class="footer__sub-list">
-                     <a href="<?php echo $price; ?>">ライセンス取得</a>
-                     <a href="<?php echo $price; ?>">体験ダイビング</a>
-                     <a href="<?php echo $price; ?>">ファンダイビング</a>
+                     <a href="<?php echo $price; ?>#license">ライセンス講習</a>
+                     <a href="<?php echo $price; ?>#experience">体験ダイビング</a>
+                     <a href="<?php echo $price; ?>#fun">ファンダイビング</a>
+                     <a href="<?php echo $price; ?>#special">スペシャルダイビング</a>
                    </li>
                  </ul>
                </li>
                <li class="footer__nav-item">
                  <div class="footer__box">
                    <a href="<?php echo $faq; ?>">よくある質問</a>
+                 </div>
+               </li>
+               <li class="footer__nav-item">
+                 <div class="footer__box">
+                   <a href="<?php echo $sitemap; ?>">サイトマップ</a>
                  </div>
                </li>
                <li class="footer__nav-item">

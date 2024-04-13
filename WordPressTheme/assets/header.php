@@ -27,7 +27,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <!-- header -->
-  <header class="header header-layout header-layout__404">
+  <header id="js-header" class="header header-layout header-layout__404 ">
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="<?php echo $home; ?>">
@@ -98,9 +98,9 @@ $sitemap = esc_url(home_url('/sitemap/'));
                   </div>
                   <ul class="sp-nav__sub-item">
                     <li class="sp-nav__sub-list">
-                      <a href="<?php echo $information; ?>">ライセンス講習</a>
-                      <a href="<?php echo $information; ?>">体験ダイビング</a>
-                      <a href="<?php echo $information; ?>">ファンダイビング</a>
+                      <a href="<?php echo esc_url($information); ?>?tab=tab01" class="footer-tab-link js-tab-list" data-tab="tab01">ライセンス講習</a>
+                      <a href="<?php echo esc_url($information); ?>?tab=tab02" class="footer-tab-link js-tab-list" data-tab="tab02">ファンダイビング</a>
+                      <a href="<?php echo esc_url($information); ?>?tab=tab03" class="footer-tab-link js-tab-list" data-tab="tab03">体験ダイビング</a>
                     </li>
                   </ul>
                 </li>

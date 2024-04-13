@@ -13,7 +13,7 @@ function add_custom_scripts()
 
 
   // swiperのCSSの追加
-  wp_enqueue_style('swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.css', false);
+  wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css', false);
 
   // テーマのCSSの追加
   wp_enqueue_style('theme-styles', get_theme_file_uri('/css/style.css'), false);
@@ -22,7 +22,7 @@ function add_custom_scripts()
   wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.js', array(), '3.6.0', true);
 
   // swiperのJSの追加
-  wp_enqueue_script('swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery'), '8.0.0', true);
+  wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array('jquery'), '8.0.0', true);
 
   // テーマのJSの追加
   wp_enqueue_script('theme-scripts', get_theme_file_uri('/js/script.js'), array('jquery'), '1.0.0', true);

@@ -1101,7 +1101,8 @@ body.active {
 
 .footer__sub-list a:nth-child(1),
 .footer__sub-list a:nth-child(2),
-.footer__sub-list a:nth-child(3) {
+.footer__sub-list a:nth-child(3),
+.footer__sub-list a:nth-child(4) {
 	color: #fff;
 	display: block;
 	font-family: "Noto Sans JP", sans-serif;
@@ -2795,6 +2796,30 @@ p:empty {
 	width: 30%;
 }
 
+html:focus-within {
+	scroll-behavior: root;
+}
+
+:root:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* 
+  css変数は詳細度の関係からhtmlではなく、:rootがいいらしい
+  というか、どのサイト見ても:rootしか使ってなかったです。
+*/
+
+:root {
+	--header-height: 120px; /* headerの高さを変える時はここだけ変えれば良くなる */
+	scroll-padding-top: 120px;
+	scroll-padding-top: var(--header-height);
+}
+
+header {
+	height: 120px;
+	height: var(--header-height);
+}
+
 .page-privacy {
 	position: relative;
 }
@@ -3154,7 +3179,8 @@ p:empty {
 
 .page-sitemap__sub-list a:nth-child(1),
 .page-sitemap__sub-list a:nth-child(2),
-.page-sitemap__sub-list a:nth-child(3) {
+.page-sitemap__sub-list a:nth-child(3),
+.page-sitemap__sub-list a:nth-child(4) {
 	color: #0D2936;
 	display: block;
 	font-family: "Noto Sans JP", sans-serif;

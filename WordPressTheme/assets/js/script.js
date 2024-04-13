@@ -179,31 +179,33 @@ jQuery(function ($) {
       }
     });
   });
-  $(document).ready(function () {
-    // タブpage-campaign・page-voice ------------------------------------------
-    var newsLink = $(".js-campaign__link,.js-voice__link li");
-    var limit = 4;
-    var $campaignContent = $(".js-campaign-content,.js-voice-content");
 
-    // 最初の4つのコンテンツを表示
-    $campaignContent.slice(0, limit).fadeIn();
-    $(newsLink).click(function () {
-      $(newsLink).removeClass("active");
-      $(this).addClass("active");
-      var btnFilter = $(this).attr('data-filter');
-      if (btnFilter === 'catAll') {
-        // 全てのコンテンツを非表示
-        $campaignContent.css('display', 'none');
-        // 最初の4つのコンテンツを表示
-        $campaignContent.slice(0, limit).fadeIn();
-      } else {
-        // 特定のカテゴリのコンテンツを非表示
-        $campaignContent.css('display', 'none');
-        // 選択されたカテゴリのコンテンツを表示
-        $campaignContent.filter('[data-category="' + btnFilter + '"]').fadeIn();
-      }
-    });
-  });
+  // $(document).ready(function () {
+  //   // タブpage-campaign・page-voice ------------------------------------------
+  //   var newsLink = $(".js-campaign__link,.js-voice__link li");
+  //   var limit = 4;
+  //   var $campaignContent = $(".js-campaign-content,.js-voice-content");
+
+    
+  //   // 最初の4つのコンテンツを表示
+  //   $campaignContent.slice(0, limit).fadeIn();
+  //   $(newsLink).click(function () {
+  //     $(newsLink).removeClass("active");
+  //     $(this).addClass("active");
+  //     var btnFilter = $(this).attr('data-filter');
+  //     if (btnFilter === 'catAll') {
+  //       // 全てのコンテンツを非表示
+  //       $campaignContent.css('display', 'none');
+  //       // 最初の4つのコンテンツを表示
+  //       $campaignContent.slice(0, limit).fadeIn();
+  //     } else {
+  //       // 特定のカテゴリのコンテンツを非表示
+  //       $campaignContent.css('display', 'none');
+  //       // 選択されたカテゴリのコンテンツを表示
+  //       $campaignContent.filter('[data-category="' + btnFilter + '"]').fadeIn();
+  //     }
+  //   });
+  // });
 });
 
 // タブpage-information ------------------------------------------
@@ -215,42 +217,41 @@ jQuery(function ($) {
     var number = $(this).data("number");
     $('#' + number).addClass('is-active');
 
-    // ヘッダーの高さ分(100px)下にスクロール
-    $('html, body').animate({
-      scrollTop: $('.information-tab').offset().top - 100 // タブがある要素の上端までスクロールし、さらに100px下にスクロール
-    }, 500);
-
     // タブの色を変更
     $('.information-tab__menu-item').removeClass('is-active'); // すべてのタブから 'is-active' クラスを削除
     $(this).addClass('is-active'); // クリックされたタブに 'is-active' クラスを付ける
   });
 
-  $('.footer-tab-link').on('click', function (event) {
-    event.preventDefault(); // リンクのデフォルトの挙動を無効化
 
-    // クリックされたリンクの data-tab 属性の値を取得
-    var tabId = $(this).attr('data-tab');
+  var footerTabList = $(".js-tab-list");
+  footerTabList.on("click", function () {
+    var targetTab = $(this).data("tab");
 
-    // すべてのタブメニューから 'is-active' クラスを削除し、クリックされたリンクに 'is-active' クラスを付ける
-    $('.js-tab-menu').removeClass('is-active');
-    $('.footer-tab-link').removeClass('is-active'); // すべてのフッターリンクから 'is-active' クラスを削除
-    $(this).addClass('is-active');
+    // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
+    var matchingPageTab = $('.js-tab-menu[data-tab="' + targetTab + '"]');
+    if (matchingPageTab.length > 0) {
+      matchingPageTab.addClass("is-active");
 
-    // すべてのタブコンテンツから 'is-active' クラスを削除し、クリックされたリンクの data-tab 属性の値に対応するタブコンテンツに 'is-active' クラスを付ける
-    $('.js-tab-content').removeClass('is-active');
-    $('#' + tabId).addClass('is-active');
-
-    // タブの色を変更
-    $('.information-tab__menu-item').removeClass('is-active'); // すべてのタブから 'is-active' クラスを削除
-    $('.information-tab__menu-item[data-number="' + tabId + '"]').addClass('is-active'); // クリックされたタブに 'is-active' クラスを付ける
-
-    // ヘッダーの高さ分(100px)下にスクロール
-    $('html, body').animate({
-      scrollTop: $('.information-tab').offset().top - 100 // タブがある要素の上端までスクロールし、さらに100px下にスクロール
-    }, 500);
+      // 対応するコンテンツも表示する
+      var matchingPageContent = $(
+        '.js-tab-content[data-number="' + targetTab + '"]'
+      );
+      if (matchingPageContent.length > 0) {
+        matchingPageContent.addClass("is-active");
+      }
+    }
   });
-});
 
+  // URLからクエリパラメータを取得
+  var params = new URLSearchParams(window.location.search);
+  var targetTab = params.get("tab");
+
+  // クエリパラメータが存在する場合は、該当のタブを表示する
+  if (targetTab) {
+    // クリックイベントをトリガーして実行
+    $('[data-number="' + targetTab + '"]').trigger("click");
+  }
+});
 
 // faq アコーディオン------------------------------------------
 
@@ -305,3 +306,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// footer price スクロール位置------------------------------------------
+// jQuery(function ($) {
+//   // #から始まるアンカータグをクリックしたら処理を実行
+//   $('a[href^="#"]').click(function () {
+//     // スクロールの速度（ミリ秒）
+//     const speed = 500;
+//     // アンカーの値取得（リンク先<href>を取得して、hrefという変数に代入）
+//     const href = $(this).attr("href");
+//     // 移動先を取得（リンク先<href>のidがある要素を探してtargetに代入）
+//     const target = $(href == "#" || href == "" ? "html" : href);
+//     // 移動先を調整(idの要素の位置をoffset()で取得しpositionに代入<ヘッダー分は差し引く>）
+//     const position = target.offset().top - $('#js-header').outerHeight();
+//     // スムーススクロール
+//     $("html, body").animate({ scrollTop: position }, speed, "swing");
+//     return false;
+//   });
+// });
