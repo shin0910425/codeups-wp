@@ -209,6 +209,50 @@ jQuery(function ($) {
 });
 
 // タブpage-information ------------------------------------------
+// jQuery(function ($) {
+//   $('.js-tab-menu').on('click', function () {
+//     $('.js-tab-menu').removeClass('is-active');
+//     $('.js-tab-content').removeClass('is-active');
+//     $(this).addClass('is-active');
+//     var number = $(this).data("number");
+//     $('#' + number).addClass('is-active');
+
+//     // タブの色を変更
+//     $('.information-tab__menu-item').removeClass('is-active'); // すべてのタブから 'is-active' クラスを削除
+//     $(this).addClass('is-active'); // クリックされたタブに 'is-active' クラスを付ける
+//   });
+
+
+//   var footerTabList = $(".js-tab-list");
+//   footerTabList.on("click", function () {
+//     var targetTab = $(this).data("tab");
+
+//     // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
+//     var matchingPageTab = $('.js-tab-menu[data-tab="' + targetTab + '"]');
+//     if (matchingPageTab.length > 0) {
+//       matchingPageTab.addClass("is-active");
+
+//       // 対応するコンテンツも表示する
+//       var matchingPageContent = $(
+//         '.js-tab-content[data-number="' + targetTab + '"]'
+//       );
+//       if (matchingPageContent.length > 0) {
+//         matchingPageContent.addClass("is-active");
+//       }
+//     }
+//   });
+
+//   // URLからクエリパラメータを取得
+//   var params = new URLSearchParams(window.location.search);
+//   var targetTab = params.get("tab");
+
+//   // クエリパラメータが存在する場合は、該当のタブを表示する
+//   if (targetTab) {
+//     // クリックイベントをトリガーして実行
+//     $('[data-number="' + targetTab + '"]').trigger("click");
+//   }
+// });
+
 jQuery(function ($) {
   $('.js-tab-menu').on('click', function () {
     $('.js-tab-menu').removeClass('is-active');
@@ -220,6 +264,11 @@ jQuery(function ($) {
     // タブの色を変更
     $('.information-tab__menu-item').removeClass('is-active'); // すべてのタブから 'is-active' クラスを削除
     $(this).addClass('is-active'); // クリックされたタブに 'is-active' クラスを付ける
+
+    // タブ02またはタブ03がクリックされた場合、タブ01のis-showを削除する
+    if (number === 'tab02' || number === 'tab03') {
+      $('#tab01').removeClass('is-show');
+    }
   });
 
 
@@ -252,6 +301,7 @@ jQuery(function ($) {
     $('[data-number="' + targetTab + '"]').trigger("click");
   }
 });
+
 
 // faq アコーディオン------------------------------------------
 

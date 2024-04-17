@@ -1750,6 +1750,11 @@ span.wpcf7-spinner {
 	color: #fff;
 }
 
+.information-tab__menu-item.is-show {
+	background-color: #408F95;
+	color: #fff;
+}
+
 .information-tab__icon {
 	display: none;
 }
@@ -1776,6 +1781,13 @@ span.wpcf7-spinner {
 	filter: brightness(1) invert(0); /* アクティブ時のアイコンの色 */
 }
 
+/* アクティブ時のアイコンの色を#fffに変更 */
+
+.information-tab__menu-item.js-tab-menu.is-show .information-tab__icon img {
+	color: #fff;
+	filter: brightness(1) invert(0); /* アクティブ時のアイコンの色 */
+}
+
 .information-tab__content {
 	margin-top: 1rem;
 }
@@ -1788,6 +1800,11 @@ span.wpcf7-spinner {
 }
 
 .information-tab__content-item.is-active {
+	animation: fade 0.3s;
+	display: block;
+}
+
+.information-tab__content-item.is-show {
 	animation: fade 0.3s;
 	display: block;
 }
