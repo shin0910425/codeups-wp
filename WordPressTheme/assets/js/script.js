@@ -254,23 +254,24 @@ jQuery(function ($) {
 // });
 
 jQuery(function ($) {
+  // 初期状態で tab01 の要素に is-active と is-show を付与する
+  $('[data-number="tab01"], #tab01').addClass('is-show is-active');
+
   $('.js-tab-menu').on('click', function () {
+    // すべてのタブからis-activeクラスを削除
     $('.js-tab-menu').removeClass('is-active');
     $('.js-tab-content').removeClass('is-active');
+
+    // クリックされたタブにis-activeクラスを付与
     $(this).addClass('is-active');
     var number = $(this).data("number");
     $('#' + number).addClass('is-active');
 
-    // タブの色を変更
-    $('.information-tab__menu-item').removeClass('is-active'); // すべてのタブから 'is-active' クラスを削除
-    $(this).addClass('is-active'); // クリックされたタブに 'is-active' クラスを付ける
-
-    // タブ02またはタブ03がクリックされた場合、タブ01のis-showを削除する
+    // タブ02またはタブ03がクリックされた場合、tab01のis-showを削除する
     if (number === 'tab02' || number === 'tab03') {
-      $('#tab01').removeClass('is-show');
+      $('[data-number="tab01"], #tab01').removeClass('is-show');
     }
   });
-
 
   var footerTabList = $(".js-tab-list");
   footerTabList.on("click", function () {
@@ -301,6 +302,7 @@ jQuery(function ($) {
     $('[data-number="' + targetTab + '"]').trigger("click");
   }
 });
+
 
 
 // faq アコーディオン------------------------------------------

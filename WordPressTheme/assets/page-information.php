@@ -19,7 +19,7 @@
       <div class="page-information-tab">
         <div class="information-tab">
           <ul class="information-tab__menu">
-            <li class="information-tab__menu-item js-tab-menu is-show" data-number="tab01">
+            <li class="information-tab__menu-item js-tab-menu" data-number="tab01">
               <div class="information-tab__icon"><img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon1.svg" alt="クジラの画像"></div>
               <p>ライセンス<br class="u-mobile">講習</p>
             </li>
@@ -33,7 +33,7 @@
             </li>
           </ul>
           <ul class="information-tab__content">
-            <li id="tab01" class="information-tab__content-item js-tab-content is-show">
+            <li id="tab01" class="information-tab__content-item js-tab-content">
               <div class="information-tab__body">
                 <div class="information-tab__text-box">
                   <h2 class="information-tab__title">ライセンス講習</h2>
