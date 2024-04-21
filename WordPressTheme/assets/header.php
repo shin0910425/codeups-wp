@@ -81,9 +81,19 @@ $sitemap = esc_url(home_url('/sitemap/'));
                   </div>
                   <ul class="sp-nav__sub-item">
                     <li class="sp-nav__sub-list">
-                      <a href="<?php echo $campaign; ?>">ライセンス取得</a>
-                      <a href="<?php echo $campaign; ?>">貸切体験ダイビング</a>
-                      <a href="<?php echo $campaign; ?>">ナイトダイビング</a>
+                      <?php
+                      $license_link = esc_url(home_url('/campaign'));
+                      $is_active = is_post_type_archive('campaign') ? 'class="is-active"' : '';
+                      echo "<a href=\"$license_link\" $is_active></a>"; // テキストを追加しない
+                      ?>
+                      <?php
+                      $args = ['taxonomy' => 'campaign_category'];
+                      $terms = get_terms($args);
+                      foreach ($terms as $term) {
+                        $term_link = get_term_link($term);
+                        echo '<a href="' . esc_url($term_link) . '" ' . (is_tax('campaign_category', $term->term_id) ? 'class="is-active"' : '') . '>' . $term->name . '</a>';
+                      }
+                      ?>
                     </li>
                   </ul>
                 </li>
@@ -124,9 +134,10 @@ $sitemap = esc_url(home_url('/sitemap/'));
                   </div>
                   <ul class="sp-nav__sub-item">
                     <li class="sp-nav__sub-list">
-                      <a href="<?php echo $price; ?>">ライセンス取得</a>
-                      <a href="<?php echo $price; ?>">体験ダイビング</a>
-                      <a href="<?php echo $price; ?>">ファンダイビング</a>
+                      <a href="<?php echo $price; ?>#license">ライセンス講習</a>
+                      <a href="<?php echo $price; ?>#experience">体験ダイビング</a>
+                      <a href="<?php echo $price; ?>#fun">ファンダイビング</a>
+                      <a href="<?php echo $price; ?>#special">スペシャルダイビング</a>
                     </li>
                   </ul>
                 </li>

@@ -19,7 +19,7 @@
 
 .sp-nav__body {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: rem(90) 0;
   width: 100%;
@@ -56,3 +56,23 @@
   // margin-right: auto;
 }
 
+.sp-nav__sub-list a:nth-child(1),
+.sp-nav__sub-list a:nth-child(2),
+.sp-nav__sub-list a:nth-child(3),
+.sp-nav__sub-list a:nth-child(4) {
+  color: $white;
+  display: block;
+  padding: rem(12);
+  font-size: rem(16);
+  font-family: $jp-family;
+  font-weight: $regular;
+  line-height: 1.125;
+}
+
+.sp-nav__sub-list a {
+  margin-left: rem(15);
+}
+
+.sp-nav__sub-list a:empty {
+    display: none;
+}

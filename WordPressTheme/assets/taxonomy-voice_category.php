@@ -31,7 +31,7 @@
           ?>
         </div>
 
-        <ul class="page-voice__contents">
+        <ul class="page-voice__contents voice__cards">
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <li class="page-voice__item voice-card" data-category="catCourse">

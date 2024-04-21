@@ -110,6 +110,13 @@
   }
 }
 
+.footer__nav-left {
+  padding-right: rem(30);
+    @include mq("md") {
+  padding-right: rem(0);
+    }
+}
+
 .footer__nav-items {
   @include mq("md") {}
 }

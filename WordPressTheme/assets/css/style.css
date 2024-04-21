@@ -1090,6 +1090,10 @@ body.active {
 	width: 100%;
 }
 
+.footer__nav-left {
+	padding-right: 1.875rem;
+}
+
 .footer__nav-item {
 	position: relative;
 	width: 100%;
@@ -1896,22 +1900,6 @@ span.wpcf7-spinner {
 	padding-left: 15px;
 	padding-right: 15px;
 	width: 100%;
-}
-
-.sp-nav__sub-list a:nth-child(1),
-.sp-nav__sub-list a:nth-child(2),
-.sp-nav__sub-list a:nth-child(3) {
-	color: #fff;
-	display: block;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.125;
-	padding: 0.75rem;
-}
-
-.sp-nav__sub-list a {
-	margin-left: 0.9375rem;
 }
 
 .modal { /* 初期状態で非表示 */
@@ -3670,7 +3658,7 @@ header {
 }
 
 .sp-nav__body {
-	align-items: center;
+	align-items: flex-start;
 	display: flex;
 	justify-content: center;
 	padding: 5.625rem 0;
@@ -3702,6 +3690,27 @@ header {
 
 .sp-nav__box a::before {
 	content: url(../../assets/images/common/hitode_img.svg);
+}
+
+.sp-nav__sub-list a:nth-child(1),
+.sp-nav__sub-list a:nth-child(2),
+.sp-nav__sub-list a:nth-child(3),
+.sp-nav__sub-list a:nth-child(4) {
+	color: #fff;
+	display: block;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.125;
+	padding: 0.75rem;
+}
+
+.sp-nav__sub-list a {
+	margin-left: 0.9375rem;
+}
+
+.sp-nav__sub-list a:empty {
+	display: none;
 }
 
 .sub-mv__header {
@@ -4502,6 +4511,10 @@ html {
 
 .footer__nav-body {
 	margin-top: 1.8125rem;
+}
+
+.footer__nav-left {
+	padding-right: 0rem;
 }
 
 .footer__nav-item a {
