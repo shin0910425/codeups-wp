@@ -42,6 +42,8 @@
 
 // ここまでーーーーーーーーーーーーーーーーーー
 .gallery-list__box {
+  width: 100%;
+  height: 100%;
   @include mq(md) {
     grid-column: span 5;
     grid-row: span 1;
@@ -50,6 +52,7 @@
 
 .gallery-list__box:nth-of-type(6n+1),
 .gallery-list__box:nth-of-type(6n+6) {
+  width: 100%;
   @include mq(md) {
     grid-column: span 4;
     grid-row: span 2;
@@ -68,8 +71,9 @@
 
 .gallery-list__box:nth-of-type(6n+1) img,
 .gallery-list__box:nth-of-type(6n+6) img {
+  width: 100%;
   aspect-ratio: 300/454;
    @include mq("md") {
-  aspect-ratio: 492/764;
+  aspect-ratio: 492/772;
   }
 }

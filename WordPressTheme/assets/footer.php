@@ -117,7 +117,6 @@
                  <div class="footer__box">
                    <a href="<?php echo $information; ?>">ダイビング情報</a>
                  </div>
-
                  <ul class="footer__sub-item">
                    <li class="footer__sub-list">
                      <a href="<?php echo esc_url($information); ?>?tab=tab01" class="footer-tab-link js-tab-list" data-tab="tab01">ライセンス講習</a>

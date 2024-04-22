@@ -36,11 +36,16 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="page-about__inner inner">
       <div class="page-about__title">
         <p class="section-header__sub">Gallery</p>
         <h2 class="section-header__main">フォト</h2>
       </div>
-
       <div class="page-about__gallery">
         <div class="about-gallery">
           <div class="about-gallery__list gallery-list">

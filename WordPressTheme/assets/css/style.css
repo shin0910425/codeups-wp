@@ -1596,6 +1596,16 @@ span.wpcf7-spinner {
 	width: 100%;
 }
 
+.gallery-list__box {
+	height: 100%;
+	width: 100%;
+}
+
+.gallery-list__box:nth-of-type(6n+1),
+.gallery-list__box:nth-of-type(6n+6) {
+	width: 100%;
+}
+
 .gallery-list__box img {
 	-o-object-fit: cover;
 	aspect-ratio: 580/369;
@@ -1607,6 +1617,7 @@ span.wpcf7-spinner {
 .gallery-list__box:nth-of-type(6n+1) img,
 .gallery-list__box:nth-of-type(6n+6) img {
 	aspect-ratio: 300/454;
+	width: 100%;
 }
 
 .header {
@@ -4043,7 +4054,6 @@ html {
 
 .page-about-layout {
 	margin-top: 9.125rem;
-	padding-bottom: 0.5rem;
 }
 
 .page-blog-layout {
@@ -4657,7 +4667,7 @@ html {
 
 .gallery-list__box:nth-of-type(6n+1) img,
 .gallery-list__box:nth-of-type(6n+6) img {
-	aspect-ratio: 492/764;
+	aspect-ratio: 492/772;
 }
 
 .header {
