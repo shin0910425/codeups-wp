@@ -51,8 +51,8 @@
   left: rem(3);
   transform: translateY(-50%) rotate(-45deg);
   display: block;
-  width: rem(15);
-  height: rem(8);
+  width: rem(9);
+  height: rem(5);
   border-bottom: rem(3) solid $red;
   border-left: rem(3) solid $red;
   transition: .3s;
@@ -95,4 +95,9 @@
 .form-checkbox--privacy input+span::before {
   width: rem(22);
   height: rem(22);
+}
+
+.form-checkbox--privacy input+span::after {
+  width: rem(15);
+  height: rem(9);
 }
