@@ -158,6 +158,10 @@ body.active {
 	overflow: hidden;
 }
 
+.about-gallery-layout {
+	margin-top: 2.5rem;
+}
+
 .breadcrumb-layout__404 {
 	margin-top: -1.25rem;
 	padding-top: 6.625rem;
@@ -263,6 +267,16 @@ body.active {
 
 .top-voice-layout {
 	margin-top: 5.25rem;
+}
+
+.about-gallery__inner {
+	max-width: 37.5rem;
+	width: 100%;
+}
+
+.about-gallery__top {
+	margin-top: 2.5rem;
+	padding-bottom: 0.625rem;
 }
 
 .about__inner {
@@ -1920,6 +1934,7 @@ span.wpcf7-spinner {
 
 .modal { /* 初期状態で非表示 */
 	background: rgba(32, 32, 32, 0.8);
+	cursor: pointer;
 	display: none;
 	height: 100vh;
 	left: 0;
@@ -2163,11 +2178,6 @@ span.wpcf7-spinner {
 	text-align: center;
 }
 
-.page-about__gallery {
-	margin-top: 2.5rem;
-	padding-bottom: 0.625rem;
-}
-
 .page-blog-card {
 	box-shadow: 0.125rem 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.25);
 }
@@ -2309,6 +2319,22 @@ span.wpcf7-spinner {
 
 .page-blog-detail__container li {
 	margin-top: 0.25rem;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.page-blog-detail__container li::before {
+	align-items: center;
+	background: url(../images/common/hitode-green_img.svg) center/cover;
+	content: "";
+	display: inline-block;
+	height: 1.125rem;
+	left: 0;
+	margin-right: 0.5625rem;
+	position: absolute;
+	top: 0.1875rem;
+	vertical-align: middle;
+	width: 1.125rem;
 }
 
 .page-blog-detail__title {
@@ -2369,17 +2395,6 @@ span.wpcf7-spinner {
 	width: 1.125rem;
 }
 
-.page-blog-detail__container li::before {
-	align-items: center;
-	background: url(../images/common/hitode-green_img.svg) center/cover;
-	content: "";
-	display: inline-block;
-	height: 1.125rem;
-	margin-right: 0.5625rem;
-	vertical-align: middle;
-	width: 1.125rem;
-}
-
 p:empty {
 	display: none;
 }
@@ -2409,7 +2424,7 @@ p:empty {
 	display: block;
 }
 
-.page-blog__items.blog-cards {
+.page-blog__items.blog-cards.blog-cards--2col {
 	grid-gap: 2.5rem;
 	counter-reset: number;
 	display: grid;
@@ -4040,6 +4055,10 @@ html {
 	font-size: 1.4814814815vw;
 }
 
+.about-gallery-layout {
+	margin-top: 7.5rem;
+}
+
 .breadcrumb-layout__404 {
 	margin-top: -1.25rem;
 	padding-top: 7.25rem;
@@ -4132,6 +4151,15 @@ html {
 
 .top-voice-layout {
 	margin-top: 8.75rem;
+}
+
+.about-gallery__inner {
+	position: relative;
+}
+
+.about-gallery__top {
+	margin-top: 5rem;
+	padding-bottom: 0;
 }
 
 .about {
@@ -4869,7 +4897,6 @@ html {
 .page-about__container {
 	margin-top: 2.5rem;
 	max-width: 67.5rem;
-	padding-bottom: 7.5rem;
 }
 
 .page-about__img-box {
@@ -4933,11 +4960,6 @@ html {
 .page-about__button {
 	margin-left: 2.5625rem;
 	margin-top: 2.5rem;
-}
-
-.page-about__gallery {
-	margin-top: 5rem;
-	padding-bottom: 0;
 }
 
 .page-blog-card__link {
@@ -5033,7 +5055,7 @@ html {
 	width: 66%;
 }
 
-.page-blog__items.blog-cards {
+.page-blog__items.blog-cards.blog-cards--2col {
 	-moz-column-gap: 2.5rem;
 	column-gap: 2.5rem;
 	grid-template-columns: repeat(2, 1fr);

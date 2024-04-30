@@ -55,7 +55,7 @@
   @include mq("md") {
     max-width: rem(1080);
     margin-top: rem(40);
-    padding-bottom: rem(120);
+    // padding-bottom: rem(120);
   }
 }
 
@@ -199,14 +199,4 @@
 
 .page-about__btn a {
   @include mq("md") {}
-}
-
-.page-about__gallery {
-  margin-top: rem(40);
-  padding-bottom: rem(10);
-
-  @include mq("md") {
-    margin-top: rem(80);
-    padding-bottom: 0;
-  }
 }

@@ -2,6 +2,7 @@
 
 .page-blog-detail--inner.inner {
   padding: 0 rem(15);
+
   @include mq("md") {
     padding: 0 rem(25);
   }
@@ -28,9 +29,10 @@
 .page-blog-detail__container p {
   margin-top: rem(24);
   padding-bottom: rem(24);
+
   @include mq("md") {
-  margin-top: rem(40);
-  padding-bottom: rem(40);
+    margin-top: rem(40);
+    padding-bottom: rem(40);
   }
 }
 
@@ -40,6 +42,22 @@
 
 .page-blog-detail__container li {
   margin-top: rem(4);
+  position: relative;
+  padding-left: rem(24);
+}
+
+.page-blog-detail__container li::before {
+  content: "";
+  background: url(../images/common/hitode-green_img.svg) center/cover;
+  display: inline-block;
+  align-items: center;
+  width: rem(18);
+  height: rem(18);
+  margin-right: rem(9);
+  vertical-align: middle;
+  position: absolute;
+  left: 0;
+  top: rem(3);
 }
 
 
@@ -106,10 +124,10 @@
 
 .page-blog-detail__item {
   font-size: rem(16);
-    color: $green;
-    font-family: $jp-family;
-    font-weight: $regular;
-    line-height: 1.5;
+  color: $green;
+  font-family: $jp-family;
+  font-weight: $regular;
+  line-height: 1.5;
 }
 
 .page-blog-detail__item:not(:first-child) {
@@ -125,17 +143,6 @@
   height: rem(18);
   margin-right: rem(9);
   vertical-align: middle;
-}
-
-.page-blog-detail__container li::before {
-  content: "";
-    background: url(../images/common/hitode-green_img.svg) center/cover;
-    display: inline-block;
-    align-items: center;
-    width: rem(18);
-    height: rem(18);
-    margin-right: rem(9);
-    vertical-align: middle;
 }
 
 .wp-block-image {
