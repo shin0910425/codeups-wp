@@ -243,3 +243,28 @@ add_action('widgets_init', 'my_widgets_register');
  pタグ削除
 -------------------------------------------------- */
 remove_filter('the_content', 'wpautop');
+
+/* -------------------------------------------------
+ Contact Form 7 セレクトボックスの選択肢をタクソノミーのターム一覧から自動生成
+-------------------------------------------------- */
+
+add_filter('do_shortcode_tag', function ($output, $tag, $attr) {
+  if ('contact-form-7' === $tag || 'contact-form' === $tag) {
+
+    $id   = 27;               // コンタクトフォームの ID
+    $name = 'menu-760'; // セレクトボックスの名前
+    $tax  = 'campaign_category';       // タクソノミーのスラッグ
+
+    if ($id == $attr['id']) {
+      $terms = get_terms($tax, array('hide_empty' => false));
+      if (!empty($terms) && !is_wp_error($terms)) {
+        $options = '<option value="">選択してください</option>';
+        foreach ($terms as $term) {
+          $options .= '<option value="' . esc_attr($term->name) . '">' . esc_html($term->name) . '</option>';
+        }
+        $output = preg_replace('/(<select .*?name="' . $name . '".*?>)(.*?)(<\/select>)/i', '${1}' . $options . '${3}', $output);
+      }
+    }
+  }
+  return $output;
+}, 10, 3);
