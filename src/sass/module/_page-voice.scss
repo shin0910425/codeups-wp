@@ -31,19 +31,18 @@
   }
 }
 
-.page-voice__contents.voice__cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: rem(40);
+.page-voice__contents {
   margin-top: rem(40);
 
   @include mq("md") {
-    display: grid;
+  }
+}
+
+.page-voice__contents.voice-cards--2col {
+  gap: rem(40);
+
+  @include mq("md") {
     gap: rem(80) rem(40);
-    grid-template-columns: repeat(2, 1fr);
-    align-items: normal;
   }
 }
 

@@ -6,7 +6,7 @@
   font-size: rem(12);
   line-height: 1;
   border-radius: 0;
-  border: 1px solid #ccc;
+  border: 1px solid $green3;
   // background-image: url(./../images/common/arrow.svg);
   background-repeat: no-repeat;
   background-size: rem(15);
@@ -20,7 +20,7 @@
 }
 
 .form-select select:focus {
-  border: 1px solid #ccc;
+  border: 1px solid $green3;
   box-shadow: none;
   outline: none;
 }

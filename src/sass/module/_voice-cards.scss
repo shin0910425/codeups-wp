@@ -1,15 +1,13 @@
 @use "global" as *;
 
-.voice__cards {
+.voice-cards {
   display: flex;
   flex-direction: column;
-  margin-top: rem(44);
 
   @include mq("md") {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: rem(40);
-    margin-top: rem(40);
   }
 }
 

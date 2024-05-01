@@ -26,15 +26,20 @@
   margin-top: rem(8);
 }
 
-.page-blog-detail__container p {
-  margin-top: rem(24);
-  padding-bottom: rem(24);
+// .page-blog-detail__container p {
+//   margin-top: rem(24);
 
-  @include mq("md") {
-    margin-top: rem(40);
-    padding-bottom: rem(40);
-  }
-}
+//   @include mq("md") {
+//     margin-top: rem(40);
+//   }
+// }
+
+// .page-blog-detail__container ul {
+//   margin-top: rem(24);
+//   @include mq("md") {
+//     margin-top: rem(40);
+//   }
+// }
 
 .page-blog-detail__container li:first-child {
   margin-top: rem(0);
@@ -93,6 +98,13 @@
   @include mq(md) {
     aspect-ratio: 700/468;
   }
+}
+
+.page-blog-detail__text > * {
+  margin-top: rem(24);
+    @include mq("md") {
+      margin-top: rem(40);
+    }
 }
 
 .page-blog-detail__text {
@@ -158,4 +170,12 @@
 
 p:empty {
   display: none;
+}
+
+.wp-block-image {
+    margin-top: rem(24);
+    
+      @include mq("md") {
+        margin-top: rem(40);
+      }
 }
