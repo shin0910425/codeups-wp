@@ -245,26 +245,43 @@ add_action('widgets_init', 'my_widgets_register');
 remove_filter('the_content', 'wpautop');
 
 /* -------------------------------------------------
- Contact Form 7 セレクトボックスの選択肢をタクソノミーのターム一覧から自動生成
+Contact Form 7 セレクトボックスの選択肢をカスタム投稿のタイトルから自動生成
 -------------------------------------------------- */
 
-add_filter('do_shortcode_tag', function ($output, $tag, $attr) {
-  if ('contact-form-7' === $tag || 'contact-form' === $tag) {
-
-    $id   = 27;               // コンタクトフォームの ID
-    $name = 'menu-760'; // セレクトボックスの名前
-    $tax  = 'campaign_category';       // タクソノミーのスラッグ
-
-    if ($id == $attr['id']) {
-      $terms = get_terms($tax, array('hide_empty' => false));
-      if (!empty($terms) && !is_wp_error($terms)) {
-        $options = '<option value="">選択してください</option>';
-        foreach ($terms as $term) {
-          $options .= '<option value="' . esc_attr($term->name) . '">' . esc_html($term->name) . '</option>';
-        }
-        $output = preg_replace('/(<select .*?name="' . $name . '".*?>)(.*?)(<\/select>)/i', '${1}' . $options . '${3}', $output);
-      }
-    }
+//関数の作成
+function job_selectlist($tag, $unused)
+{
+  //セレクトボックスの名前が'select-job'かどうか
+  if ($tag['name'] != 'menu-760') {
+    return $tag;
   }
-  return $output;
-}, 10, 3);
+
+  //get_posts()でセレクトボックスの中身を作成する
+  //クエリの作成
+  $args = array(
+    'numberposts' => -1,
+    'post_type' => 'campaign', //カスタム投稿タイプを指定
+    //並び順⇒セレクトボックス内の表示順
+    'orderby' => 'ID',
+    'order' => 'ASC'
+  );
+
+  //クエリをget_posts()に入れる
+  $job_posts = get_posts($args);
+
+  //クエリがなければ戻す
+  if (!$job_posts) {
+    return $tag;
+  }
+
+  //セレクトボックスにforeachで入れる
+  foreach ($job_posts as $job_post) {
+    $tag['raw_values'][] = $job_post->post_title;
+    $tag['values'][] = $job_post->post_title;
+    $tag['labels'][] = $job_post->post_title;
+  }
+
+  return $tag;
+}
+
+add_filter('wpcf7_form_tag', 'job_selectlist', 10, 2);

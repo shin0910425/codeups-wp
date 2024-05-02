@@ -38,13 +38,13 @@
   }
 }
 
-.page-voice__contents.voice-cards--2col {
-  gap: rem(40);
+// .page-voice__contents.voice-cards--2col {
+//   gap: rem(40);
 
-  @include mq("md") {
-    gap: rem(80) rem(40);
-  }
-}
+//   @include mq("md") {
+//     gap: rem(80) rem(40);
+//   }
+// }
 
 .page-voice__content {
   width: rem(280);

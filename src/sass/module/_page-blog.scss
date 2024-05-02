@@ -48,20 +48,6 @@
   }
 }
 
-.page-blog__items.blog-cards.blog-cards--2col {
-  display: grid;
-  gap: rem(40);
-  grid-template-columns: repeat(1, 1fr);
-  counter-reset: number;
-  padding-bottom: rem(5);
-
-  @include mq(md) {
-    row-gap: rem(80);
-    column-gap: rem(40);
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .page-blog__link {
   padding: rem(24) 0;
   display: flex;

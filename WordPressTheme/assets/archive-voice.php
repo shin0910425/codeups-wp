@@ -29,7 +29,7 @@
           ?>
         </div>
 
-        <ul class="page-voice__contents voice-cards voice-cards--2col">
+        <ul class="page-voice__contents voice-cards">
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <li class="voice-card" data-category="catCourse">
