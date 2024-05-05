@@ -1071,6 +1071,7 @@ body.active {
 .footer__inner.inner {
 	max-width: 37.5rem;
 	padding: 0 0.875rem;
+	width: 100%;
 }
 
 .footer__logo-body {
@@ -1108,22 +1109,29 @@ body.active {
 
 .footer__nav-body {
 	display: flex;
+	gap: 1.5625rem;
 	justify-content: center;
+	margin-left: 0.625rem;
 	margin-top: -0.1875rem;
 	width: 100%;
 }
 
-.footer__nav-left {
-	padding-right: 1.875rem;
-}
-
 .footer__nav-item {
+	max-width: 100%;
 	position: relative;
-	width: 100%;
+	width: 9.375rem;
 }
 
-.footer__sub-item {
-	margin-left: 1rem;
+.footer__nav-item a {
+	color: #fff;
+	display: block;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	left: 5px;
+	line-height: 1.125;
+	margin-top: 2.4375rem;
+	position: relative;
 }
 
 .footer__sub-list a:nth-child(1),
@@ -1139,29 +1147,15 @@ body.active {
 	margin-top: 1.5rem;
 }
 
-.sp-nav__sub-list a {
-	margin-left: 0.9375rem;
-}
-
-.footer__nav-item a {
-	color: #fff;
-	display: block;
-	font-family: "Noto Sans JP", sans-serif;
-	font-size: 1rem;
-	font-weight: 700;
-	line-height: 1.125;
-	margin-top: 2.4375rem;
-}
-
 .footer__box {
 	margin-top: 0.75rem;
 }
 
 .footer__box a::before {
 	content: url(../../assets/images/common/hitode_img.svg);
-	position: relative;
-	right: 0.1875rem;
-	top: 0.1875rem;
+	left: -22px;
+	position: absolute;
+	top: 0rem;
 }
 
 .footer__copyright {
@@ -3717,8 +3711,16 @@ header {
 	margin-top: 0.75rem;
 }
 
+.sp-nav__box a {
+	max-width: 100%;
+	width: 10rem;
+}
+
 .sp-nav__box a::before {
 	content: url(../../assets/images/common/hitode_img.svg);
+	left: -12px;
+	position: absolute;
+	top: 13px;
 }
 
 .sp-nav__sub-list a:nth-child(1),
@@ -3735,7 +3737,8 @@ header {
 }
 
 .sp-nav__sub-list a {
-	margin-left: 0.9375rem;
+	max-width: 100%;
+	width: 10rem;
 }
 
 .sp-nav__sub-list a:empty {
@@ -4558,6 +4561,7 @@ html {
 }
 
 .footer__nav-body {
+	margin-left: 1.5625rem;
 	margin-top: 1.8125rem;
 }
 
@@ -4565,12 +4569,13 @@ html {
 	padding-right: 0rem;
 }
 
-.footer__nav-item a {
-	text-align: left;
+.footer__nav-item {
+	width: 11.375rem;
 }
 
 .footer__nav-item a {
 	margin-top: 0rem;
+	text-align: left;
 }
 
 .footer__box {

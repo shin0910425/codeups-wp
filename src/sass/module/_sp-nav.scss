@@ -23,6 +23,7 @@
   justify-content: center;
   padding: rem(90) 0;
   width: 100%;
+  // margin-left: rem(15);
 }
 
 .sp-nav.is-active {
@@ -48,8 +49,16 @@
   margin-top: rem(12);
 }
 
+.sp-nav__box a {
+  width: rem(160);
+  max-width: 100%;
+}
+
 .sp-nav__box a::before {
   content: url(../../assets/images/common/hitode_img.svg);
+  position: absolute;
+  top: 13px;
+  left: -12px;
 }
 
 .sp-nav--item__right {
@@ -70,7 +79,8 @@
 }
 
 .sp-nav__sub-list a {
-  margin-left: rem(15);
+   width: rem(160);
+   max-width: 100%;
 }
 
 .sp-nav__sub-list a:empty {
