@@ -157,7 +157,7 @@ function change_set_campaign($query)
 add_action('pre_get_posts', 'change_set_campaign');
 
 /* -------------------------------------------------
-カスタム投稿タイプのアーカイブページの表示設定変更【voice】：メインクエリの変更（アーカイブページにて表示件数を9件にする）
+カスタム投稿タイプのアーカイブページの表示設定変更【voice】：メインクエリの変更（アーカイブページにて表示件数を4件にする）
 -------------------------------------------------- */
 function change_set_voice($query)
 {
@@ -165,7 +165,7 @@ function change_set_voice($query)
     return;
   }
   if ($query->is_post_type_archive('voice') || is_tax(['voice_category', 'voice_tag'])) {
-    $query->set('posts_per_page', '6');
+    $query->set('posts_per_page', '4');
     return;
   }
 }
