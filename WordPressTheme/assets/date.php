@@ -18,9 +18,9 @@
     <div class="page-blog__wrapper">
       <div class="page-blog__body">
         <?php if (have_posts()) : ?>
-          <ul class="page-blog__items">
+          <ul class="page-blog__items blog-cards blog-cards--2col">
             <?php while (have_posts()) : the_post(); ?>
-              <li class="page-blog__item blog-cards__item">
+              <li class="blog-cards__item">
                 <div class="blog-card">
                   <a href="<?php the_permalink(); ?>" class="blog-card__link">
                     <div class="blog-card__box">

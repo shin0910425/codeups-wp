@@ -148,7 +148,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                 </li>
                 <li class="sp-nav__item">
                   <div class="sp-nav__box">
-                    <a href="<?php echo $sitemap; ?>">よくある質問</a>
+                    <a href="<?php echo $sitemap; ?>">サイトマップ</a>
                   </div>
                 </li>
                 <li class="sp-nav__item">

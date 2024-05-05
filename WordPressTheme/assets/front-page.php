@@ -299,7 +299,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                   </div>
                 </div>
                 <div class="voice-card__body">
-                  <div class="voice-card__text"><?php the_content(); ?></div>
+                  <p class="voice-card__text"><?php echo wpautop(wp_trim_words(get_the_content(), 200, '…')); ?></p>
                 </div>
               </div>
             </li>

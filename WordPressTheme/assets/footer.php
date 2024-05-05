@@ -75,12 +75,12 @@
              </a>
            </div>
            <div class="footer__icon">
-             <a href="https://www.facebook.com/" class="footer__icon-facebook">
+             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__icon-facebook">
                <div>
                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/facebooklogo.svg" alt="facebook">
                </div>
              </a>
-             <a href="https://www.instagram.com/" class="footer__icon-instagram">
+             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__icon-instagram">
                <div>
                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/instagramlogo.svg" alt="instagram">
                </div>
