@@ -1109,7 +1109,7 @@ body.active {
 
 .footer__nav-body {
 	display: flex;
-	gap: 1.5625rem;
+	gap: 1rem;
 	justify-content: center;
 	margin-left: 0.625rem;
 	margin-top: -0.1875rem;
@@ -1449,6 +1449,7 @@ span.wpcf7-spinner {
 	background-size: 0.9375rem;
 	border: 1px solid #408F95;
 	border-radius: 0;
+	color: #000;
 	cursor: pointer;
 	font-size: 0.75rem;
 	line-height: 1;
@@ -3165,6 +3166,7 @@ header {
 }
 
 .page-sitemap__logo-body {
+	gap: 1rem;
 	margin-left: 0rem;
 }
 
@@ -3197,6 +3199,7 @@ header {
 .page-sitemap__nav-body {
 	display: flex;
 	justify-content: center;
+	margin-left: 0.9375rem;
 	margin-top: 1.5625rem;
 	width: 100%;
 }
@@ -3220,7 +3223,11 @@ header {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.125;
-	padding: 0.75rem;
+	padding: 0.75rem 0.75rem 0.75rem 0rem;
+}
+
+.page-sitemap__nav-item {
+	margin-top: 0.75rem;
 }
 
 .page-sitemap__nav-item a {
@@ -3234,14 +3241,14 @@ header {
 }
 
 .page-sitemap__box {
-	margin-top: 0.75rem;
+	position: relative;
 }
 
 .page-sitemap__box a::before {
 	content: url(../../assets/images/common/site-map-hitode_img.svg);
-	position: relative;
-	right: 0.1875rem;
-	top: 0.1875rem;
+	left: -12px;
+	position: absolute;
+	top: 12px;
 }
 
 .page-tab {
@@ -3683,7 +3690,9 @@ header {
 .sp-nav__body {
 	align-items: flex-start;
 	display: flex;
+	gap: 1rem;
 	justify-content: center;
+	margin-left: 0.875rem;
 	padding: 5.625rem 0;
 	width: 100%;
 }
@@ -3752,7 +3761,7 @@ header {
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width: 18.0625rem;
+	width: 18.75rem;
 }
 
 .sub-mv__title {
@@ -5408,7 +5417,7 @@ html {
 	text-align: left;
 }
 
-.page-sitemap__box {
+.page-sitemap__nav-item {
 	margin: 0;
 }
 
