@@ -179,128 +179,42 @@ jQuery(function ($) {
       }
     });
   });
+  $(document).ready(function () {
+    // タブpage-campaign・page-voice ------------------------------------------
+    var newsLink = $(".js-campaign__link,.js-voice__link li");
+    var limit = 4;
+    var $campaignContent = $(".js-campaign-content,.js-voice-content");
 
-  // $(document).ready(function () {
-  //   // タブpage-campaign・page-voice ------------------------------------------
-  //   var newsLink = $(".js-campaign__link,.js-voice__link li");
-  //   var limit = 4;
-  //   var $campaignContent = $(".js-campaign-content,.js-voice-content");
-
-    
-  //   // 最初の4つのコンテンツを表示
-  //   $campaignContent.slice(0, limit).fadeIn();
-  //   $(newsLink).click(function () {
-  //     $(newsLink).removeClass("active");
-  //     $(this).addClass("active");
-  //     var btnFilter = $(this).attr('data-filter');
-  //     if (btnFilter === 'catAll') {
-  //       // 全てのコンテンツを非表示
-  //       $campaignContent.css('display', 'none');
-  //       // 最初の4つのコンテンツを表示
-  //       $campaignContent.slice(0, limit).fadeIn();
-  //     } else {
-  //       // 特定のカテゴリのコンテンツを非表示
-  //       $campaignContent.css('display', 'none');
-  //       // 選択されたカテゴリのコンテンツを表示
-  //       $campaignContent.filter('[data-category="' + btnFilter + '"]').fadeIn();
-  //     }
-  //   });
-  // });
+    // 最初の4つのコンテンツを表示
+    $campaignContent.slice(0, limit).fadeIn();
+    $(newsLink).click(function () {
+      $(newsLink).removeClass("active");
+      $(this).addClass("active");
+      var btnFilter = $(this).attr('data-filter');
+      if (btnFilter === 'catAll') {
+        // 全てのコンテンツを非表示
+        $campaignContent.css('display', 'none');
+        // 最初の4つのコンテンツを表示
+        $campaignContent.slice(0, limit).fadeIn();
+      } else {
+        // 特定のカテゴリのコンテンツを非表示
+        $campaignContent.css('display', 'none');
+        // 選択されたカテゴリのコンテンツを表示
+        $campaignContent.filter('[data-category="' + btnFilter + '"]').fadeIn();
+      }
+    });
+  });
 });
 
 // タブpage-information ------------------------------------------
-// jQuery(function ($) {
-//   $('.js-tab-menu').on('click', function () {
-//     $('.js-tab-menu').removeClass('is-active');
-//     $('.js-tab-content').removeClass('is-active');
-//     $(this).addClass('is-active');
-//     var number = $(this).data("number");
-//     $('#' + number).addClass('is-active');
-
-//     // タブの色を変更
-//     $('.information-tab__menu-item').removeClass('is-active'); // すべてのタブから 'is-active' クラスを削除
-//     $(this).addClass('is-active'); // クリックされたタブに 'is-active' クラスを付ける
-//   });
-
-
-//   var footerTabList = $(".js-tab-list");
-//   footerTabList.on("click", function () {
-//     var targetTab = $(this).data("tab");
-
-//     // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
-//     var matchingPageTab = $('.js-tab-menu[data-tab="' + targetTab + '"]');
-//     if (matchingPageTab.length > 0) {
-//       matchingPageTab.addClass("is-active");
-
-//       // 対応するコンテンツも表示する
-//       var matchingPageContent = $(
-//         '.js-tab-content[data-number="' + targetTab + '"]'
-//       );
-//       if (matchingPageContent.length > 0) {
-//         matchingPageContent.addClass("is-active");
-//       }
-//     }
-//   });
-
-//   // URLからクエリパラメータを取得
-//   var params = new URLSearchParams(window.location.search);
-//   var targetTab = params.get("tab");
-
-//   // クエリパラメータが存在する場合は、該当のタブを表示する
-//   if (targetTab) {
-//     // クリックイベントをトリガーして実行
-//     $('[data-number="' + targetTab + '"]').trigger("click");
-//   }
-// });
-
 jQuery(function ($) {
-  // 初期状態で tab01 の要素に is-active と is-show を付与する
-  $('[data-number="tab01"], #tab01').addClass('is-show is-active');
-
   $('.js-tab-menu').on('click', function () {
-    // すべてのタブからis-activeクラスを削除
     $('.js-tab-menu').removeClass('is-active');
     $('.js-tab-content').removeClass('is-active');
-
-    // クリックされたタブにis-activeクラスを付与
     $(this).addClass('is-active');
     var number = $(this).data("number");
     $('#' + number).addClass('is-active');
-
-    // タブ02またはタブ03がクリックされた場合、tab01のis-showを削除する
-    if (number === 'tab02' || number === 'tab03') {
-      $('[data-number="tab01"], #tab01').removeClass('is-show');
-    }
   });
-
-  var footerTabList = $(".js-tab-list");
-  footerTabList.on("click", function () {
-    var targetTab = $(this).data("tab");
-
-    // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
-    var matchingPageTab = $('.js-tab-menu[data-tab="' + targetTab + '"]');
-    if (matchingPageTab.length > 0) {
-      matchingPageTab.addClass("is-active");
-
-      // 対応するコンテンツも表示する
-      var matchingPageContent = $(
-        '.js-tab-content[data-number="' + targetTab + '"]'
-      );
-      if (matchingPageContent.length > 0) {
-        matchingPageContent.addClass("is-active");
-      }
-    }
-  });
-
-  // URLからクエリパラメータを取得
-  var params = new URLSearchParams(window.location.search);
-  var targetTab = params.get("tab");
-
-  // クエリパラメータが存在する場合は、該当のタブを表示する
-  if (targetTab) {
-    // クリックイベントをトリガーして実行
-    $('[data-number="' + targetTab + '"]').trigger("click");
-  }
 });
 
 // faq アコーディオン------------------------------------------
@@ -356,21 +270,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-// footer price スクロール位置------------------------------------------
-// jQuery(function ($) {
-//   // #から始まるアンカータグをクリックしたら処理を実行
-//   $('a[href^="#"]').click(function () {
-//     // スクロールの速度（ミリ秒）
-//     const speed = 500;
-//     // アンカーの値取得（リンク先<href>を取得して、hrefという変数に代入）
-//     const href = $(this).attr("href");
-//     // 移動先を取得（リンク先<href>のidがある要素を探してtargetに代入）
-//     const target = $(href == "#" || href == "" ? "html" : href);
-//     // 移動先を調整(idの要素の位置をoffset()で取得しpositionに代入<ヘッダー分は差し引く>）
-//     const position = target.offset().top - $('#js-header').outerHeight();
-//     // スムーススクロール
-//     $("html, body").animate({ scrollTop: position }, speed, "swing");
-//     return false;
-//   });
-// });
