@@ -8,7 +8,7 @@
 
   <div class="page-sidebar__items">
     <div class="page-sidebar__item">
-      <h3 class="page-sidebar__title">人気記事</h3>
+      <h2 class="page-sidebar__title">人気記事</h2>
       <?php
       $args = array(
         "post_type" => "post",
@@ -28,16 +28,16 @@
                     <div class="page-sidebar__ranking-img">
                       <div class="page-sidebar__ranking-img">
                         <?php if (has_post_thumbnail()) : ?>
-                          <?php the_post_thumbnail('full', array('class' => 'img')); ?>
+                          <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                         <?php else : ?>
-                          <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
+                          <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
                         <?php endif; ?>
                       </div>
 
                     </div>
                   </div>
                   <div class="page-sidebar__wrap">
-                    <time datetime="<?php the_time('c') ?>" class="page-sidebar__date"><?php the_time('Y.m.d') ?></time>
+                    <time class="page-sidebar__date" datetime="<?php echo get_the_time('c'); ?>"><?php the_time('Y.m/d'); ?></time>
                     <p class="page-sidebar__ranking-title"><?php the_title(); ?></p>
                   </div>
                 </a>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="page-sidebar__item">
-      <h3 class="page-sidebar__title">口コミ</h3>
+      <h2 class="page-sidebar__title">口コミ</h2>
       <?php
       $args = array(
         "post_type" => "voice",
@@ -101,7 +101,7 @@
     </div>
 
     <div class="page-sidebar__item">
-      <h3 class="page-sidebar__title">キャンペーン</h3>
+      <h2 class="page-sidebar__title">キャンペーン</h2>
       <?php
       $args = array(
         "post_type" => "campaign",
@@ -122,15 +122,15 @@
 
                     <div>
                       <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail(array('223,334')); ?>
+                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                       <?php else : ?>
-                        <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
+                        <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
                       <?php endif; ?>
                     </div>
                     <div class="campaign-card__body campaign-card__body--small">
 
                       <div class="campaign-card__body-head">
-                        <h3 class="campaign-card__title campaign-card__title-center"><?php the_title(); ?></h3>
+                        <h2 class="campaign-card__title campaign-card__title-center"><?php the_title(); ?></h2>
                       </div>
                       <div class="campaign-card__charge">
                         <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
@@ -156,7 +156,7 @@
     </div>
 
     <div class="page-sidebar__item">
-      <h3 class="page-sidebar__title">アーカイブ</h3>
+      <h2 class="page-sidebar__title">アーカイブ</h2>
       <div class="page-sidebar__box js-year">
         <div class="page-sidebar__item">
           <?php

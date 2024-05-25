@@ -59,11 +59,11 @@
 
  <footer>
    <div id="footer" class="footer footer-layout <?php
-                                                if (is_page('291')) {
-                                                  echo 'footer-layout--thanks-special'; // 特定のページID(291)の場合に適用するクラス
-                                                } else if (is_404()) {
-                                                  echo 'page-footer-layout--mt0'; // 404ページの場合に適用するクラス
-                                                } ?>">
+      if (is_page('thanks')) {
+        echo 'footer-layout--thanks-special'; // 特定のスラッグの場合に適用するクラス
+      } else if (is_404()) {
+        echo 'page-footer-layout--mt0'; // 404ページの場合に適用するクラス
+      } ?>">
      <div class="footer__inner inner">
        <nav class="footer__nav">
          <div class="footer__logo-body footer__logo-body--404">

@@ -20,16 +20,30 @@
         <ul class="faq-list">
           <?php
           $faq_group = SCF::get('faq-group', get_page_by_path('faq')->ID);
-          foreach ($faq_group as $fields) :
-          ?>
+          $has_content = false;
+
+          if (!empty($faq_group)) :
+            foreach ($faq_group as $fields) :
+              $faq_question = $fields['faq-question'];
+              $faq_answer = $fields['faq-answer'];
+
+              if (!empty($faq_question) && !empty($faq_answer)) :
+                $has_content = true;
+                ?>
+                <li class="faq-list__item">
+                  <p class="faq-list__item-question js-faq-question is-open"><?php echo esc_html($faq_question); ?></p>
+                  <p class="faq-list__item-answer">
+                    <?php echo esc_html($faq_answer); ?>
+                  </p>
+                </li>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          <?php endif; ?>
+          <?php if (!$has_content) : ?>
             <li class="faq-list__item">
-              <p class="faq-list__item-question js-faq-question is-open"><?php echo $fields['faq-question']; ?></p>
-              <p class="faq-list__item-answer">
-                <?php echo $fields['faq-answer']; ?>
-              </p>
+              <p class="faq-list__item-message">FAQが見つかりませんでした。</p>
             </li>
-            <?php $first = false; ?>
-          <?php endforeach; ?>
+          <?php endif; ?>
         </ul>
       </div>
     </div>

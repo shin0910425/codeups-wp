@@ -22,8 +22,7 @@
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <div class="page-blog-detail__mete">
-                <!-- <time datetime="<?php the_time('c') ?>" class="blog-card__time"><?php the_time('Y.m/d') ?></time> -->
-                <time class="blog-card__time" datetime="<?php echo get_the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
+                <time class="blog-card__time" datetime="<?php echo get_the_time('c'); ?>"><?php the_time('Y.m/d'); ?></time>
 
               </div>
               <div class="page-blog-detail__container">
@@ -38,18 +37,6 @@
                 <div class="page-blog-detail__text">
                   <?php the_content(); ?>
                 </div>
-                <!-- <p class="page-blog-detail__text">
-                  <?php the_content(); ?>
-                </p> -->
-
-                <!-- <ul class="page-blog-detail__list">
-                  <li class="page-blog-detail__item">リスト1</li>
-                  <li class="page-blog-detail__item">リスト2</li>
-                  <li class="page-blog-detail__item">リスト3</li>
-                </ul> -->
-                <!-- <p class="page-blog-detail__text">
-                  <?php the_content(); ?>
-                </p> -->
               </div>
 
               <nav class="pagination pagination--detail">

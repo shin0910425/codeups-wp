@@ -50,7 +50,7 @@
           <?php
           $gallery_group = SCF::get('gallery-group', get_page_by_path('about')->ID);
 
-          if ($gallery_group) {
+          if ($gallery_group) :
             foreach ($gallery_group as $index => $fields) :
               $image_url = $fields['gallery-image'];
           ?>
@@ -70,7 +70,7 @@
               </div>
           <?php
             endforeach;
-          }
+          endif;
           ?>
         </div>
       </div>

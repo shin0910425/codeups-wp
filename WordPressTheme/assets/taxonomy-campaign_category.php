@@ -69,7 +69,7 @@
                         <div class="page-campaign-card_box u-desktop">
                           <div class="page-campaign-card_text"><?php the_excerpt(); ?>
                           </div>
-                          <time class="page-campaign-card__time" datetime="<?php echo esc_attr(date('Y-m-d', strtotime(get_field('campaign_date_start')))); ?>">
+                          <time class="page-campaign-card__time" datetime="<?php echo get_the_time('c'); ?>">
                             <?php echo esc_html(get_field('campaign_date_display_start')); ?>-<?php echo esc_html(get_field('campaign_date_display_end')); ?>
                           </time>
 

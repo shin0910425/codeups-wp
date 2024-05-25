@@ -26,14 +26,13 @@
                     <div class="blog-card__box">
                       <div class="blog-card__image">
                         <?php if (has_post_thumbnail()) : ?>
-                          <?php the_post_thumbnail('medium', array('class' => 'img')); ?>
+                          <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                         <?php else : ?>
-                          <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
+                          <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
                         <?php endif; ?>
                       </div>
                       <div class="blog-card__mete">
-                        <!-- <time class="blog-card__time"><?php the_time('Y.m/d') ?></time> -->
-                        <time class="blog-card__time" datetime="<?php echo get_the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
+                        <time class="blog-card__time" datetime="<?php echo get_the_time('c'); ?>"><?php the_time('Y.m/d'); ?></time>
 
                         <h3 class="blog-card__title"><?php the_title(); ?></h3>
                       </div>
@@ -60,17 +59,6 @@
           );
           the_posts_pagination($args);
           ?>
-
-          <!-- <div>
-            <a class="prev page-numbers" href="">&lsaquo;</a>
-            <span aria-current="page" class="page-numbers current">1</span>
-            <a class="page-numbers" href="">2</a>
-            <a class="page-numbers" href="">3</a>
-            <a class="page-numbers" href="">4</a>
-            <a class="page-numbers" href="">5</a>
-            <a class="page-numbers" href="">6</a>
-            <a class="next page-numbers" href="">&rsaquo;</a>
-          </div> -->
         </nav>
       </div>
 

@@ -38,7 +38,7 @@
                     <div class="page-campaign-card__link">
                       <div class="page-campaign-card__link-img">
                         <?php if (has_post_thumbnail()) : ?>
-                          <?php the_post_thumbnail('full'); ?>
+                          <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                         <?php else : ?>
                           <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
                         <?php endif; ?>
@@ -71,7 +71,7 @@
                           ?>
 
                           <p class="page-campaign-card_text"><?php echo $excerpt; ?></p>
-                          <time class="page-campaign-card__time" datetime="<?php echo esc_attr(date('Y-m-d', strtotime(get_field('campaign_date_start')))); ?>">
+                          <time class="page-campaign-card__time" datetime="<?php echo get_the_time('c'); ?>">
                             <?php echo esc_html(get_field('campaign_date_display_start')); ?>-<?php echo esc_html(get_field('campaign_date_display_end')); ?>
                           </time>
                           <p class="page-campaign-card_contact-text">ご予約・お問い合わせはコチラ</p>

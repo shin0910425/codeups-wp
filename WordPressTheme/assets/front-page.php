@@ -20,7 +20,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
       <div class="swiper-wrapper">
         <?php
         // ACFフィールドから値を取得
-        for ($i = 1; $i <= 4; $i++) {
+        for ($i = 1; $i <= 4; $i++) :
           $slide_img_pc = get_field('slide_img_pc_' . $i);
           $slide_img_sp = get_field('slide_img_sp_' . $i);
         ?>
@@ -31,7 +31,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
             </picture>
           </div>
         <?php
-        }
+        endfor
         ?>
       </div>
       <div class="mv__header">
@@ -207,11 +207,15 @@ $sitemap = esc_url(home_url('/sitemap/'));
                 <a href="<?php the_permalink(); ?>" class="blog-card__link">
                   <div class="blog-card__box">
                     <div class="blog-card__image">
-                      <?php the_post_thumbnail('medium', array('class' => 'img')); ?>
+                      <?php if (has_post_thumbnail()) : ?>
+                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
+                      <?php else : ?>
+                        <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                      <?php endif; ?>
                     </div>
                     <div class="blog-card__mete">
 
-                      <time class="blog-card__time" datetime="<?php echo get_the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
+                      <time class="blog-card__time" datetime="<?php echo get_the_time('c'); ?>"><?php the_time('Y.m/d'); ?></time>
 
                       <h3 class="blog-card__title"><?php the_title(); ?></h3>
                     </div>
