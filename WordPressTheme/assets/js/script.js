@@ -142,21 +142,11 @@ jQuery(function ($) {
     }
   }
 
-  // スライド用のswiperインスタンスを作成
-  // var slideswiper = new Swiper('.swiper-container', {
-  //   // 他の設定オプションをここに設定
-  // });
 
   function updateSwiperOnResize() {
     slideswiper.params.slidesPerView = getSlidesPerView();
     slideswiper.update();
   }
-
-  // ページ読み込み時に実行
-  // updateSwiperOnResize();
-
-  // 画面サイズ変更時にスライダーを更新
-  // window.addEventListener('resize', updateSwiperOnResize);
 
   // 背景から画像が出る-------------------------------------------
   var EffectH = 100;
@@ -180,7 +170,7 @@ jQuery(function ($) {
     });
   });
 
-  
+
   $(document).ready(function () {
     // タブpage-campaign・page-voice ------------------------------------------
     var newsLink = $(".js-campaign__link,.js-voice__link li");
@@ -210,23 +200,56 @@ jQuery(function ($) {
 
 // タブpage-information ------------------------------------------
 jQuery(function ($) {
+  // 初期状態で tab01 の要素に is-active と is-show を付与する
+  $('[data-number="tab01"], #tab01').addClass('is-show is-active');
+
   $('.js-tab-menu').on('click', function () {
+    // すべてのタブからis-activeクラスを削除
     $('.js-tab-menu').removeClass('is-active');
     $('.js-tab-content').removeClass('is-active');
+
+    // クリックされたタブにis-activeクラスを付与
     $(this).addClass('is-active');
     var number = $(this).data("number");
     $('#' + number).addClass('is-active');
+
+    // タブ02またはタブ03がクリックされた場合、tab01のis-showを削除する
+    if (number === 'tab02' || number === 'tab03') {
+      $('[data-number="tab01"], #tab01').removeClass('is-show');
+    }
   });
+
+  var footerTabList = $(".js-tab-list");
+  footerTabList.on("click", function () {
+    var targetTab = $(this).data("tab");
+
+    // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
+    var matchingPageTab = $('.js-tab-menu[data-tab="' + targetTab + '"]');
+    if (matchingPageTab.length > 0) {
+      matchingPageTab.addClass("is-active");
+
+      // 対応するコンテンツも表示する
+      var matchingPageContent = $(
+        '.js-tab-content[data-number="' + targetTab + '"]'
+      );
+      if (matchingPageContent.length > 0) {
+        matchingPageContent.addClass("is-active");
+      }
+    }
+  });
+
+  // URLからクエリパラメータを取得
+  var params = new URLSearchParams(window.location.search);
+  var targetTab = params.get("tab");
+
+  // クエリパラメータが存在する場合は、該当のタブを表示する
+  if (targetTab) {
+    // クリックイベントをトリガーして実行
+    $('[data-number="' + targetTab + '"]').trigger("click");
+  }
 });
 
 // faq アコーディオン------------------------------------------
-
-// jQuery(function ($) {
-//   $('.js-faq-question').on('click', function () {
-//     $(this).next().slideToggle();
-//     $(this).toggleClass('is-open');
-//   });
-// });
 
 jQuery(function ($) {
   $(".faq-list__item:first-of-type .faq-list__item-answer").css("display", "block");
