@@ -86,7 +86,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                             <?php if (has_post_thumbnail()) : ?>
                               <?php the_post_thumbnail('full'); ?>
                             <?php else : ?>
-                              <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
+                              <img class="img" src="<?php echo esc_url(get_theme_file_uri("/assets/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
                             <?php endif; ?>
                           </div>
                           <div class="campaign-card__body">
@@ -143,7 +143,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
   <!-- about -->
   <section id="about" class="about top-about-layout">
     <div class="about__icon-image">
-      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/images/common/sango_img.png" alt="サンゴのアイコン">
+      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/sango_img.png" alt="サンゴのアイコン">
     </div>
     <div class="about__inner inner">
 
@@ -154,10 +154,10 @@ $sitemap = esc_url(home_url('/sitemap/'));
       <div class="about__container">
         <div class="about__img-box">
           <div class="about__image-1">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/about_img1.jpg" alt="屋根の上にシーサーの置き物">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about_img1.jpg" alt="屋根の上にシーサーの置き物">
           </div>
           <div class="about__image-2">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/about_img2.jpg" alt="魚の群れ">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about_img2.jpg" alt="魚の群れ">
           </div>
         </div>
         <div class="about__body">
@@ -185,7 +185,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
       <div class="information__box">
         <div class="information__image">
           <div class="js-scroll colorbox-scroll"><span class="js-motion-txt colorbox-motion-txt"><span class="js-motion-inner colorbox-motion-inner">
-                <img class="background-image" src="<?php echo get_theme_file_uri(); ?>/images/common/information_img.jpg" alt="泳ぐ魚">
+                <img class="background-image" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information_img.jpg" alt="泳ぐ魚">
               </span></span>
           </div>
         </div>
@@ -204,10 +204,10 @@ $sitemap = esc_url(home_url('/sitemap/'));
   <!-- blog -->
   <section id="blog" class="blog top-blog-layout">
     <div class="blog__icon-image">
-      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img1.png" alt="キンギョハナダイのアイコン">
+      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img1.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="blog__bg u-desktop">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/blog-bg_img.jpg" alt="水面を撮った様子">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/blog-bg_img.jpg" alt="水面を撮った様子">
     </div>
     <div class="blog__inner inner">
       <div class="blog__title section-header">
@@ -232,7 +232,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                       <?php if (has_post_thumbnail()) : ?>
                         <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                       <?php else : ?>
-                        <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
                       <?php endif; ?>
                     </div>
                     <div class="blog-card__mete">
@@ -262,10 +262,10 @@ $sitemap = esc_url(home_url('/sitemap/'));
   <!-- voice -->
   <section id="voice" class="voice top-voice-layout">
     <div class="voice__icon-image1">
-      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="voice__icon-image2">
-      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/images/common/tatu_img.png" alt="イバラタツのアイコン">
+      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/tatu_img.png" alt="イバラタツのアイコン">
     </div>
     <div class="voice__inner inner">
       <div class="voice__title section-header">
@@ -341,7 +341,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
                           <?php if (get_the_post_thumbnail()) : ?>
                             <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                           <?php else : ?>
-                            <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
                           <?php endif; ?>
                         </span></span></div>
                   </div>
@@ -400,7 +400,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
   if ($has_content) : ?>
     <section id="price" class="price top-price-layout">
       <div class="price__icon-image">
-        <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img3.png" alt="キンギョハナダイのアイコン">
+        <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img3.png" alt="キンギョハナダイのアイコン">
       </div>
       <div class="price__inner inner">
         <div class="price__title section-header">
@@ -413,8 +413,8 @@ $sitemap = esc_url(home_url('/sitemap/'));
               <span class="js-motion-txt colorbox-motion-txt">
                 <span class="js-motion-inner colorbox-motion-inner">
                   <picture>
-                    <source srcset="<?php echo get_theme_file_uri(); ?>/images/common/price-pc_img.jpg" media="(min-width: 768px)">
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/common/price-sp_img.jpg" alt="海の中で泳ぐウミガメ">
+                    <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-pc_img.jpg" media="(min-width: 768px)">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/price-sp_img.jpg" alt="海の中で泳ぐウミガメ">
                   </picture>
                 </span>
               </span>

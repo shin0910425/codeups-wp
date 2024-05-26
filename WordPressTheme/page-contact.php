@@ -15,7 +15,7 @@
       <main>
         <div class="page-contact page-contact-layout">
           <div class="page-contact__icon-image1">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
           </div>
           <div class="page-contact__inner inner">
             <?php echo do_shortcode('[contact-form-7 id="2aa6578" title="お問い合わせ"]'); ?>

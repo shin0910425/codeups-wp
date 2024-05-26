@@ -13,7 +13,7 @@
 <main>
   <section class="page-voice page-voice-layout">
     <div class="page-voice__icon-image1">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-voice__inner inner">
       <div class="page-voice__tab page-tab">
@@ -91,7 +91,7 @@
                             <?php if (get_the_post_thumbnail()) : ?>
                               <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                             <?php else : ?>
-                              <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
                             <?php endif; ?>
                           </span></span></div>
                     </div>

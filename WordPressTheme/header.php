@@ -32,7 +32,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
       <h1 class="header__logo">
         <a href="<?php echo $home; ?>">
           <?php  ?>
-          <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps.svg" alt="CodeUps">
+          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps.svg" alt="CodeUps">
         </a>
       </h1>
       <button class="header__hamburger js-hamburger">

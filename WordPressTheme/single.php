@@ -13,7 +13,7 @@
 <main>
   <section class="page-blog page-blog-layout">
     <div class="page-blog__icon-image1">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-blog__inner inner page-blog-detail--inner">
       <div class="page-blog__wrapper">
@@ -31,7 +31,7 @@
                   <?php if (get_the_post_thumbnail()) : ?>
                     <?php the_post_thumbnail('full', array('class' => 'img')); ?>
                   <?php else : ?>
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
                   <?php endif; ?>
                 </div>
                 <div class="page-blog-detail__text">

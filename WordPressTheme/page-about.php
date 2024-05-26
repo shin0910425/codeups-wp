@@ -13,19 +13,19 @@
 <main>
   <section id="about" class="page-about page-about-layout">
     <div class="page-about__icon-image1">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-about__icon-image">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img4.png" alt="キンギョハナダイのアイコン">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img4.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-about__inner inner">
       <div class="page-about__container">
         <div class="page-about__img-box">
           <div class="page-about__image-1">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/about_img1.jpg" alt="屋根の上にシーサーの置き物">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about_img1.jpg" alt="屋根の上にシーサーの置き物">
           </div>
           <div class="page-about__image-2">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/common/about_img2.jpg" alt="魚の群れ">
+            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/about_img2.jpg" alt="魚の群れ">
           </div>
         </div>
         <div class="page-about__body">

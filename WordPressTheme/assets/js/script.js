@@ -179,6 +179,8 @@ jQuery(function ($) {
       }
     });
   });
+
+  
   $(document).ready(function () {
     // タブpage-campaign・page-voice ------------------------------------------
     var newsLink = $(".js-campaign__link,.js-voice__link li");
@@ -218,6 +220,14 @@ jQuery(function ($) {
 });
 
 // faq アコーディオン------------------------------------------
+
+// jQuery(function ($) {
+//   $('.js-faq-question').on('click', function () {
+//     $(this).next().slideToggle();
+//     $(this).toggleClass('is-open');
+//   });
+// });
+
 jQuery(function ($) {
   $(".faq-list__item:first-of-type .faq-list__item-answer").css("display", "block");
   $(".faq-list__item:first-of-type .faq-list__item-question").addClass("is-open");

@@ -30,7 +30,7 @@
                         <?php if (has_post_thumbnail()) : ?>
                           <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                         <?php else : ?>
-                          <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                          <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
                         <?php endif; ?>
                       </div>
 
@@ -70,7 +70,7 @@
                     <?php if (get_the_post_thumbnail()) : ?>
                       <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                     <?php else : ?>
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
                     <?php endif; ?>
                   </div>
                   <div class="page-sidebar__reviews-tag">
@@ -124,7 +124,7 @@
                       <?php if (has_post_thumbnail()) : ?>
                         <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>のアイキャチ画像">
                       <?php else : ?>
-                        <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg" alt="noimage">
                       <?php endif; ?>
                     </div>
                     <div class="campaign-card__body campaign-card__body--small">

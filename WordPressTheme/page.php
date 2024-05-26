@@ -34,7 +34,7 @@
     ?>
     <div class="<?php echo $page_class; ?> <?php echo $page_class; ?>-layout">
       <div class="<?php echo $page_class; ?>__icon-image1">
-        <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
       </div>
       <div class="<?php echo $page_class; ?>__inner inner">
         <?php while (have_posts()) : the_post(); ?>

@@ -13,7 +13,7 @@
 <main>
   <section id="campaign" class="page-campaign page-campaign-layout">
     <div class="page-campaign__icon-image1">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-campaign__inner inner">
       <div class="page-campaign__tab page-tab">
@@ -54,7 +54,7 @@
                         <?php if (has_post_thumbnail()) : ?>
                           <?php the_post_thumbnail('full'); ?>
                         <?php else : ?>
-                          <img src="<?php echo get_theme_file_uri('/images/common/noimage.jpg'); ?>" alt="noimage">
+                          <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>" alt="noimage">
                         <?php endif; ?>
                       </div>
                       <div class="page-campaign-card__body">

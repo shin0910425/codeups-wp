@@ -13,7 +13,7 @@
 <main>
   <div class="page-sitemap page-sitemap-layout">
     <div class="page-sitemap__icon-image1">
-      <img class="u-mobile" src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+      <img class="u-mobile" src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-sitemap__inner inner">
       <div class="page-sitemap__nav-body">

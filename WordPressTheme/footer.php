@@ -16,14 +16,14 @@
  <?php if (!is_page('contact') && !is_page('thanks') && !is_404()) : ?>
    <section id="contact" class="contact top-contact-layout">
      <div class="contact__icon-image">
-       <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img4.png" alt="キンギョハナダイのアイコン">
+       <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img4.png" alt="キンギョハナダイのアイコン">
      </div>
      <div class="contact__inner inner">
        <div class="contact__wrapper">
          <div class="contact__wrap">
            <div class="contact__contain">
              <div class="contact__logo">
-               <img src="<?php echo get_theme_file_uri(); ?>/images/common/contact-logo_img.svg" alt="Codeups">
+               <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/contact-logo_img.svg" alt="Codeups">
              </div>
              <div class="contact__box">
                <div class="contact__form-item">
@@ -70,19 +70,19 @@
            <div class="footer__logo">
              <a href="<?php echo $home; ?>">
                <div>
-                 <img src="<?php echo get_theme_file_uri(); ?>/images/common/CodeUps.svg" alt="CodeUps">
+                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps.svg" alt="CodeUps">
                </div>
              </a>
            </div>
            <div class="footer__icon">
              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__icon-facebook">
                <div>
-                 <img src="<?php echo get_theme_file_uri(); ?>/images/common/facebooklogo.svg" alt="facebook">
+                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/facebooklogo.svg" alt="facebook">
                </div>
              </a>
              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__icon-instagram">
                <div>
-                 <img src="<?php echo get_theme_file_uri(); ?>/images/common/instagramlogo.svg" alt="instagram">
+                 <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/instagramlogo.svg" alt="instagram">
                </div>
              </a>
            </div>

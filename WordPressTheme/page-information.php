@@ -13,22 +13,22 @@
 <main>
   <section class="page-information page-information-layout">
     <div class="page-information__icon-image1">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-information__inner inner">
       <div class="page-information-tab">
         <div class="information-tab">
           <ul class="information-tab__menu">
             <li class="information-tab__menu-item js-tab-menu" data-number="tab01">
-              <div class="information-tab__icon"><img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon1.svg" alt="クジラの画像"></div>
+              <div class="information-tab__icon"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-tab-icon1.svg" alt="クジラの画像"></div>
               <p>ライセンス<br class="u-mobile">講習</p>
             </li>
             <li class="information-tab__menu-item js-tab-menu" data-number="tab02">
-              <div class="information-tab__icon"><img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon2.svg" alt="サメの画像"></div>
+              <div class="information-tab__icon"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-tab-icon2.svg" alt="サメの画像"></div>
               <p>ファン<br class="u-mobile">ダイビング</p>
             </li>
             <li class="information-tab__menu-item js-tab-menu" data-number="tab03">
-              <div class="information-tab__icon"><img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon3.svg" alt="魚の画像"></div>
+              <div class="information-tab__icon"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-tab-icon3.svg" alt="魚の画像"></div>
               <p>体験<br class="u-mobile">ダイビング</p>
             </li>
           </ul>
@@ -42,7 +42,7 @@
                   </p>
                 </div>
                 <div class="information-tab__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/information-body_img1.jpg" alt="ライセンス講習を受けている人を上空から撮影している画像">
+                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-body_img1.jpg" alt="ライセンス講習を受けている人を上空から撮影している画像">
                 </div>
               </div>
             </li>
@@ -55,7 +55,7 @@
                   </p>
                 </div>
                 <div class="information-tab__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/information-body_img2.jpg" alt="2匹の魚が泳いでいる">
+                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-body_img2.jpg" alt="2匹の魚が泳いでいる">
                 </div>
               </div>
             </li>
@@ -68,7 +68,7 @@
                   </p>
                 </div>
                 <div class="information-tab__img">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/information-body_img3.jpg" alt="小魚達の群れ">
+                  <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-body_img3.jpg" alt="小魚達の群れ">
                 </div>
               </div>
             </li>

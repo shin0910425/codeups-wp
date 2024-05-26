@@ -3,9 +3,6 @@
 function add_custom_scripts()
 {
   // Google Fontsの追加
-  // wp_enqueue_style('google-fonts-montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap', false);
-  // wp_enqueue_style('google-fonts-noto', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap', false);
-
   wp_enqueue_style('google-fonts1', '//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
   wp_enqueue_style('google-fonts2', '//fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap');
   wp_enqueue_style('google-fonts3', '//fonts.googleapis.com/css2?family=Gotu:wght@400;500;700&display=swap');
@@ -16,7 +13,7 @@ function add_custom_scripts()
   wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css', false);
 
   // テーマのCSSの追加
-  wp_enqueue_style('theme-styles', get_theme_file_uri('/css/style.css'), false);
+  wp_enqueue_style('theme-styles', get_theme_file_uri('/assets/css/style.css'), false);
 
   // jQueryの追加
   wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.js', array(), '3.6.0', true);
@@ -25,7 +22,7 @@ function add_custom_scripts()
   wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', array('jquery'), '8.0.0', true);
 
   // テーマのJSの追加
-  wp_enqueue_script('theme-scripts', get_theme_file_uri('/js/script.js'), array('jquery'), '1.0.0', true);
+  wp_enqueue_script('theme-scripts', get_theme_file_uri('/assets/js/script.js'), array('jquery'), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'add_custom_scripts');
@@ -65,18 +62,6 @@ function my_setup()
 }
 add_action('after_setup_theme', 'my_setup');
 
-/*
-function post_has_archive($args, $post_type){
-	if('post' == $post_type){
-		$args['rewrite'] = true;
-		$args['has_archive'] = 'news';
-		$args['label'] = 'お知らせ';
-	}
-	return $args;
-}
-add_filter('register_post_type_args','post_has_archive',10,2);
-*/
-
 
 /* ---------- 「投稿」の表記変更 ---------- */
 function Change_menulabel()
@@ -106,40 +91,6 @@ function Change_objectlabel()
 }
 add_action('init', 'Change_objectlabel');
 add_action('admin_menu', 'Change_menulabel');
-
-
-
-
-
-// アーカイブの表示件数変更
-// function change_posts_per_page($query)
-// {
-//   if (is_admin() || !$query->is_main_query())
-//     return;
-
-//   if ($query->is_archive('campaign')) { // カスタム投稿タイプを指定
-//     $query->set('posts_per_page', '1'); // 表示件数を指定
-//   }
-
-//   if ($query->is_archive('voice')) { // カスタム投稿タイプを指定
-//     $query->set('posts_per_page', '-1'); // 表示件数を指定
-//   }
-// }
-// add_action('pre_get_posts', 'change_posts_per_page');
-
-
-// カスタム投稿タイプ【campaign】：メインクエリの変更（アーカイブページにて表示件数を9件にする）
-// カスタム投稿タイプの設定【campaign】
-// function register_custom_post_type()
-// {
-//   $args = array(
-//     'public' => true,
-//     'label'  => 'Campaigns',
-//     // 他の設定も追加可能
-//   );
-//   register_post_type('campaign', $args);
-// }
-// add_action('init', 'register_custom_post_type');
 
 /* -------------------------------------------------
 カスタム投稿タイプのアーカイブページの表示設定変更【campaign】：メインクエリの変更（アーカイブページにて表示件数を9件にする）
@@ -215,29 +166,6 @@ function my_widgets_register()
   register_sidebar($args);
 }
 add_action('widgets_init', 'my_widgets_register');
-
-// アーカイブ
-// function add_nen_year_archives($link_html)
-// {
-//   $regex = array(
-//     "/ title='([\d]{4})'/" => " title='$1年'",
-//     "/ ([\d]{4}) /"        => " $1年 ",
-//     "/>([\d]{4})<\/a>/"    => ">$1年</a>"
-//   );
-//   $link_html = preg_replace(array_keys($regex), $regex, $link_html);
-//   return $link_html;
-// }
-// add_filter('get_archives_link', 'add_nen_year_archives');
-
-// functions.php での例
-// functions.php での例
-// function custom_taxonomy() {
-//     register_taxonomy('voice_category', 'your_custom_post_type', array(
-//         'label' => 'Voice Categories',
-//         // その他の設定...
-//     ));
-// }
-// add_action('init', 'custom_taxonomy');
 
 /* -------------------------------------------------
  pタグ削除

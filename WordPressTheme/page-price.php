@@ -13,7 +13,7 @@
 <main>
   <div class="page-price page-price-layout">
     <div class="page-price__icon-image1">
-      <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-price__inner inner">
       <?php
@@ -36,7 +36,7 @@
           <div class="page-price__list-title">
             <div class="page-price__sub-title">ライセンス講習</div>
             <div class="page-price__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon1.svg" alt="">
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-tab-icon1.svg" alt="">
             </div>
           </div>
           <table class="page-price__box">
@@ -72,7 +72,7 @@
           <div class="page-price__list-title" id="experience">
             <div class="page-price__sub-title">体験ダイビング</div>
             <div class="page-price__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon1.svg" alt="">
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-tab-icon1.svg" alt="">
             </div>
           </div>
           <table class="page-price__box">
@@ -108,7 +108,7 @@
           <div class="page-price__list-title" id="fun">
             <div class="page-price__sub-title">ファンダイビング</div>
             <div class="page-price__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon1.svg" alt="">
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-tab-icon1.svg" alt="">
             </div>
           </div>
           <table class="page-price__box">
@@ -144,7 +144,7 @@
           <div class="page-price__list-title" id="special">
             <div class="page-price__sub-title">スペシャルダイビング</div>
             <div class="page-price__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/common/information-tab-icon1.svg" alt="">
+              <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/information-tab-icon1.svg" alt="">
             </div>
           </div>
           <table class="page-price__box">
