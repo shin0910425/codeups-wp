@@ -19,14 +19,14 @@
       <div class="page-campaign__tab page-tab">
 
         <div class="page-tab_list">
-          <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-tab_item <?php echo is_post_type_archive('campaign') ? 'is-active' : '' ?>" data-filter="catAll">ALL</a>
+          <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="page-tab_item <?php echo is_post_type_archive('campaign') ? 'is-active' : ''; ?>" data-filter="catAll">ALL</a>
           <?php
           $args = ['taxonomy' => 'campaign_category'];
           $terms = get_terms($args);
           foreach ($terms as $term) {
             // 現在表示されているタームがこのタームかどうかをチェック
             $is_term_active = is_tax('campaign_category', $term) ? 'is-active' : '';
-            echo '<div class="page-tab_item ' . $is_term_active . '"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+            echo '<div class="page-tab_item ' . $is_term_active . '"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></div>';
           }
           ?>
         </div>
@@ -34,6 +34,18 @@
         <ul class="page-campaign__contents">
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
+              <?php
+              // ACFフィールドの値を取得
+              $campaign_price_1 = get_field('campaign_price_1');
+              $campaign_price_2 = get_field('campaign_price_2');
+              $campaign_date_display_start = get_field('campaign_date_display_start');
+              $campaign_date_display_end = get_field('campaign_date_display_end');
+
+              // 全てのフィールドが空かどうかをチェック
+              if (empty($campaign_price_1) && empty($campaign_price_2) && empty($campaign_date_display_start) && empty($campaign_date_display_end)) {
+                continue; // 次のループにスキップ
+              }
+              ?>
               <li class="page-campaign__content" data-category="catInfo">
                 <div class="page-campaign-card">
                   <div class="page-campaign-card__container">
@@ -42,7 +54,7 @@
                         <?php if (has_post_thumbnail()) : ?>
                           <?php the_post_thumbnail('full'); ?>
                         <?php else : ?>
-                          <img src="<?php echo get_theme_file_uri(); ?>/images/common/noimage.jpg" alt="noimage">
+                          <img src="<?php echo get_theme_file_uri('/images/common/noimage.jpg'); ?>" alt="noimage">
                         <?php endif; ?>
                       </div>
                       <div class="page-campaign-card__body">
@@ -51,7 +63,7 @@
                             <?php
                             $terms = get_the_terms($post->ID, 'campaign_category');
                             foreach ($terms as $term) {
-                              echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                              echo '<a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a>';
                             }
                             ?>
                           </p>
@@ -83,10 +95,11 @@
                   </div>
                 </div>
               </li>
-          <?php endwhile;
-          endif; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </ul>
       </div>
+
     </div>
   </section>
 

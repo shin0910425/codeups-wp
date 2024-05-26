@@ -23,8 +23,10 @@
           <?php
           $args = ['taxonomy' => 'voice_category'];
           $terms = get_terms($args);
-          foreach ($terms as $term) {
-            echo '<div class="page-tab_item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+          if (!empty($terms) && !is_wp_error($terms)) {
+            foreach ($terms as $term) {
+              echo '<div class="page-tab_item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+            }
           }
           ?>
         </div>
@@ -41,33 +43,31 @@
                         // voice-meta グループフィールドからサブフィールドの値を取得
                         $voice_meta = get_field('voice-meta');
 
-                        // voice-age と voice-sex の値を変数に格納
-                        $voice_age = $voice_meta['voice-age'];
-                        $voice_sex = $voice_meta['voice-sex'];
-                        ?>
-                        <div class="voice-card__category">
-                          <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
-                        </div>
+                        if ($voice_meta) {
+                          // voice-age と voice-sex の値を変数に格納
+                          $voice_age = $voice_meta['voice-age'];
+                          $voice_sex = $voice_meta['voice-sex'];
 
-                        <!-- <div class="voice-card__tag">
+                          if ($voice_age && $voice_sex) {
+                        ?>
+                            <div class="voice-card__category">
+                              <p class="voice-card__category"><?php echo esc_html($voice_age); ?>(<?php echo esc_html($voice_sex); ?>)</p>
+                            </div>
                         <?php
-                        $terms = get_the_terms($post->ID, 'voice_category');
-                        foreach ($terms as $term) {
-                          echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                          }
                         }
                         ?>
-                      </div> -->
+
                         <ul class="voice-card__tag">
                           <?php
                           $terms = get_the_terms($post->ID, 'voice_category');
                           if (!empty($terms) && !is_wp_error($terms)) {
                             foreach ($terms as $term) {
-                              echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+                              echo '<li><a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a></li>';
                             }
                           }
                           ?>
                         </ul>
-
                       </div>
                       <h2 class="voice-card__title"><?php the_title(); ?></h2>
                     </div>
@@ -86,11 +86,12 @@
                   </div>
                 </div>
               </li>
-          <?php endwhile;
-          endif; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </ul>
 
       </div>
+
     </div>
   </section>
 

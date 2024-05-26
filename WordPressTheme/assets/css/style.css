@@ -2830,6 +2830,14 @@ p:empty {
 	width: 30%;
 }
 
+.page-price__message {
+	color: #0D2936;
+	font-family: "Noto Sans JP", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	text-align: center;
+}
+
 html:focus-within {
 	scroll-behavior: root;
 }

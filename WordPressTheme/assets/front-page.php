@@ -23,6 +23,11 @@ $sitemap = esc_url(home_url('/sitemap/'));
         for ($i = 1; $i <= 4; $i++) :
           $slide_img_pc = get_field('slide_img_pc_' . $i);
           $slide_img_sp = get_field('slide_img_sp_' . $i);
+
+          // どちらかの画像が空の場合はスキップ
+          if (empty($slide_img_pc) || empty($slide_img_sp)) {
+            continue;
+          }
         ?>
           <div class="swiper-slide">
             <picture>
@@ -31,7 +36,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
             </picture>
           </div>
         <?php
-        endfor
+        endfor;
         ?>
       </div>
       <div class="mv__header">
@@ -39,6 +44,8 @@ $sitemap = esc_url(home_url('/sitemap/'));
         <p class="mv__subtitle"><?php the_field('mv_subtitle'); ?></p>
       </div>
     </div>
+
+
   </div>
 </section>
 

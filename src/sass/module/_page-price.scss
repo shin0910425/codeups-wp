@@ -153,6 +153,14 @@
   }
 }
 
+.page-price__message {
+  font-size: rem(16);
+  font-weight: $regular;
+  font-family: $jp-family;
+  text-align: center;
+  color: $green;
+}
+
 html:focus-within {
   scroll-behavior: root;
 }

@@ -39,42 +39,53 @@
     </div>
   </section>
 
-  <section id="gallery" class="about-gallery about-gallery-layout">
-    <div class="about-gallery__inner inner">
-      <div class="about-gallery__title section-header">
-        <p class="section-header__sub">Gallery</p>
-        <h2 class="section-header__main">フォト</h2>
-      </div>
-      <div class="about-gallery__top">
-        <div class="about-gallery__list gallery-list">
-          <?php
-          $gallery_group = SCF::get('gallery-group', get_page_by_path('about')->ID);
+  <?php
+  $gallery_group = SCF::get('gallery-group', get_page_by_path('about')->ID);
 
-          if ($gallery_group) :
-            foreach ($gallery_group as $index => $fields) :
-              $image_url = $fields['gallery-image'];
-          ?>
-              <div class="gallery-list__box">
-                <div class="gallery-list__button js-modal-open" data-target="<?php echo $index + 1; ?>">
-                  <div class="gallery-list__item">
-                    <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
-                  </div>
-                </div>
-                <div class="gallery-list__modal modal js-modal js-modal-close" id="<?php echo $index + 1; ?>">
-                  <div class="modal__body">
-                    <div class="modal__img">
+  if (!empty($gallery_group)) :
+    $has_content = false;
+    foreach ($gallery_group as $fields) {
+      if (!empty($fields['gallery-image'])) {
+        $has_content = true;
+        break;
+      }
+    }
+
+    if ($has_content) :
+  ?>
+      <section id="gallery" class="about-gallery about-gallery-layout">
+        <div class="about-gallery__inner inner">
+          <div class="about-gallery__title section-header">
+            <p class="section-header__sub">Gallery</p>
+            <h2 class="section-header__main">フォト</h2>
+          </div>
+          <div class="about-gallery__top">
+            <div class="about-gallery__list gallery-list">
+              <?php foreach ($gallery_group as $index => $fields) :
+                $image_url = $fields['gallery-image']; ?>
+                <div class="gallery-list__box">
+                  <div class="gallery-list__button js-modal-open" data-target="<?php echo $index + 1; ?>">
+                    <div class="gallery-list__item">
                       <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
                     </div>
                   </div>
+                  <div class="gallery-list__modal modal js-modal js-modal-close" id="<?php echo $index + 1; ?>">
+                    <div class="modal__body">
+                      <div class="modal__img">
+                        <img src="<?php echo wp_get_attachment_url($image_url); ?>" alt="画像の説明">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-          <?php
-            endforeach;
-          endif;
-          ?>
+              <?php endforeach; ?>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+  <?php
+    endif;
+  endif;
+  ?>
+
 
   <?php get_footer(); ?>

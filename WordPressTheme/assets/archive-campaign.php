@@ -23,8 +23,10 @@
           <?php
           $args = ['taxonomy' => 'campaign_category'];
           $terms = get_terms($args);
-          foreach ($terms as $term) {
-            echo '<div class="page-tab_item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+          if (!empty($terms) && !is_wp_error($terms)) {
+            foreach ($terms as $term) {
+              echo '<div class="page-tab_item"><a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a></div>';
+            }
           }
           ?>
         </div>
@@ -32,6 +34,18 @@
         <ul class="page-campaign__contents">
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
+              <?php
+              // ACFフィールドの値を取得
+              $campaign_price_1 = get_field('campaign_price_1');
+              $campaign_price_2 = get_field('campaign_price_2');
+              $campaign_date_display_start = get_field('campaign_date_display_start');
+              $campaign_date_display_end = get_field('campaign_date_display_end');
+
+              // 全てのフィールドが空かどうかをチェック
+              if (empty($campaign_price_1) && empty($campaign_price_2) && empty($campaign_date_display_start) && empty($campaign_date_display_end)) {
+                continue; // 次のループにスキップ
+              }
+              ?>
               <li class="page-campaign__content" data-category="catInfo">
                 <div class="page-campaign-card">
                   <div class="page-campaign-card__container">
@@ -48,8 +62,10 @@
                           <p class="page-campaign-card__tag">
                             <?php
                             $terms = get_the_terms($post->ID, 'campaign_category');
-                            foreach ($terms as $term) {
-                              echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                            if (!empty($terms) && !is_wp_error($terms)) {
+                              foreach ($terms as $term) {
+                                echo '<a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a>';
+                              }
                             }
                             ?>
                           </p>
@@ -60,8 +76,12 @@
                         <div class="page-campaign-card__charge">
                           <p class="page-campaign-card__charge-text">全部コミコミ(お一人様)</p>
                           <div class="page-campaign-card__charge-box">
-                            <p class="page-campaign-card__charge-price-1">&yen;<?php the_field('campaign_price_1'); ?></p>
-                            <p class="page-campaign-card__charge-price-2">&yen;<?php the_field('campaign_price_2'); ?></p>
+                            <?php if ($campaign_price_1) : ?>
+                              <p class="page-campaign-card__charge-price-1">&yen;<?php echo esc_html($campaign_price_1); ?></p>
+                            <?php endif; ?>
+                            <?php if ($campaign_price_2) : ?>
+                              <p class="page-campaign-card__charge-price-2">&yen;<?php echo esc_html($campaign_price_2); ?></p>
+                            <?php endif; ?>
                           </div>
                         </div>
                         <div class="page-campaign-card_box u-desktop">
@@ -71,9 +91,11 @@
                           ?>
 
                           <p class="page-campaign-card_text"><?php echo $excerpt; ?></p>
-                          <time class="page-campaign-card__time" datetime="<?php echo get_the_time('c'); ?>">
-                            <?php echo esc_html(get_field('campaign_date_display_start')); ?>-<?php echo esc_html(get_field('campaign_date_display_end')); ?>
-                          </time>
+                          <?php if ($campaign_date_display_start && $campaign_date_display_end) : ?>
+                            <time class="page-campaign-card__time" datetime="<?php echo get_the_time('c'); ?>">
+                              <?php echo esc_html($campaign_date_display_start); ?>-<?php echo esc_html($campaign_date_display_end); ?>
+                            </time>
+                          <?php endif; ?>
                           <p class="page-campaign-card_contact-text">ご予約・お問い合わせはコチラ</p>
                           <div class="page-campaign-card__button">
                             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="button"><span>Contact&nbsp;us</span></a>
@@ -84,10 +106,12 @@
                   </div>
                 </div>
               </li>
-          <?php endwhile;
-          endif; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </ul>
       </div>
+
+
     </div>
   </section>
 
