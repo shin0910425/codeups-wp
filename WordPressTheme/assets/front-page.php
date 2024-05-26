@@ -71,39 +71,52 @@ $sitemap = esc_url(home_url('/sitemap/'));
 
             if ($the_query->have_posts()) :
               while ($the_query->have_posts()) : $the_query->the_post();
-            ?>
-                <li class="swiper-slide campaign-cards__item">
-                  <div class="campaign-card">
-                    <div class="campaign-card__container">
-                      <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="campaign-card__link">
+                // ACFフィールドの値を取得
+                $campaign_price_1 = get_field('campaign_price_1');
+                $campaign_price_2 = get_field('campaign_price_2');
 
-                        <div>
-                          <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('full'); ?>
-                          <?php else : ?>
-                            <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
-                          <?php endif; ?>
-                        </div>
-                        <div class="campaign-card__body">
-                          <div class="campaign-card__mete">
-                            <p class="campaign-card__tag">ライセンス講習</p>
+                // 両方の値が空でない場合にのみコンテンツを表示
+                if ($campaign_price_1 || $campaign_price_2) :
+            ?>
+                  <li class="swiper-slide campaign-cards__item">
+                    <div class="campaign-card">
+                      <div class="campaign-card__container">
+                        <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="campaign-card__link">
+                          <div>
+                            <?php if (has_post_thumbnail()) : ?>
+                              <?php the_post_thumbnail('full'); ?>
+                            <?php else : ?>
+                              <img class="img" src="<?php echo esc_url(get_theme_file_uri("/images/common/noimage.jpg")); ?>" alt="NoImage画像" />
+                            <?php endif; ?>
                           </div>
-                          <div class="campaign-card__body-head">
-                            <h3 class="campaign-card__title"><?php the_title(); ?></h3>
-                          </div>
-                          <div class="campaign-card__charge">
-                            <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
-                            <div class="campaign-card__charge-box">
-                              <p class="campaign-card__charge-price-1">&yen;<?php the_field('campaign_price_1'); ?></p>
-                              <p class="campaign-card__charge-price-2">&yen;<?php the_field('campaign_price_2'); ?></p>
+                          <div class="campaign-card__body">
+                            <div class="campaign-card__mete">
+                              <p class="campaign-card__tag">ライセンス講習</p>
+                            </div>
+                            <div class="campaign-card__body-head">
+                              <h3 class="campaign-card__title"><?php the_title(); ?></h3>
+                            </div>
+                            <div class="campaign-card__charge">
+                              <p class="campaign-card__charge-text">全部コミコミ(お一人様)</p>
+                              <div class="campaign-card__charge-box">
+                                <?php
+                                if ($campaign_price_1) {
+                                  echo '<p class="campaign-card__charge-price-1">&yen;' . esc_html($campaign_price_1) . '</p>';
+                                }
+
+                                if ($campaign_price_2) {
+                                  echo '<p class="campaign-card__charge-price-2">&yen;' . esc_html($campaign_price_2) . '</p>';
+                                }
+                                ?>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </a>
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
             <?php
+                endif;
               endwhile;
               wp_reset_postdata(); // サブループの後にリセット
             else :
@@ -111,6 +124,8 @@ $sitemap = esc_url(home_url('/sitemap/'));
             endif;
             ?>
           </ul>
+
+
         </div>
       </div>
 
@@ -278,20 +293,42 @@ $sitemap = esc_url(home_url('/sitemap/'));
                       // voice-meta グループフィールドからサブフィールドの値を取得
                       $voice_meta = get_field('voice-meta');
 
-                      // voice-age と voice-sex の値を変数に格納
-                      $voice_age = $voice_meta['voice-age'];
-                      $voice_sex = $voice_meta['voice-sex'];
+                      if ($voice_meta) {
+                        // voice-age と voice-sex の値を変数に格納
+                        $voice_age = $voice_meta['voice-age'];
+                        $voice_sex = $voice_meta['voice-sex'];
+
+                        if ($voice_age || $voice_sex) {
                       ?>
-                      <div class="voice-card__category">
-                        <p class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</p>
-                      </div>
+                          <div class="voice-card__category">
+                            <p class="voice-card__category">
+                              <?php
+                              if ($voice_age) {
+                                echo esc_html($voice_age);
+                              }
+                              if ($voice_age && $voice_sex) {
+                                echo ' (';
+                              }
+                              if ($voice_sex) {
+                                echo esc_html($voice_sex);
+                              }
+                              if ($voice_age && $voice_sex) {
+                                echo ')';
+                              }
+                              ?>
+                            </p>
+                          </div>
+                      <?php
+                        }
+                      }
+                      ?>
 
                       <ul class="voice-card__tag">
                         <?php
                         $terms = get_the_terms($post->ID, 'voice_category');
                         if (!empty($terms) && !is_wp_error($terms)) {
                           foreach ($terms as $term) {
-                            echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+                            echo '<li><a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a></li>';
                           }
                         }
                         ?>
@@ -322,6 +359,7 @@ $sitemap = esc_url(home_url('/sitemap/'));
         endif;
         ?>
       </ul>
+
       <div class="voice__button">
         <a href="<?php echo $voice; ?>" class="button"><span>view&nbsp;more</span></a>
       </div>
@@ -329,83 +367,121 @@ $sitemap = esc_url(home_url('/sitemap/'));
   </section>
 
   <!-- price -->
-  <section id="price" class="price top-price-layout">
-    <div class="price__icon-image">
-      <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img3.png" alt="キンギョハナダイのアイコン">
-    </div>
-    <div class="price__inner inner">
-      <div class="price__title section-header">
-        <p class="section-header__sub">Price</p>
-        <h2 class="section-header__main">料金一覧</h2>
+  <?php
+  // 各 price-group の内容を取得
+  $price_groups = [
+    'price-group1' => SCF::get('price-group1', get_page_by_path('price')->ID),
+    'price-group2' => SCF::get('price-group2', get_page_by_path('price')->ID),
+    'price-group3' => SCF::get('price-group3', get_page_by_path('price')->ID),
+    'price-group4' => SCF::get('price-group4', get_page_by_path('price')->ID)
+  ];
+
+  $has_content = false;
+  $group_has_content = [];
+
+  // 各 price-group にデータがあるかどうかをチェック
+  foreach ($price_groups as $group_key => $group) {
+    if (!empty($group)) {
+      foreach ($group as $fields) {
+        if (
+          !empty($fields['price-menu1']) || !empty($fields['price-money1']) ||
+          !empty($fields['price-menu2']) || !empty($fields['price-menu2-sub']) || !empty($fields['price-money2']) ||
+          !empty($fields['price-menu3']) || !empty($fields['price-menu3-sub']) || !empty($fields['price-money3']) ||
+          !empty($fields['price-menu4']) || !empty($fields['price-menu4-sub']) || !empty($fields['price-money4'])
+        ) {
+          $has_content = true;
+          $group_has_content[$group_key] = true;
+          break;
+        }
+      }
+    }
+  }
+
+  if ($has_content) : ?>
+    <section id="price" class="price top-price-layout">
+      <div class="price__icon-image">
+        <img class="u-desktop" src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img3.png" alt="キンギョハナダイのアイコン">
       </div>
-      <div class="price__list-box">
-        <div class="price__list-image">
-          <div class="js-scroll colorbox-scroll"><span class="js-motion-txt colorbox-motion-txt"><span class="js-motion-inner colorbox-motion-inner">
-                <picture>
-                  <source srcset="<?php echo get_theme_file_uri(); ?>/images/common/price-pc_img.jpg" media="(min-width: 768px)">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/common/price-sp_img.jpg" alt="海の中で泳ぐウミガメ">
-                </picture>
-              </span></span>
+      <div class="price__inner inner">
+        <div class="price__title section-header">
+          <p class="section-header__sub">Price</p>
+          <h2 class="section-header__main">料金一覧</h2>
+        </div>
+        <div class="price__list-box">
+          <div class="price__list-image">
+            <div class="js-scroll colorbox-scroll">
+              <span class="js-motion-txt colorbox-motion-txt">
+                <span class="js-motion-inner colorbox-motion-inner">
+                  <picture>
+                    <source srcset="<?php echo get_theme_file_uri(); ?>/images/common/price-pc_img.jpg" media="(min-width: 768px)">
+                    <img src="<?php echo get_theme_file_uri(); ?>/images/common/price-sp_img.jpg" alt="海の中で泳ぐウミガメ">
+                  </picture>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="price__list-body">
+            <?php
+            // ライセンス講習
+            if (!empty($group_has_content['price-group1'])) :
+              echo '<h3 class="price__sub-title">ライセンス講習</h3>';
+              foreach ($price_groups['price-group1'] as $fields) :
+                if (!empty($fields['price-menu1']) || !empty($fields['price-money1'])) : ?>
+                  <dl class="price__list-item">
+                    <dt class="price__list-menu"><?php echo $fields['price-menu1']; ?></dt>
+                    <dd class="price__list-money">&yen;<?php echo $fields['price-money1']; ?></dd>
+                  </dl>
+                <?php endif;
+              endforeach;
+            endif;
+
+            // 体験ダイビング
+            if (!empty($group_has_content['price-group2'])) :
+              echo '<h3 class="price__sub-title">体験ダイビング</h3>';
+              foreach ($price_groups['price-group2'] as $fields) :
+                if (!empty($fields['price-menu2']) || !empty($fields['price-menu2-sub']) || !empty($fields['price-money2'])) : ?>
+                  <dl class="price__list-item">
+                    <dt class="price__list-menu"><?php echo $fields['price-menu2']; ?><br class="u-mobile"><?php echo $fields['price-menu2-sub']; ?></dt>
+                    <dd class="price__list-money">&yen;<?php echo $fields['price-money2']; ?></dd>
+                  </dl>
+                <?php endif;
+              endforeach;
+            endif;
+
+            // ファンダイビング
+            if (!empty($group_has_content['price-group3'])) :
+              echo '<h3 class="price__sub-title">ファンダイビング</h3>';
+              foreach ($price_groups['price-group3'] as $fields) :
+                if (!empty($fields['price-menu3']) || !empty($fields['price-menu3-sub']) || !empty($fields['price-money3'])) : ?>
+                  <dl class="price__list-item">
+                    <dt class="price__list-menu"><?php echo $fields['price-menu3']; ?><br class="u-mobile"><?php echo $fields['price-menu3-sub']; ?></dt>
+                    <dd class="price__list-money">&yen;<?php echo $fields['price-money3']; ?></dd>
+                  </dl>
+                <?php endif;
+              endforeach;
+            endif;
+
+            // スペシャルダイビング
+            if (!empty($group_has_content['price-group4'])) :
+              echo '<h3 class="price__sub-title">スペシャルダイビング</h3>';
+              foreach ($price_groups['price-group4'] as $fields) :
+                if (!empty($fields['price-menu4']) || !empty($fields['price-menu4-sub']) || !empty($fields['price-money4'])) : ?>
+                  <dl class="price__list-item">
+                    <dt class="price__list-menu"><?php echo $fields['price-menu4']; ?><br class="u-mobile"><?php echo $fields['price-menu4-sub']; ?></dt>
+                    <dd class="price__list-money">&yen;<?php echo $fields['price-money4']; ?></dd>
+                  </dl>
+            <?php endif;
+              endforeach;
+            endif;
+            ?>
           </div>
         </div>
-        <div class="price__list-body">
-          <h3 class="price__sub-title">ライセンス講習</h3>
-          <?php
-          // Front Pageに表示するためのコード
-          // Smart Custom Fieldsから価格情報を取得
-          $front_page_price_group = SCF::get('price-group1', get_page_by_path('price')->ID);
-          // テーブルの表示
-          if ($front_page_price_group) :
-          ?>
-            <?php foreach ($front_page_price_group as $fields) : ?>
-              <dl class="price__list-item">
-                <dt class="price__list-menu"><?php echo $fields['price-menu1']; ?></dt>
-                <dd class="price__list-money">&yen;<?php echo $fields['price-money1']; ?></dd>
-              </dl>
-            <?php endforeach; ?>
-          <?php endif; ?>
-          <h3 class="price__sub-title">体験ダイビング</h3>
-          <?php
-          $front_page_price_group = SCF::get('price-group2', get_page_by_path('price')->ID);
-          if ($front_page_price_group) :
-          ?>
-            <?php foreach ($front_page_price_group as $fields) : ?>
-              <dl class="price__list-item">
-                <dt class="price__list-menu"><?php echo $fields['price-menu2']; ?><?php echo $fields['price-menu2-sub']; ?></dt>
-                <dd class="price__list-money">&yen;<?php echo $fields['price-money2']; ?></dd>
-              </dl>
-            <?php endforeach; ?>
-          <?php endif; ?>
-          <h3 class="price__sub-title">ファンダイビング</h3>
-          <?php
-          $front_page_price_group = SCF::get('price-group3', get_page_by_path('price')->ID);
-          if ($front_page_price_group) :
-          ?>
-            <?php foreach ($front_page_price_group as $fields) : ?>
-              <dl class="price__list-item">
-                <dt class="price__list-menu"><?php echo $fields['price-menu3']; ?><?php echo $fields['price-menu3-sub']; ?></dt>
-                <dd class="price__list-money">&yen;<?php echo $fields['price-money3']; ?></dd>
-              </dl>
-            <?php endforeach; ?>
-          <?php endif; ?>
-          <h3 class="price__sub-title">スペシャルダイビング</h3>
-          <?php
-          $front_page_price_group = SCF::get('price-group4', get_page_by_path('price')->ID);
-          if ($front_page_price_group) :
-          ?>
-            <?php foreach ($front_page_price_group as $fields) : ?>
-              <dl class="price__list-item">
-                <dt class="price__list-menu"><?php echo $fields['price-menu4']; ?><?php echo $fields['price-menu4-sub']; ?></dt>
-                <dd class="price__list-money">&yen;<?php echo $fields['price-money4']; ?></dd>
-              </dl>
-            <?php endforeach; ?>
-          <?php endif; ?>
+        <div class="price__button">
+          <a href="<?php echo $price; ?>" class="button"><span>view&nbsp;more</span></a>
         </div>
       </div>
-      <div class="price__button">
-        <a href="<?php echo $price; ?>" class="button"><span>view&nbsp;more</span></a>
-      </div>
-    </div>
-  </section>
+    </section>
+  <?php endif; ?>
+
 
   <?php get_footer(); ?>

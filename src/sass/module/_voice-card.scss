@@ -44,10 +44,10 @@
   font-family: $jp-family;
   font-weight: normal;
   color: $green;
+  max-width: rem(100);
+  width: 100%;
 
   @include mq("md") {
-    max-width: rem(58);
-    width: 100%;
   }
 }
 

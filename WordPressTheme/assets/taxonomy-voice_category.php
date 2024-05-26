@@ -16,7 +16,7 @@
       <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-voice__inner inner">
-      <div class="page-voice__tub page-tab">
+      <div class="page-voice__tab page-tab">
 
         <div class="page-tab_list">
           <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-tab_item <?php echo is_post_type_archive('voice') ? 'is-active' : '' ?>" data-filter="catAll">ALL</a>
@@ -26,7 +26,7 @@
           foreach ($terms as $term) {
             // 現在表示されているタームがこのタームかどうかをチェック
             $is_term_active = is_tax('voice_category', $term) ? 'is-active' : '';
-            echo '<div class="page-tab_item ' . $is_term_active . '"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+            echo '<div class="page-tab_item ' . $is_term_active . '"><a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a></div>';
           }
           ?>
         </div>
@@ -43,34 +43,46 @@
                         // voice-meta グループフィールドからサブフィールドの値を取得
                         $voice_meta = get_field('voice-meta');
 
-                        // voice-age と voice-sex の値を変数に格納
-                        $voice_age = $voice_meta['voice-age'];
-                        $voice_sex = $voice_meta['voice-sex'];
-                        ?>
-                        <div class="voice-card__category">
-                          <div class="voice-card__category"><?php echo $voice_age; ?>(<?php echo $voice_sex; ?>)</div>
-                        </div>
+                        if ($voice_meta) {
+                          // voice-age と voice-sex の値を変数に格納
+                          $voice_age = $voice_meta['voice-age'];
+                          $voice_sex = $voice_meta['voice-sex'];
 
-                        <!-- <div class="voice-card__tag">
-                          <?php
-                          $terms = get_the_terms($post->ID, 'voice_category');
-                          foreach ($terms as $term) {
-                            echo '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
+                          if ($voice_age || $voice_sex) {
+                        ?>
+                            <div class="voice-card__category">
+                              <p class="voice-card__category">
+                                <?php
+                                if ($voice_age) {
+                                  echo esc_html($voice_age);
+                                }
+                                if ($voice_age && $voice_sex) {
+                                  echo ' (';
+                                }
+                                if ($voice_sex) {
+                                  echo esc_html($voice_sex);
+                                }
+                                if ($voice_age && $voice_sex) {
+                                  echo ')';
+                                }
+                                ?>
+                              </p>
+                            </div>
+                        <?php
                           }
-                          ?>
-                        </div> -->
+                        }
+                        ?>
+
                         <ul class="voice-card__tag">
                           <?php
                           $terms = get_the_terms($post->ID, 'voice_category');
                           if (!empty($terms) && !is_wp_error($terms)) {
                             foreach ($terms as $term) {
-                              echo '<li><a href="' . get_term_link($term) . '">' . $term->name . '</a></li>';
+                              echo '<li><a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a></li>';
                             }
                           }
                           ?>
                         </ul>
-
-
                       </div>
                       <h2 class="voice-card__title"><?php the_title(); ?></h2>
                     </div>
@@ -89,11 +101,12 @@
                   </div>
                 </div>
               </li>
-          <?php endwhile;
-          endif; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </ul>
 
       </div>
+
     </div>
   </section>
 

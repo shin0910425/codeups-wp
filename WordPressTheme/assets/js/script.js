@@ -218,14 +218,6 @@ jQuery(function ($) {
 });
 
 // faq アコーディオン------------------------------------------
-
-// jQuery(function ($) {
-//   $('.js-faq-question').on('click', function () {
-//     $(this).next().slideToggle();
-//     $(this).toggleClass('is-open');
-//   });
-// });
-
 jQuery(function ($) {
   $(".faq-list__item:first-of-type .faq-list__item-answer").css("display", "block");
   $(".faq-list__item:first-of-type .faq-list__item-question").addClass("is-open");

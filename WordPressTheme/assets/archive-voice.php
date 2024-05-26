@@ -16,7 +16,7 @@
       <img src="<?php echo get_theme_file_uri(); ?>/images/common/hanadai_img2.png" alt="キンギョハナダイのアイコン">
     </div>
     <div class="page-voice__inner inner">
-      <div class="page-voice__tub page-tab">
+      <div class="page-voice__tab page-tab">
 
         <div class="page-tab_list">
           <a href="<?php echo esc_url(home_url('/voice')); ?>" class="page-tab_item <?php echo is_post_type_archive('voice') ? 'is-active' : '' ?>" data-filter="catAll">ALL</a>
@@ -25,7 +25,7 @@
           $terms = get_terms($args);
           if (!empty($terms) && !is_wp_error($terms)) {
             foreach ($terms as $term) {
-              echo '<div class="page-tab_item"><a href="' . get_term_link($term) . '">' . $term->name . '</a></div>';
+              echo '<div class="page-tab_item"><a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a></div>';
             }
           }
           ?>
@@ -48,10 +48,25 @@
                           $voice_age = $voice_meta['voice-age'];
                           $voice_sex = $voice_meta['voice-sex'];
 
-                          if ($voice_age && $voice_sex) {
+                          if ($voice_age || $voice_sex) {
                         ?>
                             <div class="voice-card__category">
-                              <p class="voice-card__category"><?php echo esc_html($voice_age); ?>(<?php echo esc_html($voice_sex); ?>)</p>
+                              <p class="voice-card__category">
+                                <?php
+                                if ($voice_age) {
+                                  echo esc_html($voice_age);
+                                }
+                                if ($voice_age && $voice_sex) {
+                                  echo ' (';
+                                }
+                                if ($voice_sex) {
+                                  echo esc_html($voice_sex);
+                                }
+                                if ($voice_age && $voice_sex) {
+                                  echo ')';
+                                }
+                                ?>
+                              </p>
                             </div>
                         <?php
                           }
@@ -91,6 +106,7 @@
         </ul>
 
       </div>
+
 
     </div>
   </section>

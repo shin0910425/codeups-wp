@@ -3967,6 +3967,8 @@ header {
 	font-size: 0.75rem;
 	font-weight: normal;
 	line-height: 1.8;
+	max-width: 6.25rem;
+	width: 100%;
 }
 
 .voice-card__tag {
@@ -5696,11 +5698,6 @@ html {
 .voice-card__item {
 	margin-top: 1.25rem;
 	max-width: 17.25rem;
-	width: 100%;
-}
-
-.voice-card__category {
-	max-width: 3.625rem;
 	width: 100%;
 }
 
