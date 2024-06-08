@@ -101,11 +101,11 @@ $sitemap = esc_url(home_url('/sitemap/'));
                               <div class="campaign-card__charge-box">
                                 <?php
                                 if ($campaign_price_1) {
-                                  echo '<p class="campaign-card__charge-price-1">&yen;' . esc_html($campaign_price_1) . '</p>';
+                                  echo '<p class="campaign-card__charge-price-1">&yen;' . esc_html(number_format($campaign_price_1)) . '</p>';
                                 }
 
                                 if ($campaign_price_2) {
-                                  echo '<p class="campaign-card__charge-price-2">&yen;' . esc_html($campaign_price_2) . '</p>';
+                                  echo '<p class="campaign-card__charge-price-2">&yen;' . esc_html(number_format($campaign_price_2)) . '</p>';
                                 }
                                 ?>
                               </div>

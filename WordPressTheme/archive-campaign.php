@@ -77,10 +77,10 @@
                           <p class="page-campaign-card__charge-text">全部コミコミ(お一人様)</p>
                           <div class="page-campaign-card__charge-box">
                             <?php if ($campaign_price_1) : ?>
-                              <p class="page-campaign-card__charge-price-1">&yen;<?php echo esc_html($campaign_price_1); ?></p>
+                              <p class="page-campaign-card__charge-price-1">&yen;<?php echo esc_html(number_format($campaign_price_1)); ?></p>
                             <?php endif; ?>
                             <?php if ($campaign_price_2) : ?>
-                              <p class="page-campaign-card__charge-price-2">&yen;<?php echo esc_html($campaign_price_2); ?></p>
+                              <p class="page-campaign-card__charge-price-2">&yen;<?php echo esc_html(number_format($campaign_price_2)); ?></p>
                             <?php endif; ?>
                           </div>
                         </div>
@@ -92,10 +92,29 @@
 
                           <p class="page-campaign-card_text"><?php echo $excerpt; ?></p>
                           <?php if ($campaign_date_display_start && $campaign_date_display_end) : ?>
+                            <?php
+                            // 日付をDateTimeオブジェクトに変換
+                            $start_date = new DateTime($campaign_date_display_start);
+                            $end_date = new DateTime($campaign_date_display_end);
+
+                            // 年を取得
+                            $start_year = $start_date->format('Y');
+                            $end_year = $end_date->format('Y');
+
+                            // 同じ年の場合、終了日付の年を非表示にする
+                            if ($start_year === $end_year) {
+                              $formatted_start_date = $start_date->format('Y/n/j');
+                              $formatted_end_date = $end_date->format('n/j');
+                            } else {
+                              $formatted_start_date = $start_date->format('Y/n/j');
+                              $formatted_end_date = $end_date->format('Y/n/j');
+                            }
+                            ?>
                             <time class="page-campaign-card__time" datetime="<?php echo get_the_time('c'); ?>">
-                              <?php echo esc_html($campaign_date_display_start); ?>-<?php echo esc_html($campaign_date_display_end); ?>
+                              <?php echo esc_html($formatted_start_date); ?>-<?php echo esc_html($formatted_end_date); ?>
                             </time>
                           <?php endif; ?>
+
                           <p class="page-campaign-card_contact-text">ご予約・お問い合わせはコチラ</p>
                           <div class="page-campaign-card__button">
                             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="button"><span>Contact&nbsp;us</span></a>
@@ -108,6 +127,7 @@
               </li>
             <?php endwhile; ?>
           <?php endif; ?>
+
         </ul>
       </div>
 

@@ -41,7 +41,7 @@
           <?php endif; ?>
           <?php if (!$has_content) : ?>
             <li class="faq-list__item">
-              <p class="faq-list__item-message">FAQが見つかりませんでした。</p>
+              <p class="faq-list__item-message">FAQは、現在準備中です。</p>
             </li>
           <?php endif; ?>
         </ul>

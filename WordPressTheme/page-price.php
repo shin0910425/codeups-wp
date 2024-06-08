@@ -22,6 +22,7 @@
       // License Section
       $price_group = SCF::get('price-group1', get_page_by_path('price')->ID);
       $has_content = false;
+
       if (!empty($price_group)) {
         foreach ($price_group as $fields) {
           if (!empty($fields['price-menu1']) || !empty($fields['price-money1'])) {
@@ -30,8 +31,10 @@
           }
         }
       }
+
       if ($has_content) :
-        $content_exists = true; ?>
+        $content_exists = true;
+      ?>
         <div class="page-price__list-body" id="license" tabindex="-1">
           <div class="page-price__list-title">
             <div class="page-price__sub-title">ライセンス講習</div>
@@ -45,7 +48,7 @@
                 <?php if (!empty($fields['price-menu1']) || !empty($fields['price-money1'])) : ?>
                   <tr class="page-price__list-item">
                     <td class="page-price__list-menu"><?php echo $fields['price-menu1']; ?></td>
-                    <td class="page-price__list-money">&yen;<?php echo $fields['price-money1']; ?></td>
+                    <td class="page-price__list-money">&yen;<?php echo number_format($fields['price-money1']); ?></td>
                   </tr>
                 <?php endif; ?>
               <?php endforeach; ?>
@@ -81,7 +84,7 @@
                 <?php if (!empty($fields['price-menu2']) || !empty($fields['price-menu2-sub']) || !empty($fields['price-money2'])) : ?>
                   <tr class="page-price__list-item">
                     <td class="page-price__list-menu"><?php echo $fields['price-menu2']; ?><br class="u-mobile"><?php echo $fields['price-menu2-sub']; ?></td>
-                    <td class="page-price__list-money">&yen;<?php echo $fields['price-money2']; ?></td>
+                    <td class="page-price__list-money">&yen;<?php echo number_format($fields['price-money2']); ?></td>
                   </tr>
                 <?php endif; ?>
               <?php endforeach; ?>
@@ -117,7 +120,7 @@
                 <?php if (!empty($fields['price-menu3']) || !empty($fields['price-menu3-sub']) || !empty($fields['price-money3'])) : ?>
                   <tr class="page-price__list-item">
                     <td class="page-price__list-menu"><?php echo $fields['price-menu3']; ?><br class="u-mobile"><?php echo $fields['price-menu3-sub']; ?></td>
-                    <td class="page-price__list-money">&yen;<?php echo $fields['price-money3']; ?></td>
+                    <td class="page-price__list-money">&yen;<?php echo number_format($fields['price-money3']); ?></td>
                   </tr>
                 <?php endif; ?>
               <?php endforeach; ?>
@@ -153,7 +156,7 @@
                 <?php if (!empty($fields['price-menu4']) || !empty($fields['price-menu4-sub']) || !empty($fields['price-money4'])) : ?>
                   <tr class="page-price__list-item">
                     <td class="page-price__list-menu"><?php echo $fields['price-menu4']; ?><br class="u-mobile"><?php echo $fields['price-menu4-sub']; ?></td>
-                    <td class="page-price__list-money">&yen;<?php echo $fields['price-money4']; ?></td>
+                    <td class="page-price__list-money">&yen;<?php echo number_format($fields['price-money4']); ?></td>
                   </tr>
                 <?php endif; ?>
               <?php endforeach; ?>
